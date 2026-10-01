@@ -1,0 +1,122 @@
+[
+ {
+  "run": "gpt2_162m_pile_2b",
+  "status": "complete",
+  "n_evals": 30,
+  "best_val_ppl": 14.454165144702992,
+  "final_val_ppl": 15.2597131984698,
+  "params": 162322944,
+  "tokens": 2000027648,
+  "hours": 10.959885702000724
+ },
+ {
+  "run": "gpt2_162m_pile_250m",
+  "status": "complete",
+  "n_evals": 19,
+  "best_val_ppl": 27.566273765403615,
+  "final_val_ppl": 28.3850575882648,
+  "params": 162322944,
+  "tokens": 250019840,
+  "hours": 1.3951789127455818
+ },
+ {
+  "run": "aenca_v7.1_162m_pile_2b",
+  "status": "complete",
+  "n_evals": 30,
+  "best_val_ppl": 15.680140968598414,
+  "final_val_ppl": 19.841503284402894,
+  "params": 161994241,
+  "tokens": 1999962112,
+  "hours": 24.691719067030483
+ },
+ {
+  "run": "aenca_v13_162m_pile_250m",
+  "status": "complete (resumed from step 200)",
+  "n_evals": 18,
+  "best_val_ppl": 56.98379986270951,
+  "final_val_ppl": 52.87560430263775,
+  "params": 161999873,
+  "tokens": 250019840,
+  "hours": 3.22910543402036
+ },
+ {
+  "run": "aenca_v15_160m_pile_250m",
+  "status": "complete",
+  "n_evals": 19,
+  "best_val_ppl": 522.48825978053,
+  "final_val_ppl": 599.7481511600964,
+  "params": 159994661,
+  "tokens": 250019840,
+  "hours": 7.717748152812322
+ },
+ {
+  "run": "aenca_v15_160m_tinystories",
+  "status": "complete (2,000 steps, TinyStories)",
+  "n_evals": 10,
+  "best_val_ppl": 48.54361173083846,
+  "final_val_ppl": null,
+  "params": null,
+  "tokens": null,
+  "hours": null
+ },
+ {
+  "run": "aenca_v14.1_162m_smoke_20min",
+  "status": "smoke run (20 min)",
+  "n_evals": 8,
+  "best_val_ppl": 46.95663964278126,
+  "final_val_ppl": 48.23468127945453,
+  "params": 161993329,
+  "tokens": 16384000,
+  "hours": 0.3339738040500217
+ },
+ {
+  "run": "partial/aenca_v7_pile_250m_a",
+  "status": "aborted after 5 steps",
+  "n_evals": 0,
+  "best_val_ppl": null,
+  "final_val_ppl": null,
+  "params": null,
+  "tokens": null,
+  "hours": null
+ },
+ {
+  "run": "partial/aenca_v7_pile_250m_b",
+  "status": "aborted at step ~530",
+  "n_evals": 2,
+  "best_val_ppl": 550.7500520808607,
+  "final_val_ppl": null,
+  "params": null,
+  "tokens": null,
+  "hours": null
+ },
+ {
+  "run": "partial/aenca_v7.1_pile_250m",
+  "status": "aborted at step ~750 (superseded by the 2B run)",
+  "n_evals": 3,
+  "best_val_ppl": 262.42074982276284,
+  "final_val_ppl": null,
+  "params": null,
+  "tokens": null,
+  "hours": null
+ },
+ {
+  "run": "partial/aenca_v7.1_pile_2b_a",
+  "status": "aborted at step 1,000 (restarted)",
+  "n_evals": 1,
+  "best_val_ppl": 284.3800061908288,
+  "final_val_ppl": null,
+  "params": null,
+  "tokens": null,
+  "hours": null
+ },
+ {
+  "run": "partial/aenca_v7.1_pile_2b_b",
+  "status": "aborted at step 1 (restarted)",
+  "n_evals": 0,
+  "best_val_ppl": null,
+  "final_val_ppl": null,
+  "params": null,
+  "tokens": null,
+  "hours": null
+ }
+]

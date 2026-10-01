@@ -1,0 +1,15 @@
+  Param group 'decay': 123,351,808 params, wd=0.1
+  Param group 'no_decay': 38,644,753 params, wd=0.0
+==============================================================================
+  AENCA v7 (Stream-Hierarchical NCA)
+==============================================================================
+  Params: 161,996,561 total
+  Config: 3815 steps, batch=4, seq_len=1024
+  Token budget: 15,626,240
+  Device: cuda
+==============================================================================
+Step     1/3815 [SNCA] | CE=10.8388 PPL=50958.2 | 1134 tok/s ∇=0.78 GPU=2.4G
+Step     2/3815 [SNCA] | CE=10.8369 PPL=50865.1 | 1234 tok/s ∇=0.78 GPU=2.5G
+Step     3/3815 [SNCA] | CE=10.8375 PPL=50895.3 | 1235 tok/s ∇=0.78 GPU=2.5G
+Step     4/3815 [SNCA] | CE=10.8366 PPL=50846.5 | 1208 tok/s ∇=0.78 GPU=2.5G
+Step     5/3815 [SNCA] | CE=10.8335 PPL=50691.4 | 1211 tok/s ∇=0.78 GPU=2.5G ETA=57.7h

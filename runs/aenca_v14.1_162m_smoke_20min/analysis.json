@@ -1,0 +1,82 @@
+{
+  "experiment": {
+    "name": "v14_1_20min",
+    "profile": "smoke_v14_20min",
+    "seed": 42,
+    "timestamp": "20260331_143110",
+    "total_time_hours": 0.3339738040500217,
+    "total_time_minutes": 20.038428243001302
+  },
+  "results": {
+    "final_val_ppl": 48.23468127945453,
+    "final_val_ce": 3.876078290939331,
+    "best_val_ppl": 46.95663964278126
+  },
+  "model": {
+    "architecture": "AENCA v14 (Emergent Dynamics)",
+    "total_params": 161993329,
+    "morphogen_params": 2826560,
+    "embed_params": 7680000,
+    "readout_head_params": 7680768,
+    "content_readout_params": 787504,
+    "theta_ffn_params": 143016960,
+    "halt_params": 1537,
+    "d_model": 768,
+    "d_h": 256,
+    "d_ff": 15518,
+    "n_theta": 4,
+    "n_morph_steps": 12,
+    "n_rules": 8,
+    "effective_rule_hidden": 256,
+    "morph_dilations": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      32,
+      64,
+      128,
+      256,
+      512,
+      1024,
+      2048
+    ],
+    "enable_halting": true,
+    "mos_components": 1,
+    "tie_embeddings": false,
+    "vocab_size": 10000,
+    "target_params": 162000000,
+    "paradigm": "Emergent Dynamics (content-enriched NCA communication, multi-scale readout, no explicit attention)"
+  },
+  "training": {
+    "max_steps": 2000,
+    "steps_completed": 2000,
+    "batch_size": 16,
+    "seq_len": 512,
+    "grad_accum_steps": 1,
+    "effective_batch_tokens": 8192,
+    "total_tokens": 16384000,
+    "learning_rate": 0.0003,
+    "weight_decay": 0.1,
+    "grad_clip": 1.0,
+    "warmup_steps": 100,
+    "beta2": 0.95,
+    "lambda_agc": 0.0,
+    "lambda_reg": 0.005,
+    "lambda_aux": 0.05,
+    "dropout": 0.0,
+    "optimizer": "AdamW (beta1=0.9, beta2=0.95)",
+    "lr_schedule": "cosine with linear warmup (min_lr_ratio=0.1)",
+    "amp": true
+  },
+  "performance": {
+    "avg_tokens_per_sec": 13627.149961825922,
+    "gpu_peak_memory_gb": 7.831347942352295
+  },
+  "hardware": {
+    "device": "cuda",
+    "gpu_name": "NVIDIA GeForce RTX 4080 SUPER",
+    "gpu_memory_total_gb": 15.99169921875
+  }
+}

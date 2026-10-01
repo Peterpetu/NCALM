@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1160 440" width="1160" height="440" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#898781"/>
+    </marker>
+    <style>
+      .t { fill:#0b0b0b; font-size:13px; }
+      .s { fill:#52514e; font-size:11px; }
+      .m { fill:#898781; font-size:10.5px; }
+      .h { fill:#0b0b0b; font-size:15px; font-weight:600; }
+      .box { fill:#ffffff; stroke:#c3c2b7; stroke-width:1; rx:6; }
+      .fixed { fill:#f3f3f0; stroke:#c3c2b7; stroke-width:1; rx:6; }
+      .base { fill:#eaf2fc; stroke:#2a78d6; stroke-width:1.4; rx:6; }
+      .chal { fill:#fdeee7; stroke:#eb6834; stroke-width:1.4; rx:6; }
+      .line { stroke:#898781; stroke-width:1.2; fill:none; marker-end:url(#arr); }
+    </style>
+  </defs>
+  <rect width="1160" height="440" fill="#fcfcfb"/>
+  <text x="40" y="36" class="h">NCALM: one harness, one protocol, N architectures</text>
+  <text x="40" y="56" class="s">Everything that is not the architecture is held fixed. The only independent variable is the model class plugged into the same interface.</text>
+
+  <!-- fixed column -->
+  <rect x="40" y="80" width="330" height="300" class="fixed"/>
+  <text x="54" y="102" class="t">Held fixed (controlled variables)</text>
+  <text x="54" y="126" class="s">• Data: The Pile (uncopyrighted), one tokenized stream</text>
+  <text x="54" y="144" class="s">• Tokenizer: GPT-NeoX (Pythia), vocab 50,304, frozen</text>
+  <text x="54" y="162" class="s">• Parameter budget: ~162M ± 0.5%</text>
+  <text x="54" y="180" class="s">• Token budget per tier: 250M or 2.0B</text>
+  <text x="54" y="198" class="s">• Effective batch: 65,536 tokens/step, seq 1,024</text>
+  <text x="54" y="216" class="s">• Optimiser: AdamW (β2 0.99), wd 0.1, grad clip 1.0</text>
+  <text x="54" y="234" class="s">• Schedule: linear warmup 1,500 → cosine to 10%</text>
+  <text x="54" y="252" class="s">• Seed 42, AMP, same eval cadence (every 1,000 / 200 steps)</text>
+  <text x="54" y="270" class="s">• Same GPU: one RTX 4080 SUPER (16 GB)</text>
+  <text x="54" y="300" class="m">Known defects of the shipped eval protocol, fixed</text>
+  <text x="54" y="314" class="m">in docs but not in the recorded runs: validation windows</text>
+  <text x="54" y="328" class="m">are random (no fixed held-out set) and the val loader</text>
+  <text x="54" y="342" class="m">inherits the training micro-batch, so GPT-2 was scored</text>
+  <text x="54" y="356" class="m">on 2× the validation tokens per eval. Both favour the</text>
+  <text x="54" y="370" class="m">challengers; gaps under ~15% are within eval noise.</text>
+
+  <!-- interface -->
+  <path d="M370 230 H 400" class="line"/>
+  <rect x="400" y="200" width="190" height="60" class="box"/>
+  <text x="412" y="222" class="t">ncalm.model interface</text>
+  <text x="412" y="240" class="s">forward(tokens) → logits</text>
+  <text x="412" y="254" class="s">trainer · data · profiles · telemetry</text>
+
+  <!-- models -->
+  <path d="M590 230 H 620 V 110 H 640" class="line"/>
+  <path d="M590 230 H 620 V 200 H 640" class="line"/>
+  <path d="M590 230 H 620 V 290 H 640" class="line"/>
+  <path d="M590 230 H 620 V 365 H 640" class="line"/>
+
+  <rect x="640" y="86" width="500" height="50" class="base"/>
+  <text x="652" y="106" class="t">GPT-2 baseline (GPT-NeoX / Pythia-160M layout) · 162,322,944 params</text>
+  <text x="652" y="124" class="s">12 layers, d 768, 12 heads, d_ff 3072, rotary 25%, parallel residual, untied embeddings</text>
+
+  <rect x="640" y="176" width="500" height="50" class="chal"/>
+  <text x="652" y="196" class="t">AENCA v7.1 · 161,994,241 params · 2.0B tokens</text>
+  <text x="652" y="214" class="s">4 attention layers + an 8-call shared causal-conv/GLU loop (7.7% of non-embedding params)</text>
+
+  <rect x="640" y="266" width="500" height="50" class="chal"/>
+  <text x="652" y="286" class="t">AENCA v13 · 161,999,873 params · 250M tokens</text>
+  <text x="652" y="304" class="s">4 transformer blocks whose Q and K are gated by a 625K-parameter conv "morphogen" field</text>
+
+  <rect x="640" y="341" width="500" height="50" class="chal"/>
+  <text x="652" y="361" class="t">AENCA v15 · 159,994,661 params · 250M tokens · no attention</text>
+  <text x="652" y="379" class="s">2D reaction–diffusion NCA on a folded sequence · earlier variants v3–v12, v14 not all archived</text>
+
+  <text x="640" y="414" class="m">Blue: the control. Orange: challengers.</text><text x="640" y="428" class="m">Every run writes config.json, metrics.jsonl and analysis.json; the complete runs are in runs/.</text>
+</svg>

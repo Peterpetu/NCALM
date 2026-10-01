@@ -1,0 +1,80 @@
+{
+  "experiment": {
+    "name": "pile_250m_v15_seed42",
+    "profile": "pile_250m_v15",
+    "seed": 42,
+    "timestamp": "20260401_080411",
+    "total_time_hours": 7.717748152812322,
+    "total_time_minutes": 463.06488916873934
+  },
+  "results": {
+    "final_val_ppl": 599.7481511600964,
+    "final_val_ce": 6.396509819030761,
+    "best_val_ppl": 522.48825978053
+  },
+  "model": {
+    "architecture": "AENCA v15 (2D RD-NCA)",
+    "total_params": 159994661,
+    "rd_field_params": 2754208,
+    "embed_params": 38633472,
+    "readout_head_params": 38634240,
+    "content_readout_params": 590596,
+    "theta_ffn_params": 79380480,
+    "halt_params": 1665,
+    "d_model": 768,
+    "d_a": 128,
+    "d_b": 64,
+    "d_s": 192,
+    "d_c": 128,
+    "d_pos": 32,
+    "d_rule": 384,
+    "d_p": 544,
+    "d_ff": 8613,
+    "n_theta": 4,
+    "n_morph_steps": 8,
+    "n_rules": 8,
+    "k_a": 3,
+    "k_b": 5,
+    "grid_size": "32x32",
+    "p_async": 0.5,
+    "enable_halting": true,
+    "mos_components": 1,
+    "tie_embeddings": false,
+    "vocab_size": 50304,
+    "target_params": 160000000,
+    "n_levels": 1,
+    "turing_ratio": "D_b/D_a = 12/4 = 3.0",
+    "edge_of_chaos": "\u03c1 = 384/192 = 2.0",
+    "paradigm": "2D Latent Reaction-Diffusion NCA (dual-species Turing, causal 2D, no attention)"
+  },
+  "training": {
+    "max_steps": 3815,
+    "steps_completed": 3815,
+    "batch_size": 4,
+    "seq_len": 1024,
+    "grad_accum_steps": 16,
+    "effective_batch_tokens": 65536,
+    "total_tokens": 250019840,
+    "learning_rate": 0.0002,
+    "weight_decay": 0.1,
+    "grad_clip": 1.0,
+    "warmup_steps": 188,
+    "beta2": 0.99,
+    "lambda_agc": 0.0,
+    "lambda_reg": 0.005,
+    "lambda_aux": 0.05,
+    "dropout": 0.0,
+    "optimizer": "AdamW (beta1=0.9, beta2=0.99)",
+    "lr_schedule": "cosine with linear warmup (min_lr_ratio=0.1)",
+    "amp": true
+  },
+  "performance": {
+    "avg_tokens_per_sec": 8998.733073487014,
+    "gpu_peak_memory_gb": 9.20867109298706
+  },
+  "hardware": {
+    "device": "cuda",
+    "gpu_name": "NVIDIA GeForce RTX 4080 SUPER",
+    "gpu_memory_total_gb": 15.99169921875
+  }
+}

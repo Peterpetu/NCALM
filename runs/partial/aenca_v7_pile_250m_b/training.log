@@ -1,0 +1,78 @@
+  Param group 'decay': 123,351,808 params, wd=0.1
+  Param group 'no_decay': 38,644,753 params, wd=0.0
+==============================================================================
+  AENCA v7 (Stream-Hierarchical NCA)
+==============================================================================
+  Params: 161,996,561 total
+  Config: 3815 steps, batch=4, seq_len=1024
+  Token budget: 15,626,240
+  Device: cuda
+==============================================================================
+Step     1/3815 [SNCA] | CE=10.8388 PPL=50958.2 | 12441 tok/s ∇=0.78 GPU=2.4G
+Step     2/3815 [SNCA] | CE=10.8369 PPL=50865.1 | 17309 tok/s ∇=0.78 GPU=2.5G
+Step     3/3815 [SNCA] | CE=10.8375 PPL=50895.3 | 17201 tok/s ∇=0.78 GPU=2.5G
+Step     4/3815 [SNCA] | CE=10.8366 PPL=50846.5 | 16490 tok/s ∇=0.78 GPU=2.5G
+Step     5/3815 [SNCA] | CE=10.8335 PPL=50691.4 | 16839 tok/s ∇=0.78 GPU=2.5G ETA=4.4h
+Step    10/3815 [SNCA] | CE=10.8152 PPL=49773.6 | 17237 tok/s ∇=0.78 GPU=2.5G ETA=4.3h
+Step    20/3815 [SNCA] | CE=10.6741 PPL=43219.8 | 17698 tok/s ∇=0.78 GPU=2.5G ETA=4.2h
+Step    30/3815 [SNCA] | CE=10.3196 PPL=30321.3 | 16875 tok/s ∇=0.78 GPU=2.5G ETA=4.1h
+Step    40/3815 [SNCA] | CE=9.9804 PPL=21599.2 | 18732 tok/s ∇=0.78 GPU=2.5G ETA=4.0h
+Step    50/3815 [SNCA] | CE=9.6356 PPL=15299.1 | 18749 tok/s ∇=0.79 GPU=2.5G ETA=4.0h
+Step    60/3815 [SNCA] | CE=9.2050 PPL=9947.2 | 17757 tok/s ∇=0.80 GPU=2.5G ETA=4.0h
+Step    70/3815 [SNCA] | CE=8.7536 PPL=6333.4 | 17552 tok/s ∇=0.81 GPU=2.5G ETA=4.0h
+Step    80/3815 [SNCA] | CE=8.4298 PPL=4581.7 | 18530 tok/s ∇=0.83 GPU=2.5G ETA=3.9h
+Step    90/3815 [SNCA] | CE=8.1646 PPL=3514.3 | 18362 tok/s ∇=0.85 GPU=2.5G ETA=3.9h
+Step   100/3815 [SNCA] | CE=8.0808 PPL=3231.8 | 18535 tok/s ∇=0.87 GPU=2.5G ETA=3.9h
+Step   110/3815 [SNCA] | CE=7.9344 PPL=2791.8 | 18522 tok/s ∇=0.78 GPU=2.5G ETA=3.8h
+Step   120/3815 [SNCA] | CE=8.0568 PPL=3155.1 | 18485 tok/s ∇=0.62 GPU=2.5G ETA=3.8h
+Step   130/3815 [SNCA] | CE=7.8045 PPL=2451.5 | 18525 tok/s ∇=0.37 GPU=2.5G ETA=3.8h
+Step   140/3815 [SNCA] | CE=7.7721 PPL=2373.5 | 18909 tok/s ∇=0.66 GPU=2.5G ETA=3.8h
+Step   150/3815 [SNCA] | CE=7.7355 PPL=2288.2 | 18651 tok/s ∇=0.54 GPU=2.5G ETA=3.7h
+Step   160/3815 [SNCA] | CE=7.7382 PPL=2294.4 | 18828 tok/s ∇=0.48 GPU=2.5G ETA=3.7h
+Step   170/3815 [SNCA] | CE=7.5799 PPL=1958.4 | 18870 tok/s ∇=0.53 GPU=2.5G ETA=3.7h
+Step   180/3815 [SNCA] | CE=7.6546 PPL=2110.3 | 18779 tok/s ∇=0.55 GPU=2.5G ETA=3.7h
+Step   190/3815 [SNCA] | CE=7.4205 PPL=1669.8 | 18616 tok/s ∇=0.46 GPU=2.5G ETA=3.7h
+Step   200/3815 [SNCA] | CE=7.3267 PPL=1520.3 | 18413 tok/s ∇=0.57 GPU=2.5G ETA=3.7h
+  >>> VAL: CE=7.3479 PPL=1552.9
+  Disk free before save (experiments\AENCA v7 (Stream-Hierarchical NCA)\pile_250m_v7_20260320_160525): 30.72 GB
+  Saved checkpoint: best_model.pt
+  Disk free after save (experiments\AENCA v7 (Stream-Hierarchical NCA)\pile_250m_v7_20260320_160525): 28.91 GB
+  >>> New best Val PPL: 1552.9
+Step   210/3815 [SNCA] | CE=7.3279 PPL=1522.1 | 17999 tok/s ∇=0.52 GPU=2.5G ETA=3.7h
+Step   220/3815 [SNCA] | CE=7.0203 PPL=1119.2 | 18698 tok/s ∇=0.53 GPU=2.5G ETA=3.7h
+Step   230/3815 [SNCA] | CE=7.0859 PPL=1195.0 | 18556 tok/s ∇=0.63 GPU=2.5G ETA=3.7h
+Step   240/3815 [SNCA] | CE=7.0818 PPL=1190.1 | 18311 tok/s ∇=0.68 GPU=2.5G ETA=3.7h
+Step   250/3815 [SNCA] | CE=6.8694 PPL=962.3 | 18219 tok/s ∇=0.65 GPU=2.5G ETA=3.7h
+Step   260/3815 [SNCA] | CE=6.9343 PPL=1026.9 | 18212 tok/s ∇=0.81 GPU=2.5G ETA=3.6h
+Step   270/3815 [SNCA] | CE=6.9432 PPL=1036.1 | 18051 tok/s ∇=0.69 GPU=2.5G ETA=3.6h
+Step   280/3815 [SNCA] | CE=6.9802 PPL=1075.2 | 18496 tok/s ∇=0.71 GPU=2.5G ETA=3.6h
+Step   290/3815 [SNCA] | CE=6.7084 PPL=819.2 | 18295 tok/s ∇=1.31 GPU=2.5G ETA=3.6h
+Step   300/3815 [SNCA] | CE=6.5594 PPL=705.8 | 18678 tok/s ∇=0.98 GPU=2.5G ETA=3.6h
+Step   310/3815 [SNCA] | CE=6.5744 PPL=716.5 | 18323 tok/s ∇=0.88 GPU=2.5G ETA=3.6h
+Step   320/3815 [SNCA] | CE=6.5580 PPL=704.9 | 18869 tok/s ∇=0.89 GPU=2.5G ETA=3.6h
+Step   330/3815 [SNCA] | CE=6.3450 PPL=569.6 | 18947 tok/s ∇=0.78 GPU=2.5G ETA=3.5h
+Step   340/3815 [SNCA] | CE=6.5530 PPL=701.3 | 18873 tok/s ∇=1.40 GPU=2.5G ETA=3.5h
+Step   350/3815 [SNCA] | CE=6.5208 PPL=679.1 | 18971 tok/s ∇=1.34 GPU=2.5G ETA=3.5h
+Step   360/3815 [SNCA] | CE=6.3444 PPL=569.3 | 18787 tok/s ∇=0.88 GPU=2.5G ETA=3.5h
+Step   370/3815 [SNCA] | CE=6.5229 PPL=680.5 | 18820 tok/s ∇=0.90 GPU=2.5G ETA=3.5h
+Step   380/3815 [SNCA] | CE=6.4333 PPL=622.2 | 18919 tok/s ∇=0.84 GPU=2.5G ETA=3.5h
+Step   390/3815 [SNCA] | CE=6.2079 PPL=496.6 | 18824 tok/s ∇=0.80 GPU=2.5G ETA=3.5h
+Step   400/3815 [SNCA] | CE=6.2189 PPL=502.1 | 18761 tok/s ∇=0.76 GPU=2.5G ETA=3.5h
+  >>> VAL: CE=6.3113 PPL=550.8
+  Disk free before save (experiments\AENCA v7 (Stream-Hierarchical NCA)\pile_250m_v7_20260320_160525): 27.31 GB
+  Saved checkpoint: best_model.pt
+  Disk free after save (experiments\AENCA v7 (Stream-Hierarchical NCA)\pile_250m_v7_20260320_160525): 27.31 GB
+  >>> New best Val PPL: 550.8
+Step   410/3815 [SNCA] | CE=6.1337 PPL=461.1 | 18382 tok/s ∇=1.16 GPU=2.5G ETA=3.5h
+Step   420/3815 [SNCA] | CE=6.2978 PPL=543.4 | 18466 tok/s ∇=0.78 GPU=2.5G ETA=3.4h
+Step   430/3815 [SNCA] | CE=6.1460 PPL=466.9 | 18501 tok/s ∇=1.27 GPU=2.5G ETA=3.4h
+Step   440/3815 [SNCA] | CE=6.0384 PPL=419.2 | 18279 tok/s ∇=0.76 GPU=2.5G ETA=3.4h
+Step   450/3815 [SNCA] | CE=6.0707 PPL=433.0 | 18032 tok/s ∇=0.93 GPU=2.5G ETA=3.4h
+Step   460/3815 [SNCA] | CE=6.0741 PPL=434.4 | 17327 tok/s ∇=1.08 GPU=2.5G ETA=3.4h
+Step   470/3815 [SNCA] | CE=6.0697 PPL=432.5 | 18584 tok/s ∇=1.35 GPU=2.5G ETA=3.4h
+Step   480/3815 [SNCA] | CE=5.7474 PPL=313.4 | 18231 tok/s ∇=0.82 GPU=2.5G ETA=3.4h
+Step   490/3815 [SNCA] | CE=5.9036 PPL=366.4 | 18606 tok/s ∇=1.01 GPU=2.5G ETA=3.4h
+Step   500/3815 [SNCA] | CE=5.9728 PPL=392.6 | 16450 tok/s ∇=0.64 GPU=2.5G ETA=3.4h
+Step   510/3815 [SNCA] | CE=5.9922 PPL=400.3 | 18614 tok/s ∇=1.19 GPU=2.5G ETA=3.3h
+Step   520/3815 [SNCA] | CE=5.9928 PPL=400.5 | 18379 tok/s ∇=0.90 GPU=2.5G ETA=3.3h
+Step   530/3815 [SNCA] | CE=5.9401 PPL=380.0 | 18441 tok/s ∇=0.80 GPU=2.5G ETA=3.3h

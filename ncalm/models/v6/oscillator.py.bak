@@ -1,0 +1,567 @@
+"""Coupled Kuramoto oscillator network for AENCA V6.
+
+Per-cell oscillator bank controlling all temporal dynamics of the NCA.
+Each token position has K oscillator channels with state-dependent
+frequencies, inter-channel Kuramoto coupling, local spatial coupling
+(depthwise causal Conv1d), and global causal mean-field coupling.
+
+The oscillators serve three roles:
+  1. Temporal gating — phase-derived gates control WHEN each cell updates
+  2. Global coordination — mean-field coupling replaces attention as the
+     long-range communication mechanism
+  3. Slow context extraction — frequency-ranked oscillator filtering
+     provides a "slow state" view for the kernel, replacing z_H
+
+All tensors are per-cell: (B, L, K) for phases, (B, L, d_model) for
+projected outputs. The model self-regulates the effective number of
+timescales via Kuramoto synchronization (oscillators that couple strongly
+merge into one effective timescale), learned relevance gates (inactive
+oscillators are suppressed), and frequency diversity regularization
+(active oscillators are pushed to distinct frequencies).
+
+Reference: Kuramoto Y. (1984) "Chemical Oscillations, Waves, and Turbulence"
+Reference: Acebrón et al. (2005) "The Kuramoto model: A simple paradigm
+           for synchronization phenomena" Rev. Mod. Phys. 77, 137.
+"""
+
+from __future__ import annotations
+
+import math
+
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+
+from ncalm.models.v6.config import V6Config
+
+
+class CoupledOscillatorNetwork(nn.Module):
+    """Per-cell coupled Kuramoto oscillator network.
+
+    Each cell (token position) has K oscillator channels. The oscillators
+    evolve according to the Kuramoto model with three coupling terms:
+
+        φ_k^(i)(t+1) = φ_k^(i)(t) + ω_k(z_i)
+            + Σ_j C_kj sin(φ_j^(i) - φ_k^(i))          [inter-channel]
+            + κ_local · DepthwiseConv1d(φ_k)_i            [local spatial]
+            + κ_global · sin(mean_field_k^[0:i] - φ_k^(i))  [global]
+
+    From the oscillator state, the module produces:
+        - osc_gate:     (B, L, d_model) temporal update gate for the kernel
+        - readout_prob: (B, L) per-position probability of contributing to output
+        - slow_ctx:     (B, L, d_model) slow-frequency-filtered context for kernel
+
+    Args:
+        config: V6Config with oscillator parameters
+    """
+
+    def __init__(self, config: V6Config) -> None:
+        super().__init__()
+        K = config.n_osc_channels
+        D = config.d_model
+        self.K = K
+        self.d_model = D
+        self.enable_spatial = config.enable_spatial_coupling
+        self.enable_mean_field = config.enable_mean_field
+
+        # ── Frequency Head ─────────────────────────────────────────────
+        # Per-position: z_i → ω_k(z_i), shape (B, L, K)
+        # RMSNorm → Linear → softplus ensures positive frequencies
+        self.freq_norm = nn.RMSNorm(D)
+        self.freq_proj = nn.Linear(D, K, bias=True)
+
+        # ── Inter-Channel Coupling Matrix ──────────────────────────────
+        # C ∈ ℝ^{K×K}, antisymmetrized to (C - C^T)/2 at forward time
+        # This ensures C_kj = -C_jk (proper Kuramoto coupling symmetry)
+        self.C_raw = nn.Parameter(torch.empty(K, K))
+
+        # ── Local Spatial Coupling ─────────────────────────────────────
+        # Depthwise causal Conv1d: channel k at position i couples with
+        # channel k at position i−1. kernel_size=2, left-padded.
+        if self.enable_spatial:
+            self.spatial_conv = nn.Conv1d(
+                in_channels=K, out_channels=K, kernel_size=2,
+                padding=0, groups=K, bias=False,
+            )
+            # Learned coupling strength (scalar, per-channel would be overkill)
+            self.kappa_local = nn.Parameter(torch.tensor(config.spatial_coupling_init))
+
+        # ── Global Mean-Field Coupling ─────────────────────────────────
+        # κ_global · sin(mean_field - φ), where mean_field is causal cumsum
+        if self.enable_mean_field:
+            self.kappa_global = nn.Parameter(torch.tensor(0.1))
+
+        # ── Phase-to-Gate Mapping ──────────────────────────────────────
+        # gate_k = σ(α_k · cos(φ_k) + β_k), learned per channel
+        self.alpha = nn.Parameter(torch.empty(K))  # amplitude
+        self.beta = nn.Parameter(torch.empty(K))   # bias
+
+        # ── Relevance Head ─────────────────────────────────────────────
+        # Per-position per-channel: σ(Linear(z)) → relevance_k ∈ (0, 1)
+        # Self-regulates effective K per position
+        self.relevance_proj = nn.Linear(D, K, bias=True)
+
+        # ── Oscillator-to-Update Projection ────────────────────────────
+        # Maps K oscillator activations → d_model temporal gate
+        # osc_gate = σ(W_osc^T @ (relevance * phase_gates))
+        self.W_osc = nn.Linear(K, D, bias=True)
+
+        # ── Readout Weight Head ────────────────────────────────────────
+        # Per-position readout probability: when to contribute to output
+        self.readout_norm = nn.RMSNorm(D)
+        self.readout_proj = nn.Linear(D, 1, bias=True)
+
+        # ── Slow Context Extraction ────────────────────────────────────
+        # Frequency-filtered view of z, replacing z_H as kernel context
+        # Uses the K oscillator channels ranked by frequency
+        self.slow_ctx_norm = nn.RMSNorm(D)
+        self.slow_ctx_proj = nn.Linear(D, D, bias=False)
+        # Learned threshold for slow/fast frequency boundary
+        self.slow_threshold = nn.Parameter(torch.tensor(0.0))
+
+        # Initialize all parameters
+        self._init_weights(config)
+
+    def _init_weights(self, config: V6Config) -> None:
+        """Careful initialization for stable oscillator dynamics."""
+        K = self.K
+
+        # ── Frequency head ──────────────────────────────────────────
+        # Small weight so initial frequencies are driven by bias
+        nn.init.xavier_normal_(self.freq_proj.weight, gain=0.1)
+        # Bias: logarithmically spaced from base_freq to base_freq * 2^spread
+        # This gives each oscillator a distinct initial frequency
+        with torch.no_grad():
+            base = config.osc_base_freq
+            spread = config.osc_freq_spread
+            # Frequencies in log-space: base * 2^{k * spread / (K-1)}
+            if K > 1:
+                log_freqs = torch.linspace(0, spread, K)
+            else:
+                log_freqs = torch.zeros(1)
+            # softplus^{-1}(f) = ln(e^f - 1) for inverse of activation
+            target_freqs = base * (2.0 ** log_freqs)
+            # softplus inverse: if y = ln(1 + e^x), then x = ln(e^y - 1)
+            bias_init = torch.log(torch.expm1(target_freqs.clamp(min=1e-4)))
+            self.freq_proj.bias.copy_(bias_init)
+
+        # ── Inter-channel coupling ──────────────────────────────────
+        # Uniform random ± coupling_init
+        nn.init.uniform_(
+            self.C_raw,
+            -config.osc_coupling_init,
+            config.osc_coupling_init,
+        )
+
+        # ── Spatial coupling ────────────────────────────────────────
+        if self.enable_spatial:
+            nn.init.uniform_(
+                self.spatial_conv.weight,
+                -config.spatial_coupling_init,
+                config.spatial_coupling_init,
+            )
+
+        # ── Phase-to-gate ───────────────────────────────────────────
+        # α ≈ 1.0 (cos amplitude), β ≈ 0 (unbiased initially)
+        nn.init.ones_(self.alpha)
+        nn.init.zeros_(self.beta)
+
+        # ── Relevance head ──────────────────────────────────────────
+        # Small weights, positive bias so all channels start active
+        # σ(1.5) ≈ 0.82 — most channels active initially
+        nn.init.xavier_normal_(self.relevance_proj.weight, gain=0.1)
+        nn.init.constant_(self.relevance_proj.bias, 1.5)
+
+        # ── W_osc: zero-init so oscillator gates start ≈ σ(bias) ───
+        nn.init.zeros_(self.W_osc.weight)
+        nn.init.zeros_(self.W_osc.bias)
+
+        # ── Readout head ────────────────────────────────────────────
+        # Bias so initial readout ≈ 1/T_max (slow accumulation)
+        nn.init.xavier_normal_(self.readout_proj.weight, gain=0.1)
+        t_max = config.t_max
+        # σ(b) ≈ 1/T_max → b ≈ ln(1/(T_max - 1))
+        readout_bias = -math.log(max(t_max - 1, 1))
+        nn.init.constant_(self.readout_proj.bias, readout_bias)
+
+        # ── Slow context extraction ─────────────────────────────────
+        # Zero-init so slow_ctx starts as zero (kernel starts without it)
+        nn.init.zeros_(self.slow_ctx_proj.weight)
+
+    def init_phase(
+        self, B: int, L: int, device: torch.device, deterministic: bool = False
+    ) -> torch.Tensor:
+        """Initialize oscillator phases.
+
+        Args:
+            B: batch size
+            L: sequence length
+            device: torch device
+            deterministic: if True, use evenly-spaced phases (inference)
+
+        Returns:
+            phi: (B, L, K) initial phases in [0, 2π)
+        """
+        if deterministic:
+            # Evenly spaced across channels, same per position/batch
+            phi = torch.linspace(0, 2 * math.pi * (1 - 1 / self.K), self.K,
+                                 device=device)
+            phi = phi.unsqueeze(0).unsqueeze(0).expand(B, L, -1)
+        else:
+            # Uniform random initialization per cell
+            phi = torch.rand(B, L, self.K, device=device) * (2 * math.pi)
+        return phi
+
+    def _antisymmetric_coupling(self) -> torch.Tensor:
+        """Compute antisymmetric coupling matrix: C = (C_raw - C_raw^T) / 2.
+
+        This ensures C_kj = -C_jk, which is the proper symmetry for
+        Kuramoto coupling (if k pulls j forward, j pulls k backward).
+
+        Returns:
+            C: (K, K) antisymmetric coupling matrix
+        """
+        return (self.C_raw - self.C_raw.T) / 2
+
+    def _compute_frequencies(self, z: torch.Tensor) -> torch.Tensor:
+        """Compute state-dependent natural frequencies per cell per channel.
+
+        Args:
+            z: (B, L, d_model) current cell states
+
+        Returns:
+            omega: (B, L, K) natural frequencies (positive, via softplus)
+        """
+        h = self.freq_norm(z)                   # (B, L, D)
+        omega = F.softplus(self.freq_proj(h))    # (B, L, K), positive
+        return omega
+
+    def _compute_relevance(self, z: torch.Tensor) -> torch.Tensor:
+        """Compute per-channel relevance gates from cell state.
+
+        Args:
+            z: (B, L, d_model) current cell states
+
+        Returns:
+            relevance: (B, L, K) per-channel relevance ∈ (0, 1)
+        """
+        return torch.sigmoid(self.relevance_proj(z))  # (B, L, K)
+
+    def _inter_channel_coupling(self, phi: torch.Tensor) -> torch.Tensor:
+        """Kuramoto inter-channel coupling at each position.
+
+        For oscillator k at position i:
+            Δφ_k = Σ_j C_kj sin(φ_j - φ_k)
+
+        Args:
+            phi: (B, L, K) current phases
+
+        Returns:
+            coupling: (B, L, K) phase adjustments from inter-channel coupling
+        """
+        C = self._antisymmetric_coupling()  # (K, K)
+
+        # Phase differences: φ_j - φ_k for all pairs
+        # phi: (B, L, K) → expand for pairwise
+        phi_j = phi.unsqueeze(-1)        # (B, L, K, 1) — "from" oscillators
+        phi_k = phi.unsqueeze(-2)        # (B, L, 1, K) — "to" oscillators
+        sin_diff = torch.sin(phi_j - phi_k)  # (B, L, K, K) — sin(φ_j - φ_k)
+
+        # Contract with coupling matrix: Σ_j C_kj sin(φ_j - φ_k)
+        # C is (K, K), sin_diff is (B, L, K, K)
+        # We want: for each k, sum over j of C[k,j] * sin(φ_j - φ_k)
+        # = einsum('kj,blkj->blk', C, sin_diff)
+        # But our sin_diff has indices (j, k) in the last two dims
+        # sin_diff[..., j, k] = sin(φ_j - φ_k)
+        # We want Σ_j C[k,j] * sin(φ_j - φ_k) = einsum('kj,bljk->blk')
+        coupling = torch.einsum("kj,bljk->blk", C, sin_diff)
+
+        return coupling
+
+    def _local_spatial_coupling(self, phi: torch.Tensor) -> torch.Tensor:
+        """Local spatial coupling via depthwise causal Conv1d.
+
+        Channel k at position i couples with channel k at position i-1.
+        Causal: left-padded convolution with kernel_size=2.
+
+        Args:
+            phi: (B, L, K) current phases
+
+        Returns:
+            coupling: (B, L, K) phase adjustments from spatial coupling
+        """
+        # Conv1d expects (B, C, L) — reshape phases
+        phi_t = phi.transpose(1, 2)              # (B, K, L)
+        phi_padded = F.pad(phi_t, (1, 0))        # (B, K, L+1) left-pad
+        spatial_out = self.spatial_conv(phi_padded)  # (B, K, L)
+        spatial_out = spatial_out.transpose(1, 2)    # (B, L, K)
+
+        return self.kappa_local * spatial_out
+
+    def _global_mean_field_coupling(self, phi: torch.Tensor) -> torch.Tensor:
+        """Global causal mean-field coupling.
+
+        For oscillator channel k at position i:
+            mean_field_k[i] = (1/(i+1)) Σ_{j=0}^{i} φ_k[j]
+            Δφ_k[i] = κ_global · sin(mean_field_k[i] - φ_k[i])
+
+        Computed efficiently via cumsum. This is the global coordination
+        mechanism that replaces attention.
+
+        Args:
+            phi: (B, L, K) current phases
+
+        Returns:
+            coupling: (B, L, K) phase adjustments from global mean-field
+        """
+        # Causal cumulative mean: mean of φ_k[0..i] for each position i
+        # Use sin/cos decomposition for proper circular mean
+        # Direct mean of angles is problematic — use atan2(mean_sin, mean_cos)
+        sin_phi = torch.sin(phi)                            # (B, L, K)
+        cos_phi = torch.cos(phi)                            # (B, L, K)
+        cum_sin = torch.cumsum(sin_phi, dim=1)              # (B, L, K)
+        cum_cos = torch.cumsum(cos_phi, dim=1)              # (B, L, K)
+        L = phi.shape[1]
+        counts = torch.arange(1, L + 1, device=phi.device, dtype=phi.dtype)
+        counts = counts.unsqueeze(0).unsqueeze(-1)          # (1, L, 1)
+        mean_sin = cum_sin / counts                         # (B, L, K)
+        mean_cos = cum_cos / counts                         # (B, L, K)
+
+        # Circular mean phase
+        mean_phase = torch.atan2(mean_sin, mean_cos)        # (B, L, K)
+
+        # Coupling: pull toward mean field
+        coupling = self.kappa_global * torch.sin(mean_phase - phi)
+        return coupling
+
+    def _phase_to_gates(
+        self, phi: torch.Tensor, relevance: torch.Tensor
+    ) -> torch.Tensor:
+        """Convert oscillator phases to d_model-dimensional update gate.
+
+        Steps:
+            1. Per-channel gate: σ(α_k · cos(φ_k) + β_k) → (B, L, K)
+            2. Modulate by relevance: gate_k * relevance_k → (B, L, K)
+            3. Project to d_model: σ(W_osc(relevance * gates)) → (B, L, D)
+
+        Args:
+            phi: (B, L, K) current phases
+            relevance: (B, L, K) per-channel relevance ∈ (0, 1)
+
+        Returns:
+            osc_gate: (B, L, d_model) temporal update gate ∈ (0, 1)
+        """
+        # Per-channel gates from phase
+        channel_gates = torch.sigmoid(
+            self.alpha.unsqueeze(0).unsqueeze(0) * torch.cos(phi) +
+            self.beta.unsqueeze(0).unsqueeze(0)
+        )  # (B, L, K)
+
+        # Modulate by relevance
+        active_gates = relevance * channel_gates  # (B, L, K)
+
+        # Project to d_model
+        osc_gate = torch.sigmoid(self.W_osc(active_gates))  # (B, L, D)
+        return osc_gate
+
+    def _compute_readout(self, z: torch.Tensor) -> torch.Tensor:
+        """Compute per-position readout probability.
+
+        Args:
+            z: (B, L, d_model) current cell states
+
+        Returns:
+            readout_prob: (B, L) per-position readout weight ∈ (0, 1)
+        """
+        h = self.readout_norm(z)                        # (B, L, D)
+        readout = torch.sigmoid(self.readout_proj(h))   # (B, L, 1)
+        return readout.squeeze(-1)                      # (B, L)
+
+    def _extract_slow_context(
+        self, z: torch.Tensor, omega: torch.Tensor, relevance: torch.Tensor
+    ) -> torch.Tensor:
+        """Extract slow-frequency-filtered context for the kernel.
+
+        Replaces z_H: instead of a separate slow state vector, this
+        provides a frequency-filtered view of z based on which oscillator
+        channels are running slowly.
+
+        Method:
+            1. Compute mean active frequency per position (weighted by relevance)
+            2. Compute per-channel "slowness" weight: channels with freq below
+               the learned threshold contribute more to slow context
+            3. Aggregate: slow_ctx = slow_proj(z) weighted by slowness
+
+        Args:
+            z: (B, L, d_model) current cell states
+            omega: (B, L, K) current frequencies
+            relevance: (B, L, K) per-channel relevance
+
+        Returns:
+            slow_ctx: (B, L, d_model) slow-frequency filtered context
+        """
+        # Normalize frequencies to [0, 1] range for stable gating
+        # Use log-frequency for better spread (frequencies are positive via softplus)
+        log_omega = torch.log(omega + 1e-6)                  # (B, L, K)
+
+        # Per-channel slowness: σ(threshold - log_freq) — lower freq → higher weight
+        slowness = torch.sigmoid(
+            self.slow_threshold - log_omega
+        )  # (B, L, K)
+
+        # Weight by relevance (only active oscillators contribute)
+        slow_weights = slowness * relevance                   # (B, L, K)
+
+        # Aggregate weight per position: mean over K channels
+        # This gives a scalar "how slow" each position's dynamics are
+        slow_scale = slow_weights.mean(dim=-1, keepdim=True)  # (B, L, 1)
+
+        # Apply to projected state
+        h = self.slow_ctx_norm(z)                             # (B, L, D)
+        slow_ctx = slow_scale * self.slow_ctx_proj(h)         # (B, L, D)
+
+        return slow_ctx
+
+    def step(
+        self,
+        z: torch.Tensor,
+        phi: torch.Tensor,
+    ) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor]:
+        """Single oscillator tick: update phases and produce outputs.
+
+        This is the core method called once per NCA step. It:
+        1. Computes state-dependent frequencies and relevance
+        2. Advances phases via Kuramoto dynamics (3 coupling terms)
+        3. Produces oscillator-derived gates, readout weight, slow context
+
+        Args:
+            z:   (B, L, d_model) current cell states
+            phi: (B, L, K) current oscillator phases
+
+        Returns:
+            phi_new:     (B, L, K) updated phases
+            osc_gate:    (B, L, d_model) temporal update gate ∈ (0, 1)
+            readout_prob: (B, L) readout accumulation weight ∈ (0, 1)
+            slow_ctx:    (B, L, d_model) slow-frequency-filtered context
+        """
+        # ── 1. State-dependent frequencies and relevance ─────────────
+        omega = self._compute_frequencies(z)      # (B, L, K)
+        relevance = self._compute_relevance(z)    # (B, L, K)
+
+        # ── 2. Kuramoto phase update ─────────────────────────────────
+        # Natural frequency term
+        d_phi = omega                              # (B, L, K)
+
+        # Inter-channel coupling: Σ_j C_kj sin(φ_j - φ_k)
+        d_phi = d_phi + self._inter_channel_coupling(phi)
+
+        # Local spatial coupling (optional)
+        if self.enable_spatial:
+            d_phi = d_phi + self._local_spatial_coupling(phi)
+
+        # Global mean-field coupling (optional)
+        if self.enable_mean_field:
+            d_phi = d_phi + self._global_mean_field_coupling(phi)
+
+        # Update phases (mod 2π to prevent unbounded growth)
+        phi_new = (phi + d_phi) % (2 * math.pi)
+
+        # ── 3. Produce outputs from updated phases ───────────────────
+        osc_gate = self._phase_to_gates(phi_new, relevance)     # (B, L, D)
+        readout_prob = self._compute_readout(z)                  # (B, L)
+        slow_ctx = self._extract_slow_context(z, omega, relevance)  # (B, L, D)
+
+        return phi_new, osc_gate, readout_prob, slow_ctx
+
+    def freq_diversity_loss(
+        self, omega: torch.Tensor, relevance: torch.Tensor
+    ) -> torch.Tensor:
+        """Frequency diversity regularization.
+
+        Penalizes active oscillators for having similar frequencies.
+        Computed as the negative weighted standard deviation of frequencies:
+            L_freq = -mean_{B,L}( weighted_std(ω, weights=relevance) )
+
+        This encourages the model to spread active oscillators across
+        distinct frequencies, preventing K channels from collapsing to
+        a single effective timescale.
+
+        Args:
+            omega: (B, L, K) natural frequencies
+            relevance: (B, L, K) per-channel relevance ∈ (0, 1)
+
+        Returns:
+            loss: scalar, negative (minimizing = maximizing diversity)
+        """
+        # Weighted mean: Σ(w_k * ω_k) / Σ(w_k)
+        w_sum = relevance.sum(dim=-1, keepdim=True).clamp(min=1e-6)  # (B, L, 1)
+        w_mean = (relevance * omega).sum(dim=-1, keepdim=True) / w_sum  # (B, L, 1)
+
+        # Weighted variance: Σ(w_k * (ω_k - mean)^2) / Σ(w_k)
+        w_var = (relevance * (omega - w_mean).pow(2)).sum(dim=-1) / w_sum.squeeze(-1)
+        w_std = (w_var + 1e-8).sqrt()  # (B, L)
+
+        # Negative mean std → minimizing loss = maximizing diversity
+        return -w_std.mean()
+
+    def compute_freq_diversity(
+        self, z: torch.Tensor
+    ) -> torch.Tensor:
+        """Convenience: compute freq diversity loss from state z.
+
+        Args:
+            z: (B, L, d_model) current cell states
+
+        Returns:
+            loss: scalar frequency diversity loss
+        """
+        omega = self._compute_frequencies(z)
+        relevance = self._compute_relevance(z)
+        return self.freq_diversity_loss(omega, relevance)
+
+    def effective_K(self, z: torch.Tensor, threshold: float = 0.5) -> float:
+        """Compute mean active oscillator channels per position.
+
+        Monitoring metric: how many of the K channels are "active"
+        (relevance > threshold) on average.
+
+        Args:
+            z: (B, L, d_model) current cell states
+            threshold: relevance threshold for "active"
+
+        Returns:
+            mean_active: mean number of active channels per position
+        """
+        with torch.no_grad():
+            relevance = self._compute_relevance(z)
+            active = (relevance > threshold).float()
+            return active.sum(dim=-1).mean().item()
+
+    def get_diagnostics(self, z: torch.Tensor, phi: torch.Tensor) -> dict[str, float]:
+        """Compute diagnostic metrics for logging.
+
+        Args:
+            z: (B, L, d_model)
+            phi: (B, L, K)
+
+        Returns:
+            dict with oscillator diagnostics
+        """
+        with torch.no_grad():
+            omega = self._compute_frequencies(z)
+            relevance = self._compute_relevance(z)
+            C = self._antisymmetric_coupling()
+
+            return {
+                "effective_K": self.effective_K(z),
+                "freq_std": omega.std(dim=-1).mean().item(),
+                "freq_mean": omega.mean().item(),
+                "coupling_norm": C.norm().item(),
+                "relevance_mean": relevance.mean().item(),
+                "kappa_local": (
+                    self.kappa_local.item() if self.enable_spatial else 0.0
+                ),
+                "kappa_global": (
+                    self.kappa_global.item() if self.enable_mean_field else 0.0
+                ),
+            }

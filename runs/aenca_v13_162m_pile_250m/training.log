@@ -1,0 +1,542 @@
+  Param group 'decay': 123,353,728 params, wd=0.1
+  Param group 'no_decay': 38,646,145 params, wd=0.0
+  Resumed from checkpoint: step=200, tokens=13,107,200, best_val_ppl=1679.40
+==============================================================================
+  AENCA v13 (Morphogenetic Attention)
+==============================================================================
+  Params: 161,999,873 total
+  Config: 3815 steps, batch=4, seq_len=1024
+  Token budget: 15,626,240
+  Device: cuda
+==============================================================================
+Step   210/3815 [MorphAttn] | CE=7.2848 PPL=1458.0 | 17068 tok/s ∇=0.65 GPU=3.1G ETA=11m
+Step   220/3815 [MorphAttn] | CE=7.3150 PPL=1502.7 | 17547 tok/s ∇=1.23 GPU=3.1G ETA=21m
+Step   230/3815 [MorphAttn] | CE=6.9968 PPL=1093.2 | 17630 tok/s ∇=0.93 GPU=3.1G ETA=30m
+Step   240/3815 [MorphAttn] | CE=7.0842 PPL=1192.9 | 17747 tok/s ∇=0.91 GPU=3.1G ETA=37m
+Step   250/3815 [MorphAttn] | CE=6.9675 PPL=1061.5 | 17548 tok/s ∇=0.99 GPU=3.1G ETA=45m
+Step   260/3815 [MorphAttn] | CE=6.8183 PPL=914.5 | 18358 tok/s ∇=1.39 GPU=3.1G ETA=51m
+Step   270/3815 [MorphAttn] | CE=6.9526 PPL=1045.8 | 17919 tok/s ∇=1.22 GPU=3.1G ETA=57m
+Step   280/3815 [MorphAttn] | CE=6.8800 PPL=972.6 | 17404 tok/s ∇=1.18 GPU=3.1G ETA=1.0h
+Step   290/3815 [MorphAttn] | CE=6.6791 PPL=795.6 | 17925 tok/s ∇=0.97 GPU=3.1G ETA=1.1h
+Step   300/3815 [MorphAttn] | CE=6.6081 PPL=741.1 | 18052 tok/s ∇=1.15 GPU=3.1G ETA=1.2h
+Step   310/3815 [MorphAttn] | CE=6.5647 PPL=709.6 | 17322 tok/s ∇=1.13 GPU=3.1G ETA=1.3h
+Step   320/3815 [MorphAttn] | CE=6.5609 PPL=706.9 | 17800 tok/s ∇=1.20 GPU=3.1G ETA=1.4h
+Step   330/3815 [MorphAttn] | CE=6.5447 PPL=695.6 | 17709 tok/s ∇=1.03 GPU=3.1G ETA=1.4h
+Step   340/3815 [MorphAttn] | CE=6.4474 PPL=631.0 | 17040 tok/s ∇=1.25 GPU=3.1G ETA=1.5h
+Step   350/3815 [MorphAttn] | CE=6.5278 PPL=683.9 | 18323 tok/s ∇=0.92 GPU=3.1G ETA=1.5h
+Step   360/3815 [MorphAttn] | CE=6.3138 PPL=552.2 | 18054 tok/s ∇=1.15 GPU=3.1G ETA=1.6h
+Step   370/3815 [MorphAttn] | CE=6.3006 PPL=544.9 | 18147 tok/s ∇=1.71 GPU=3.1G ETA=1.6h
+Step   380/3815 [MorphAttn] | CE=6.3269 PPL=559.4 | 18101 tok/s ∇=1.03 GPU=3.1G ETA=1.7h
+Step   390/3815 [MorphAttn] | CE=6.3621 PPL=579.5 | 17764 tok/s ∇=2.37 GPU=3.1G ETA=1.7h
+Step   400/3815 [MorphAttn] | CE=6.3430 PPL=568.5 | 17685 tok/s ∇=1.88 GPU=3.1G ETA=1.8h
+  >>> VAL: CE=6.3407 PPL=567.2
+  Disk free before save (C:): 20.71 GB
+  Saved checkpoint: best_model.pt
+  Disk free after save (C:): 20.71 GB
+  >>> New best Val PPL: 567.2
+Step   410/3815 [MorphAttn] | CE=6.2736 PPL=530.4 | 17742 tok/s ∇=1.42 GPU=3.1G ETA=1.8h
+Step   420/3815 [MorphAttn] | CE=6.2516 PPL=518.8 | 17841 tok/s ∇=2.29 GPU=3.1G ETA=1.9h
+Step   430/3815 [MorphAttn] | CE=6.3143 PPL=552.4 | 17749 tok/s ∇=1.30 GPU=3.1G ETA=1.9h
+Step   440/3815 [MorphAttn] | CE=6.0595 PPL=428.2 | 17691 tok/s ∇=1.15 GPU=3.1G ETA=1.9h
+Step   450/3815 [MorphAttn] | CE=6.0675 PPL=431.6 | 17386 tok/s ∇=1.58 GPU=3.1G ETA=2.0h
+Step   460/3815 [MorphAttn] | CE=6.0692 PPL=432.3 | 17481 tok/s ∇=1.66 GPU=3.1G ETA=2.0h
+Step   470/3815 [MorphAttn] | CE=6.1180 PPL=453.9 | 18053 tok/s ∇=1.27 GPU=3.1G ETA=2.0h
+Step   480/3815 [MorphAttn] | CE=6.0532 PPL=425.5 | 18497 tok/s ∇=1.37 GPU=3.1G ETA=2.0h
+Step   490/3815 [MorphAttn] | CE=5.9684 PPL=390.9 | 17683 tok/s ∇=2.18 GPU=3.1G ETA=2.1h
+Step   500/3815 [MorphAttn] | CE=6.1572 PPL=472.1 | 18228 tok/s ∇=1.67 GPU=3.1G ETA=2.1h
+Step   510/3815 [MorphAttn] | CE=5.8654 PPL=352.6 | 18128 tok/s ∇=1.84 GPU=3.1G ETA=2.1h
+Step   520/3815 [MorphAttn] | CE=5.8771 PPL=356.8 | 17478 tok/s ∇=1.04 GPU=3.1G ETA=2.1h
+Step   530/3815 [MorphAttn] | CE=6.1015 PPL=446.5 | 17468 tok/s ∇=1.60 GPU=3.1G ETA=2.1h
+Step   540/3815 [MorphAttn] | CE=5.6831 PPL=293.9 | 17643 tok/s ∇=1.38 GPU=3.1G ETA=2.1h
+Step   550/3815 [MorphAttn] | CE=5.8124 PPL=334.4 | 17854 tok/s ∇=1.24 GPU=3.1G ETA=2.2h
+Step   560/3815 [MorphAttn] | CE=5.8437 PPL=345.0 | 17554 tok/s ∇=1.61 GPU=3.1G ETA=2.2h
+Step   570/3815 [MorphAttn] | CE=5.6017 PPL=270.9 | 18047 tok/s ∇=1.49 GPU=3.1G ETA=2.2h
+Step   580/3815 [MorphAttn] | CE=5.8479 PPL=346.5 | 17229 tok/s ∇=1.60 GPU=3.1G ETA=2.2h
+Step   590/3815 [MorphAttn] | CE=5.8265 PPL=339.2 | 17002 tok/s ∇=1.52 GPU=3.1G ETA=2.2h
+Step   600/3815 [MorphAttn] | CE=5.7437 PPL=312.2 | 18448 tok/s ∇=1.25 GPU=3.1G ETA=2.2h
+  >>> VAL: CE=5.9467 PPL=382.5
+  Disk free before save (C:): 20.71 GB
+  Saved checkpoint: best_model.pt
+  Disk free after save (C:): 20.71 GB
+  >>> New best Val PPL: 382.5
+Step   610/3815 [MorphAttn] | CE=5.8421 PPL=344.5 | 18146 tok/s ∇=2.58 GPU=3.1G ETA=2.2h
+Step   620/3815 [MorphAttn] | CE=5.9114 PPL=369.2 | 17971 tok/s ∇=1.90 GPU=3.1G ETA=2.3h
+Step   630/3815 [MorphAttn] | CE=5.7934 PPL=328.1 | 18257 tok/s ∇=2.01 GPU=3.1G ETA=2.3h
+Step   640/3815 [MorphAttn] | CE=5.6766 PPL=291.9 | 17433 tok/s ∇=1.97 GPU=3.1G ETA=2.3h
+Step   650/3815 [MorphAttn] | CE=5.6295 PPL=278.5 | 17417 tok/s ∇=1.56 GPU=3.1G ETA=2.3h
+Step   660/3815 [MorphAttn] | CE=5.7398 PPL=311.0 | 18188 tok/s ∇=1.10 GPU=3.1G ETA=2.3h
+Step   670/3815 [MorphAttn] | CE=5.7429 PPL=312.0 | 17787 tok/s ∇=1.25 GPU=3.1G ETA=2.3h
+Step   680/3815 [MorphAttn] | CE=5.5568 PPL=259.0 | 17577 tok/s ∇=1.46 GPU=3.1G ETA=2.3h
+Step   690/3815 [MorphAttn] | CE=5.6639 PPL=288.3 | 17403 tok/s ∇=2.00 GPU=3.1G ETA=2.3h
+Step   700/3815 [MorphAttn] | CE=5.7630 PPL=318.3 | 17928 tok/s ∇=2.80 GPU=3.1G ETA=2.3h
+Step   710/3815 [MorphAttn] | CE=5.5370 PPL=253.9 | 17573 tok/s ∇=1.42 GPU=3.1G ETA=2.3h
+Step   720/3815 [MorphAttn] | CE=5.7564 PPL=316.2 | 18229 tok/s ∇=1.85 GPU=3.1G ETA=2.3h
+Step   730/3815 [MorphAttn] | CE=5.4226 PPL=226.5 | 17625 tok/s ∇=2.13 GPU=3.1G ETA=2.3h
+Step   740/3815 [MorphAttn] | CE=5.4957 PPL=243.6 | 17435 tok/s ∇=0.99 GPU=3.1G ETA=2.3h
+Step   750/3815 [MorphAttn] | CE=5.5812 PPL=265.4 | 18292 tok/s ∇=3.57 GPU=3.1G ETA=2.3h
+  >>> Sample: Once upon a time in the
+the entire method. The object is very non-line of the
+aed the system and are
+b. The first-level-in-ex-s/c/n/D/c/2/2/2-2.
+
+The current name of the first, and by a set of which m...
+  Disk free before save (C:): 20.71 GB
+  Saved checkpoint: checkpoint_step750.pt
+  Disk free after save (C:): 18.90 GB
+  Disk free before save (C:): 18.90 GB
+  Saved checkpoint: latest.pt
+  Disk free after save (C:): 17.09 GB
+Step   760/3815 [MorphAttn] | CE=5.7072 PPL=301.0 | 17538 tok/s ∇=1.95 GPU=3.1G ETA=2.3h
+Step   770/3815 [MorphAttn] | CE=5.6014 PPL=270.8 | 17115 tok/s ∇=1.44 GPU=3.1G ETA=2.4h
+Step   780/3815 [MorphAttn] | CE=5.5094 PPL=247.0 | 17744 tok/s ∇=1.35 GPU=3.1G ETA=2.4h
+Step   790/3815 [MorphAttn] | CE=5.3809 PPL=217.2 | 17386 tok/s ∇=2.18 GPU=3.1G ETA=2.4h
+Step   800/3815 [MorphAttn] | CE=5.2440 PPL=189.4 | 17138 tok/s ∇=1.33 GPU=3.1G ETA=2.4h
+  >>> VAL: CE=5.5598 PPL=259.8
+  Disk free before save (C:): 17.10 GB
+  Saved checkpoint: best_model.pt
+  Disk free after save (C:): 17.10 GB
+  >>> New best Val PPL: 259.8
+Step   810/3815 [MorphAttn] | CE=5.4071 PPL=223.0 | 17517 tok/s ∇=2.35 GPU=3.1G ETA=2.4h
+Step   820/3815 [MorphAttn] | CE=5.4956 PPL=243.6 | 18267 tok/s ∇=1.74 GPU=3.1G ETA=2.4h
+Step   830/3815 [MorphAttn] | CE=5.6176 PPL=275.2 | 17649 tok/s ∇=2.13 GPU=3.1G ETA=2.4h
+Step   840/3815 [MorphAttn] | CE=5.5052 PPL=246.0 | 17494 tok/s ∇=1.37 GPU=3.1G ETA=2.4h
+Step   850/3815 [MorphAttn] | CE=5.3045 PPL=201.2 | 18092 tok/s ∇=1.33 GPU=3.1G ETA=2.4h
+Step   860/3815 [MorphAttn] | CE=5.4366 PPL=229.7 | 17428 tok/s ∇=1.62 GPU=3.1G ETA=2.4h
+Step   870/3815 [MorphAttn] | CE=5.4622 PPL=235.6 | 17995 tok/s ∇=1.34 GPU=3.1G ETA=2.4h
+Step   880/3815 [MorphAttn] | CE=5.5601 PPL=259.8 | 17784 tok/s ∇=1.26 GPU=3.1G ETA=2.4h
+Step   890/3815 [MorphAttn] | CE=5.4850 PPL=241.1 | 17827 tok/s ∇=1.85 GPU=3.1G ETA=2.4h
+Step   900/3815 [MorphAttn] | CE=5.3420 PPL=208.9 | 18108 tok/s ∇=1.48 GPU=3.1G ETA=2.4h
+Step   910/3815 [MorphAttn] | CE=5.5873 PPL=267.0 | 18201 tok/s ∇=0.95 GPU=3.1G ETA=2.4h
+Step   920/3815 [MorphAttn] | CE=5.2462 PPL=189.9 | 18173 tok/s ∇=1.87 GPU=3.1G ETA=2.4h
+Step   930/3815 [MorphAttn] | CE=5.1871 PPL=178.9 | 18103 tok/s ∇=1.64 GPU=3.1G ETA=2.4h
+Step   940/3815 [MorphAttn] | CE=5.2904 PPL=198.4 | 18346 tok/s ∇=1.48 GPU=3.1G ETA=2.4h
+Step   950/3815 [MorphAttn] | CE=5.3540 PPL=211.4 | 18143 tok/s ∇=1.55 GPU=3.1G ETA=2.4h
+Step   960/3815 [MorphAttn] | CE=5.4198 PPL=225.8 | 17769 tok/s ∇=2.09 GPU=3.1G ETA=2.4h
+Step   970/3815 [MorphAttn] | CE=5.3028 PPL=200.9 | 17973 tok/s ∇=1.68 GPU=3.1G ETA=2.4h
+Step   980/3815 [MorphAttn] | CE=5.2831 PPL=197.0 | 18053 tok/s ∇=1.66 GPU=3.1G ETA=2.4h
+Step   990/3815 [MorphAttn] | CE=5.3550 PPL=211.7 | 17739 tok/s ∇=1.38 GPU=3.1G ETA=2.3h
+Step  1000/3815 [MorphAttn] | CE=5.3458 PPL=209.7 | 17997 tok/s ∇=2.49 GPU=3.1G ETA=2.3h
+  >>> VAL: CE=5.3145 PPL=203.3
+  Disk free before save (C:): 17.10 GB
+  Saved checkpoint: best_model.pt
+  Disk free after save (C:): 17.10 GB
+  >>> New best Val PPL: 203.3
+Step  1010/3815 [MorphAttn] | CE=5.2359 PPL=187.9 | 18290 tok/s ∇=1.99 GPU=3.1G ETA=2.3h
+Step  1020/3815 [MorphAttn] | CE=5.0354 PPL=153.8 | 18212 tok/s ∇=1.98 GPU=3.1G ETA=2.3h
+Step  1030/3815 [MorphAttn] | CE=5.3116 PPL=202.7 | 18133 tok/s ∇=1.35 GPU=3.1G ETA=2.3h
+Step  1040/3815 [MorphAttn] | CE=5.2021 PPL=181.7 | 18279 tok/s ∇=1.35 GPU=3.1G ETA=2.3h
+Step  1050/3815 [MorphAttn] | CE=5.1091 PPL=165.5 | 18197 tok/s ∇=1.12 GPU=3.1G ETA=2.3h
+Step  1060/3815 [MorphAttn] | CE=5.0820 PPL=161.1 | 18294 tok/s ∇=2.12 GPU=3.1G ETA=2.3h
+Step  1070/3815 [MorphAttn] | CE=5.2150 PPL=184.0 | 18168 tok/s ∇=1.60 GPU=3.1G ETA=2.3h
+Step  1080/3815 [MorphAttn] | CE=5.1879 PPL=179.1 | 17466 tok/s ∇=1.41 GPU=3.1G ETA=2.3h
+Step  1090/3815 [MorphAttn] | CE=5.0300 PPL=152.9 | 17759 tok/s ∇=1.73 GPU=3.1G ETA=2.3h
+Step  1100/3815 [MorphAttn] | CE=5.3372 PPL=207.9 | 17702 tok/s ∇=1.73 GPU=3.1G ETA=2.3h
+Step  1110/3815 [MorphAttn] | CE=5.0627 PPL=158.0 | 17784 tok/s ∇=1.22 GPU=3.1G ETA=2.3h
+Step  1120/3815 [MorphAttn] | CE=5.2061 PPL=182.4 | 18033 tok/s ∇=1.26 GPU=3.1G ETA=2.3h
+Step  1130/3815 [MorphAttn] | CE=4.9232 PPL=137.4 | 18285 tok/s ∇=1.61 GPU=3.1G ETA=2.3h
+Step  1140/3815 [MorphAttn] | CE=5.1967 PPL=180.7 | 18595 tok/s ∇=1.64 GPU=3.1G ETA=2.3h
+Step  1150/3815 [MorphAttn] | CE=4.9278 PPL=138.1 | 18483 tok/s ∇=1.65 GPU=3.1G ETA=2.3h
+Step  1160/3815 [MorphAttn] | CE=5.1135 PPL=166.3 | 18479 tok/s ∇=2.15 GPU=3.1G ETA=2.3h
+Step  1170/3815 [MorphAttn] | CE=5.1160 PPL=166.7 | 18463 tok/s ∇=1.51 GPU=3.1G ETA=2.3h
+Step  1180/3815 [MorphAttn] | CE=4.8570 PPL=128.6 | 19798 tok/s ∇=1.65 GPU=3.1G ETA=2.3h
+Step  1190/3815 [MorphAttn] | CE=4.9268 PPL=137.9 | 20272 tok/s ∇=1.25 GPU=3.1G ETA=2.3h
+Step  1200/3815 [MorphAttn] | CE=4.9724 PPL=144.4 | 20547 tok/s ∇=1.86 GPU=3.1G ETA=2.3h
+  >>> VAL: CE=4.9925 PPL=147.3
+  Disk free before save (C:): 17.10 GB
+  Saved checkpoint: best_model.pt
+  Disk free after save (C:): 17.10 GB
+  >>> New best Val PPL: 147.3
+Step  1210/3815 [MorphAttn] | CE=4.9846 PPL=146.1 | 19528 tok/s ∇=1.41 GPU=3.1G ETA=2.3h
+Step  1220/3815 [MorphAttn] | CE=4.8949 PPL=133.6 | 19349 tok/s ∇=1.20 GPU=3.1G ETA=2.2h
+Step  1230/3815 [MorphAttn] | CE=4.9865 PPL=146.4 | 19875 tok/s ∇=2.08 GPU=3.1G ETA=2.2h
+Step  1240/3815 [MorphAttn] | CE=4.8404 PPL=126.5 | 19972 tok/s ∇=1.69 GPU=3.1G ETA=2.2h
+Step  1250/3815 [MorphAttn] | CE=4.7722 PPL=118.2 | 20292 tok/s ∇=1.13 GPU=3.1G ETA=2.2h
+Step  1260/3815 [MorphAttn] | CE=4.8060 PPL=122.2 | 20449 tok/s ∇=2.23 GPU=3.1G ETA=2.2h
+Step  1270/3815 [MorphAttn] | CE=4.9665 PPL=143.5 | 20168 tok/s ∇=1.36 GPU=3.1G ETA=2.2h
+Step  1280/3815 [MorphAttn] | CE=4.8624 PPL=129.3 | 19293 tok/s ∇=1.23 GPU=3.1G ETA=2.2h
+Step  1290/3815 [MorphAttn] | CE=4.9403 PPL=139.8 | 20869 tok/s ∇=1.97 GPU=3.1G ETA=2.2h
+Step  1300/3815 [MorphAttn] | CE=4.8055 PPL=122.2 | 20888 tok/s ∇=1.48 GPU=3.1G ETA=2.2h
+Step  1310/3815 [MorphAttn] | CE=4.7221 PPL=112.4 | 19871 tok/s ∇=1.69 GPU=3.1G ETA=2.2h
+Step  1320/3815 [MorphAttn] | CE=4.6752 PPL=107.3 | 21896 tok/s ∇=1.20 GPU=3.1G ETA=2.2h
+Step  1330/3815 [MorphAttn] | CE=4.6927 PPL=109.1 | 20212 tok/s ∇=1.30 GPU=3.1G ETA=2.2h
+Step  1340/3815 [MorphAttn] | CE=4.7381 PPL=114.2 | 20233 tok/s ∇=1.57 GPU=3.1G ETA=2.1h
+Step  1350/3815 [MorphAttn] | CE=5.0330 PPL=153.4 | 22628 tok/s ∇=2.29 GPU=3.1G ETA=2.1h
+Step  1360/3815 [MorphAttn] | CE=4.9411 PPL=139.9 | 23370 tok/s ∇=1.93 GPU=3.1G ETA=2.1h
+Step  1370/3815 [MorphAttn] | CE=4.6775 PPL=107.5 | 21747 tok/s ∇=1.56 GPU=3.1G ETA=2.1h
+Step  1380/3815 [MorphAttn] | CE=4.8592 PPL=128.9 | 22982 tok/s ∇=1.67 GPU=3.1G ETA=2.1h
+Step  1390/3815 [MorphAttn] | CE=4.7167 PPL=111.8 | 22303 tok/s ∇=1.71 GPU=3.1G ETA=2.1h
+Step  1400/3815 [MorphAttn] | CE=4.7672 PPL=117.6 | 22652 tok/s ∇=2.04 GPU=3.1G ETA=2.1h
+  >>> VAL: CE=4.8084 PPL=122.5
+  Disk free before save (C:): 17.10 GB
+  Saved checkpoint: best_model.pt
+  Disk free after save (C:): 17.10 GB
+  >>> New best Val PPL: 122.5
+Step  1410/3815 [MorphAttn] | CE=5.1464 PPL=171.8 | 23538 tok/s ∇=1.43 GPU=3.1G ETA=2.1h
+Step  1420/3815 [MorphAttn] | CE=4.7863 PPL=119.9 | 22268 tok/s ∇=1.30 GPU=3.1G ETA=2.1h
+Step  1430/3815 [MorphAttn] | CE=4.4847 PPL=88.6 | 21915 tok/s ∇=1.77 GPU=3.1G ETA=2.1h
+Step  1440/3815 [MorphAttn] | CE=4.6577 PPL=105.4 | 22642 tok/s ∇=1.40 GPU=3.1G ETA=2.1h
+Step  1450/3815 [MorphAttn] | CE=4.7165 PPL=111.8 | 21651 tok/s ∇=1.58 GPU=3.1G ETA=2.0h
+Step  1460/3815 [MorphAttn] | CE=4.8064 PPL=122.3 | 22599 tok/s ∇=1.77 GPU=3.1G ETA=2.0h
+Step  1470/3815 [MorphAttn] | CE=4.5887 PPL=98.4 | 22980 tok/s ∇=1.70 GPU=3.1G ETA=2.0h
+Step  1480/3815 [MorphAttn] | CE=4.6430 PPL=103.9 | 22650 tok/s ∇=1.96 GPU=3.1G ETA=2.0h
+Step  1490/3815 [MorphAttn] | CE=4.5691 PPL=96.5 | 23172 tok/s ∇=1.84 GPU=3.1G ETA=2.0h
+Step  1500/3815 [MorphAttn] | CE=4.8792 PPL=131.5 | 23127 tok/s ∇=1.78 GPU=3.1G ETA=2.0h
+  >>> Sample: Once upon a time, the current, and “pinc” function, are very low in the case in the absence of these two-scale structure.
+
+The question of these of the authors is a very simple approach, including a r...
+  Disk free before save (C:): 17.10 GB
+  Saved checkpoint: checkpoint_step1500.pt
+  Disk free after save (C:): 15.29 GB
+  Disk free before save (C:): 15.29 GB
+  Saved checkpoint: latest.pt
+  Disk free after save (C:): 15.29 GB
+Step  1510/3815 [MorphAttn] | CE=4.6444 PPL=104.0 | 22541 tok/s ∇=1.44 GPU=3.1G ETA=2.0h
+Step  1520/3815 [MorphAttn] | CE=4.7526 PPL=115.9 | 23142 tok/s ∇=1.66 GPU=3.1G ETA=2.0h
+Step  1530/3815 [MorphAttn] | CE=4.6687 PPL=106.6 | 22859 tok/s ∇=1.73 GPU=3.1G ETA=2.0h
+Step  1540/3815 [MorphAttn] | CE=4.5401 PPL=93.7 | 22975 tok/s ∇=1.30 GPU=3.1G ETA=2.0h
+Step  1550/3815 [MorphAttn] | CE=4.6716 PPL=106.9 | 23728 tok/s ∇=1.64 GPU=3.1G ETA=2.0h
+Step  1560/3815 [MorphAttn] | CE=4.7828 PPL=119.4 | 21652 tok/s ∇=1.24 GPU=3.1G ETA=2.0h
+Step  1570/3815 [MorphAttn] | CE=4.9707 PPL=144.1 | 21809 tok/s ∇=1.23 GPU=3.1G ETA=1.9h
+Step  1580/3815 [MorphAttn] | CE=4.6150 PPL=101.0 | 22741 tok/s ∇=1.78 GPU=3.1G ETA=1.9h
+Step  1590/3815 [MorphAttn] | CE=4.7144 PPL=111.5 | 22051 tok/s ∇=1.21 GPU=3.1G ETA=1.9h
+Step  1600/3815 [MorphAttn] | CE=4.5034 PPL=90.3 | 22165 tok/s ∇=1.70 GPU=3.1G ETA=1.9h
+  >>> VAL: CE=4.6580 PPL=105.4
+  Disk free before save (C:): 15.29 GB
+  Saved checkpoint: best_model.pt
+  Disk free after save (C:): 15.29 GB
+  >>> New best Val PPL: 105.4
+Step  1610/3815 [MorphAttn] | CE=4.9092 PPL=135.5 | 22887 tok/s ∇=1.83 GPU=3.1G ETA=1.9h
+Step  1620/3815 [MorphAttn] | CE=4.6475 PPL=104.3 | 22563 tok/s ∇=1.72 GPU=3.1G ETA=1.9h
+Step  1630/3815 [MorphAttn] | CE=4.7399 PPL=114.4 | 21939 tok/s ∇=2.32 GPU=3.1G ETA=1.9h
+Step  1640/3815 [MorphAttn] | CE=4.6540 PPL=105.0 | 23650 tok/s ∇=1.30 GPU=3.1G ETA=1.9h
+Step  1650/3815 [MorphAttn] | CE=4.7018 PPL=110.1 | 22905 tok/s ∇=1.45 GPU=3.1G ETA=1.9h
+Step  1660/3815 [MorphAttn] | CE=4.6655 PPL=106.2 | 22575 tok/s ∇=1.65 GPU=3.1G ETA=1.9h
+Step  1670/3815 [MorphAttn] | CE=4.6822 PPL=108.0 | 22875 tok/s ∇=1.31 GPU=3.1G ETA=1.9h
+Step  1680/3815 [MorphAttn] | CE=4.4602 PPL=86.5 | 22429 tok/s ∇=1.67 GPU=3.1G ETA=1.8h
+Step  1690/3815 [MorphAttn] | CE=4.7192 PPL=112.1 | 23662 tok/s ∇=1.52 GPU=3.1G ETA=1.8h
+Step  1700/3815 [MorphAttn] | CE=4.5163 PPL=91.5 | 22514 tok/s ∇=1.83 GPU=3.1G ETA=1.8h
+Step  1710/3815 [MorphAttn] | CE=4.6226 PPL=101.8 | 22343 tok/s ∇=2.04 GPU=3.1G ETA=1.8h
+Step  1720/3815 [MorphAttn] | CE=4.5152 PPL=91.4 | 22877 tok/s ∇=2.50 GPU=3.1G ETA=1.8h
+Step  1730/3815 [MorphAttn] | CE=4.5990 PPL=99.4 | 21686 tok/s ∇=1.97 GPU=3.1G ETA=1.8h
+Step  1740/3815 [MorphAttn] | CE=4.7797 PPL=119.1 | 21846 tok/s ∇=1.59 GPU=3.1G ETA=1.8h
+Step  1750/3815 [MorphAttn] | CE=4.4710 PPL=87.4 | 23595 tok/s ∇=1.56 GPU=3.1G ETA=1.8h
+Step  1760/3815 [MorphAttn] | CE=4.2599 PPL=70.8 | 23020 tok/s ∇=1.21 GPU=3.1G ETA=1.8h
+Step  1770/3815 [MorphAttn] | CE=4.3243 PPL=75.5 | 23249 tok/s ∇=1.94 GPU=3.1G ETA=1.8h
+Step  1780/3815 [MorphAttn] | CE=4.7061 PPL=110.6 | 23024 tok/s ∇=1.74 GPU=3.1G ETA=1.7h
+Step  1790/3815 [MorphAttn] | CE=4.3540 PPL=77.8 | 22482 tok/s ∇=1.53 GPU=3.1G ETA=1.7h
+Step  1800/3815 [MorphAttn] | CE=4.4843 PPL=88.6 | 23322 tok/s ∇=2.13 GPU=3.1G ETA=1.7h
+  >>> VAL: CE=4.5457 PPL=94.2
+  Disk free before save (C:): 15.28 GB
+  Saved checkpoint: best_model.pt
+  Disk free after save (C:): 15.28 GB
+  >>> New best Val PPL: 94.2
+Step  1810/3815 [MorphAttn] | CE=4.5680 PPL=96.3 | 23439 tok/s ∇=1.54 GPU=3.1G ETA=1.7h
+Step  1820/3815 [MorphAttn] | CE=4.6994 PPL=109.9 | 23382 tok/s ∇=1.66 GPU=3.1G ETA=1.7h
+Step  1830/3815 [MorphAttn] | CE=4.4915 PPL=89.3 | 22584 tok/s ∇=1.36 GPU=3.1G ETA=1.7h
+Step  1840/3815 [MorphAttn] | CE=4.7483 PPL=115.4 | 22544 tok/s ∇=2.09 GPU=3.1G ETA=1.7h
+Step  1850/3815 [MorphAttn] | CE=4.4974 PPL=89.8 | 22017 tok/s ∇=1.96 GPU=3.1G ETA=1.7h
+Step  1860/3815 [MorphAttn] | CE=4.4051 PPL=81.9 | 20478 tok/s ∇=1.62 GPU=3.1G ETA=1.7h
+Step  1870/3815 [MorphAttn] | CE=4.4562 PPL=86.2 | 23347 tok/s ∇=1.45 GPU=3.1G ETA=1.7h
+Step  1880/3815 [MorphAttn] | CE=4.3459 PPL=77.2 | 22754 tok/s ∇=1.55 GPU=3.1G ETA=1.7h
+Step  1890/3815 [MorphAttn] | CE=4.6744 PPL=107.2 | 22453 tok/s ∇=2.49 GPU=3.1G ETA=1.7h
+Step  1900/3815 [MorphAttn] | CE=4.6428 PPL=103.8 | 21397 tok/s ∇=1.53 GPU=3.1G ETA=1.6h
+Step  1910/3815 [MorphAttn] | CE=4.4168 PPL=82.8 | 22499 tok/s ∇=1.77 GPU=3.1G ETA=1.6h
+Step  1920/3815 [MorphAttn] | CE=4.4723 PPL=87.6 | 22967 tok/s ∇=1.27 GPU=3.1G ETA=1.6h
+Step  1930/3815 [MorphAttn] | CE=4.4566 PPL=86.2 | 21947 tok/s ∇=1.91 GPU=3.1G ETA=1.6h
+Step  1940/3815 [MorphAttn] | CE=4.5612 PPL=95.7 | 21912 tok/s ∇=1.49 GPU=3.1G ETA=1.6h
+Step  1950/3815 [MorphAttn] | CE=4.5267 PPL=92.4 | 21367 tok/s ∇=2.82 GPU=3.1G ETA=1.6h
+Step  1960/3815 [MorphAttn] | CE=4.2005 PPL=66.7 | 22828 tok/s ∇=1.83 GPU=3.1G ETA=1.6h
+Step  1970/3815 [MorphAttn] | CE=4.3542 PPL=77.8 | 23096 tok/s ∇=1.28 GPU=3.1G ETA=1.6h
+Step  1980/3815 [MorphAttn] | CE=4.4638 PPL=86.8 | 23430 tok/s ∇=1.67 GPU=3.1G ETA=1.6h
+Step  1990/3815 [MorphAttn] | CE=4.4632 PPL=86.8 | 22967 tok/s ∇=1.50 GPU=3.1G ETA=1.6h
+Step  2000/3815 [MorphAttn] | CE=4.3187 PPL=75.1 | 23476 tok/s ∇=1.48 GPU=3.1G ETA=1.6h
+  >>> VAL: CE=4.5075 PPL=90.7
+  Disk free before save (C:): 15.25 GB
+  Saved checkpoint: best_model.pt
+  Disk free after save (C:): 15.25 GB
+  >>> New best Val PPL: 90.7
+Step  2010/3815 [MorphAttn] | CE=4.2650 PPL=71.2 | 23056 tok/s ∇=2.42 GPU=3.1G ETA=1.5h
+Step  2020/3815 [MorphAttn] | CE=4.1489 PPL=63.4 | 22732 tok/s ∇=1.71 GPU=3.1G ETA=1.5h
+Step  2030/3815 [MorphAttn] | CE=4.3700 PPL=79.0 | 22667 tok/s ∇=1.42 GPU=3.1G ETA=1.5h
+Step  2040/3815 [MorphAttn] | CE=4.4416 PPL=84.9 | 22648 tok/s ∇=1.72 GPU=3.1G ETA=1.5h
+Step  2050/3815 [MorphAttn] | CE=4.5604 PPL=95.6 | 22541 tok/s ∇=1.67 GPU=3.1G ETA=1.5h
+Step  2060/3815 [MorphAttn] | CE=4.3905 PPL=80.7 | 22360 tok/s ∇=2.41 GPU=3.1G ETA=1.5h
+Step  2070/3815 [MorphAttn] | CE=4.1986 PPL=66.6 | 22681 tok/s ∇=1.68 GPU=3.1G ETA=1.5h
+Step  2080/3815 [MorphAttn] | CE=4.0482 PPL=57.3 | 23212 tok/s ∇=1.62 GPU=3.1G ETA=1.5h
+Step  2090/3815 [MorphAttn] | CE=4.4315 PPL=84.1 | 23425 tok/s ∇=1.81 GPU=3.1G ETA=1.5h
+Step  2100/3815 [MorphAttn] | CE=4.4689 PPL=87.3 | 23012 tok/s ∇=1.48 GPU=3.1G ETA=1.5h
+Step  2110/3815 [MorphAttn] | CE=4.2567 PPL=70.6 | 23200 tok/s ∇=1.75 GPU=3.1G ETA=1.5h
+Step  2120/3815 [MorphAttn] | CE=4.3199 PPL=75.2 | 23094 tok/s ∇=1.78 GPU=3.1G ETA=1.4h
+Step  2130/3815 [MorphAttn] | CE=4.2562 PPL=70.5 | 23018 tok/s ∇=1.99 GPU=3.1G ETA=1.4h
+Step  2140/3815 [MorphAttn] | CE=4.2932 PPL=73.2 | 23144 tok/s ∇=2.16 GPU=3.1G ETA=1.4h
+Step  2150/3815 [MorphAttn] | CE=4.2419 PPL=69.5 | 23133 tok/s ∇=1.61 GPU=3.1G ETA=1.4h
+Step  2160/3815 [MorphAttn] | CE=4.3904 PPL=80.7 | 22519 tok/s ∇=1.56 GPU=3.1G ETA=1.4h
+Step  2170/3815 [MorphAttn] | CE=4.2041 PPL=67.0 | 22649 tok/s ∇=1.60 GPU=3.1G ETA=1.4h
+Step  2180/3815 [MorphAttn] | CE=4.6317 PPL=102.7 | 22598 tok/s ∇=1.76 GPU=3.1G ETA=1.4h
+Step  2190/3815 [MorphAttn] | CE=4.2471 PPL=69.9 | 22566 tok/s ∇=1.39 GPU=3.1G ETA=1.4h
+Step  2200/3815 [MorphAttn] | CE=4.4741 PPL=87.7 | 22362 tok/s ∇=2.20 GPU=3.1G ETA=1.4h
+  >>> VAL: CE=4.2334 PPL=69.0
+  Disk free before save (C:): 15.26 GB
+  Saved checkpoint: best_model.pt
+  Disk free after save (C:): 15.26 GB
+  >>> New best Val PPL: 69.0
+Step  2210/3815 [MorphAttn] | CE=4.2607 PPL=70.9 | 23141 tok/s ∇=1.46 GPU=3.1G ETA=1.4h
+Step  2220/3815 [MorphAttn] | CE=4.2043 PPL=67.0 | 22946 tok/s ∇=1.81 GPU=3.1G ETA=1.4h
+Step  2230/3815 [MorphAttn] | CE=4.2352 PPL=69.1 | 23085 tok/s ∇=1.63 GPU=3.1G ETA=1.4h
+Step  2240/3815 [MorphAttn] | CE=4.4980 PPL=89.8 | 23450 tok/s ∇=1.35 GPU=3.1G ETA=1.3h
+Step  2250/3815 [MorphAttn] | CE=4.3678 PPL=78.9 | 23102 tok/s ∇=1.49 GPU=3.1G ETA=1.3h
+  >>> Sample: Once upon a time, or a child who was not the case, and that the company's business is to support those cases to take for the public services in the country.
+
+In addition to the technology, the technol...
+  Disk free before save (C:): 15.26 GB
+  Saved checkpoint: checkpoint_step2250.pt
+  Disk free after save (C:): 13.45 GB
+  Disk free before save (C:): 13.45 GB
+  Saved checkpoint: latest.pt
+  Disk free after save (C:): 13.45 GB
+Step  2260/3815 [MorphAttn] | CE=4.2445 PPL=69.7 | 22499 tok/s ∇=1.92 GPU=3.1G ETA=1.3h
+Step  2270/3815 [MorphAttn] | CE=4.3769 PPL=79.6 | 22309 tok/s ∇=1.35 GPU=3.1G ETA=1.3h
+Step  2280/3815 [MorphAttn] | CE=4.3699 PPL=79.0 | 22641 tok/s ∇=1.71 GPU=3.1G ETA=1.3h
+Step  2290/3815 [MorphAttn] | CE=4.1716 PPL=64.8 | 22357 tok/s ∇=2.02 GPU=3.1G ETA=1.3h
+Step  2300/3815 [MorphAttn] | CE=4.2242 PPL=68.3 | 22656 tok/s ∇=1.80 GPU=3.1G ETA=1.3h
+Step  2310/3815 [MorphAttn] | CE=4.2469 PPL=69.9 | 22617 tok/s ∇=1.75 GPU=3.1G ETA=1.3h
+Step  2320/3815 [MorphAttn] | CE=4.2189 PPL=68.0 | 22502 tok/s ∇=1.41 GPU=3.1G ETA=1.3h
+Step  2330/3815 [MorphAttn] | CE=4.3086 PPL=74.3 | 23289 tok/s ∇=1.52 GPU=3.1G ETA=1.3h
+Step  2340/3815 [MorphAttn] | CE=3.9278 PPL=50.8 | 23129 tok/s ∇=1.44 GPU=3.1G ETA=1.3h
+Step  2350/3815 [MorphAttn] | CE=4.2869 PPL=72.7 | 23157 tok/s ∇=1.60 GPU=3.1G ETA=1.2h
+Step  2360/3815 [MorphAttn] | CE=4.2081 PPL=67.2 | 23171 tok/s ∇=1.67 GPU=3.1G ETA=1.2h
+Step  2370/3815 [MorphAttn] | CE=4.2185 PPL=67.9 | 23161 tok/s ∇=1.69 GPU=3.1G ETA=1.2h
+Step  2380/3815 [MorphAttn] | CE=4.2813 PPL=72.3 | 23127 tok/s ∇=1.48 GPU=3.1G ETA=1.2h
+Step  2390/3815 [MorphAttn] | CE=3.9126 PPL=50.0 | 23249 tok/s ∇=1.79 GPU=3.1G ETA=1.2h
+Step  2400/3815 [MorphAttn] | CE=4.2102 PPL=67.4 | 23203 tok/s ∇=1.51 GPU=3.1G ETA=1.2h
+  >>> VAL: CE=4.2871 PPL=72.8
+Step  2410/3815 [MorphAttn] | CE=4.1239 PPL=61.8 | 22660 tok/s ∇=2.86 GPU=3.1G ETA=1.2h
+Step  2420/3815 [MorphAttn] | CE=4.3994 PPL=81.4 | 22303 tok/s ∇=1.77 GPU=3.1G ETA=1.2h
+Step  2430/3815 [MorphAttn] | CE=4.2935 PPL=73.2 | 22315 tok/s ∇=1.52 GPU=3.1G ETA=1.2h
+Step  2440/3815 [MorphAttn] | CE=4.3392 PPL=76.6 | 22415 tok/s ∇=1.47 GPU=3.1G ETA=1.2h
+Step  2450/3815 [MorphAttn] | CE=4.2460 PPL=69.8 | 22215 tok/s ∇=1.85 GPU=3.1G ETA=1.2h
+Step  2460/3815 [MorphAttn] | CE=3.8999 PPL=49.4 | 22995 tok/s ∇=1.84 GPU=3.1G ETA=1.2h
+Step  2470/3815 [MorphAttn] | CE=4.3444 PPL=77.0 | 22931 tok/s ∇=2.09 GPU=3.1G ETA=1.1h
+Step  2480/3815 [MorphAttn] | CE=4.0896 PPL=59.7 | 22748 tok/s ∇=1.82 GPU=3.1G ETA=1.1h
+Step  2490/3815 [MorphAttn] | CE=4.3161 PPL=74.9 | 23194 tok/s ∇=1.62 GPU=3.1G ETA=1.1h
+Step  2500/3815 [MorphAttn] | CE=4.4568 PPL=86.2 | 23293 tok/s ∇=1.40 GPU=3.1G ETA=1.1h
+Step  2510/3815 [MorphAttn] | CE=4.1747 PPL=65.0 | 23216 tok/s ∇=1.48 GPU=3.1G ETA=1.1h
+Step  2520/3815 [MorphAttn] | CE=4.1741 PPL=65.0 | 23264 tok/s ∇=1.43 GPU=3.1G ETA=1.1h
+Step  2530/3815 [MorphAttn] | CE=4.1807 PPL=65.4 | 23062 tok/s ∇=1.85 GPU=3.1G ETA=1.1h
+Step  2540/3815 [MorphAttn] | CE=4.2815 PPL=72.3 | 22370 tok/s ∇=1.62 GPU=3.1G ETA=1.1h
+Step  2550/3815 [MorphAttn] | CE=4.1397 PPL=62.8 | 22457 tok/s ∇=2.25 GPU=3.1G ETA=1.1h
+Step  2560/3815 [MorphAttn] | CE=4.1908 PPL=66.1 | 22059 tok/s ∇=1.39 GPU=3.1G ETA=1.1h
+Step  2570/3815 [MorphAttn] | CE=4.1513 PPL=63.5 | 22711 tok/s ∇=1.37 GPU=3.1G ETA=1.1h
+Step  2580/3815 [MorphAttn] | CE=4.1886 PPL=65.9 | 22382 tok/s ∇=1.53 GPU=3.1G ETA=1.0h
+Step  2590/3815 [MorphAttn] | CE=4.3313 PPL=76.0 | 22608 tok/s ∇=1.54 GPU=3.1G ETA=1.0h
+Step  2600/3815 [MorphAttn] | CE=4.0831 PPL=59.3 | 23266 tok/s ∇=1.64 GPU=3.1G ETA=1.0h
+  >>> VAL: CE=4.2296 PPL=68.7
+  Disk free before save (C:): 13.45 GB
+  Saved checkpoint: best_model.pt
+  Disk free after save (C:): 13.45 GB
+  >>> New best Val PPL: 68.7
+Step  2610/3815 [MorphAttn] | CE=4.3336 PPL=76.2 | 23133 tok/s ∇=1.56 GPU=3.1G ETA=1.0h
+Step  2620/3815 [MorphAttn] | CE=4.0530 PPL=57.6 | 22159 tok/s ∇=1.47 GPU=3.1G ETA=1.0h
+Step  2630/3815 [MorphAttn] | CE=4.1869 PPL=65.8 | 23610 tok/s ∇=1.66 GPU=3.1G ETA=1.0h
+Step  2640/3815 [MorphAttn] | CE=4.1795 PPL=65.3 | 22602 tok/s ∇=1.64 GPU=3.1G ETA=60m
+Step  2650/3815 [MorphAttn] | CE=4.0856 PPL=59.5 | 22258 tok/s ∇=1.49 GPU=3.1G ETA=59m
+Step  2660/3815 [MorphAttn] | CE=4.2462 PPL=69.8 | 22694 tok/s ∇=2.05 GPU=3.1G ETA=59m
+Step  2670/3815 [MorphAttn] | CE=4.0457 PPL=57.2 | 21701 tok/s ∇=1.41 GPU=3.1G ETA=58m
+Step  2680/3815 [MorphAttn] | CE=4.1134 PPL=61.2 | 21241 tok/s ∇=1.55 GPU=3.1G ETA=58m
+Step  2690/3815 [MorphAttn] | CE=4.2085 PPL=67.3 | 22584 tok/s ∇=1.73 GPU=3.1G ETA=57m
+Step  2700/3815 [MorphAttn] | CE=4.0920 PPL=59.9 | 22323 tok/s ∇=1.58 GPU=3.1G ETA=57m
+Step  2710/3815 [MorphAttn] | CE=4.0933 PPL=59.9 | 22697 tok/s ∇=1.71 GPU=3.1G ETA=56m
+Step  2720/3815 [MorphAttn] | CE=4.3224 PPL=75.4 | 23248 tok/s ∇=1.66 GPU=3.1G ETA=56m
+Step  2730/3815 [MorphAttn] | CE=4.1471 PPL=63.2 | 22747 tok/s ∇=2.06 GPU=3.1G ETA=55m
+Step  2740/3815 [MorphAttn] | CE=4.2717 PPL=71.6 | 22070 tok/s ∇=1.97 GPU=3.1G ETA=55m
+Step  2750/3815 [MorphAttn] | CE=4.2593 PPL=70.8 | 22323 tok/s ∇=1.61 GPU=3.1G ETA=54m
+Step  2760/3815 [MorphAttn] | CE=3.9781 PPL=53.4 | 21706 tok/s ∇=1.60 GPU=3.1G ETA=54m
+Step  2770/3815 [MorphAttn] | CE=4.0985 PPL=60.3 | 21943 tok/s ∇=1.50 GPU=3.1G ETA=53m
+Step  2780/3815 [MorphAttn] | CE=4.1919 PPL=66.1 | 21941 tok/s ∇=1.56 GPU=3.1G ETA=53m
+Step  2790/3815 [MorphAttn] | CE=4.1668 PPL=64.5 | 22124 tok/s ∇=1.44 GPU=3.1G ETA=52m
+Step  2800/3815 [MorphAttn] | CE=4.0533 PPL=57.6 | 22142 tok/s ∇=1.36 GPU=3.1G ETA=52m
+  >>> VAL: CE=4.2057 PPL=67.1
+  Disk free before save (C:): 13.44 GB
+  Saved checkpoint: best_model.pt
+  Disk free after save (C:): 13.44 GB
+  >>> New best Val PPL: 67.1
+Step  2810/3815 [MorphAttn] | CE=3.9279 PPL=50.8 | 22260 tok/s ∇=1.70 GPU=3.1G ETA=51m
+Step  2820/3815 [MorphAttn] | CE=4.0297 PPL=56.2 | 22455 tok/s ∇=1.47 GPU=3.1G ETA=51m
+Step  2830/3815 [MorphAttn] | CE=4.3650 PPL=78.6 | 22726 tok/s ∇=1.91 GPU=3.1G ETA=50m
+Step  2840/3815 [MorphAttn] | CE=4.0475 PPL=57.3 | 21788 tok/s ∇=1.50 GPU=3.1G ETA=49m
+Step  2850/3815 [MorphAttn] | CE=4.3078 PPL=74.3 | 22424 tok/s ∇=1.49 GPU=3.1G ETA=49m
+Step  2860/3815 [MorphAttn] | CE=4.1238 PPL=61.8 | 22991 tok/s ∇=1.46 GPU=3.1G ETA=48m
+Step  2870/3815 [MorphAttn] | CE=4.1152 PPL=61.3 | 21366 tok/s ∇=1.50 GPU=3.1G ETA=48m
+Step  2880/3815 [MorphAttn] | CE=4.0802 PPL=59.2 | 22237 tok/s ∇=1.46 GPU=3.1G ETA=47m
+Step  2890/3815 [MorphAttn] | CE=3.7981 PPL=44.6 | 22364 tok/s ∇=1.46 GPU=3.1G ETA=47m
+Step  2900/3815 [MorphAttn] | CE=4.1069 PPL=60.8 | 21591 tok/s ∇=1.55 GPU=3.1G ETA=46m
+Step  2910/3815 [MorphAttn] | CE=4.1012 PPL=60.4 | 22798 tok/s ∇=1.63 GPU=3.1G ETA=46m
+Step  2920/3815 [MorphAttn] | CE=4.3001 PPL=73.7 | 22451 tok/s ∇=1.43 GPU=3.1G ETA=45m
+Step  2930/3815 [MorphAttn] | CE=4.1492 PPL=63.4 | 22080 tok/s ∇=1.40 GPU=3.1G ETA=45m
+Step  2940/3815 [MorphAttn] | CE=4.1238 PPL=61.8 | 22998 tok/s ∇=1.46 GPU=3.1G ETA=44m
+Step  2950/3815 [MorphAttn] | CE=4.0721 PPL=58.7 | 22513 tok/s ∇=1.57 GPU=3.1G ETA=44m
+Step  2960/3815 [MorphAttn] | CE=3.9776 PPL=53.4 | 22503 tok/s ∇=2.24 GPU=3.1G ETA=43m
+Step  2970/3815 [MorphAttn] | CE=4.1228 PPL=61.7 | 23058 tok/s ∇=1.79 GPU=3.1G ETA=43m
+Step  2980/3815 [MorphAttn] | CE=3.9914 PPL=54.1 | 23003 tok/s ∇=1.39 GPU=3.1G ETA=42m
+Step  2990/3815 [MorphAttn] | CE=4.0088 PPL=55.1 | 22377 tok/s ∇=1.94 GPU=3.1G ETA=42m
+Step  3000/3815 [MorphAttn] | CE=4.0623 PPL=58.1 | 22197 tok/s ∇=1.64 GPU=3.1G ETA=41m
+  >>> VAL: CE=4.1648 PPL=64.4
+  Disk free before save (C:): 13.43 GB
+  Saved checkpoint: best_model.pt
+  Disk free after save (C:): 13.43 GB
+  >>> New best Val PPL: 64.4
+  >>> Sample: Once upon a time of action.
+
+We were not aware of the law and the State is also in that place.
+
+[2]  The Court finds that the evidence is not correct because
+
+the BIA does not abuse its right to be a ...
+  Disk free before save (C:): 13.43 GB
+  Saved checkpoint: checkpoint_step3000.pt
+  Disk free after save (C:): 13.43 GB
+  Disk free before save (C:): 13.43 GB
+  Saved checkpoint: latest.pt
+  Disk free after save (C:): 13.43 GB
+Step  3010/3815 [MorphAttn] | CE=4.2295 PPL=68.7 | 22338 tok/s ∇=1.72 GPU=3.1G ETA=41m
+Step  3020/3815 [MorphAttn] | CE=4.2848 PPL=72.6 | 22046 tok/s ∇=1.45 GPU=3.1G ETA=40m
+Step  3030/3815 [MorphAttn] | CE=4.0448 PPL=57.1 | 21455 tok/s ∇=1.40 GPU=3.1G ETA=40m
+Step  3040/3815 [MorphAttn] | CE=4.0690 PPL=58.5 | 21948 tok/s ∇=1.71 GPU=3.1G ETA=39m
+Step  3050/3815 [MorphAttn] | CE=4.3867 PPL=80.4 | 21123 tok/s ∇=1.65 GPU=3.1G ETA=39m
+Step  3060/3815 [MorphAttn] | CE=3.8900 PPL=48.9 | 22614 tok/s ∇=1.40 GPU=3.1G ETA=38m
+Step  3070/3815 [MorphAttn] | CE=4.2258 PPL=68.4 | 22984 tok/s ∇=1.44 GPU=3.1G ETA=38m
+Step  3080/3815 [MorphAttn] | CE=3.9931 PPL=54.2 | 22218 tok/s ∇=1.72 GPU=3.1G ETA=37m
+Step  3090/3815 [MorphAttn] | CE=4.0227 PPL=55.9 | 23018 tok/s ∇=1.54 GPU=3.1G ETA=37m
+Step  3100/3815 [MorphAttn] | CE=4.3049 PPL=74.1 | 23600 tok/s ∇=1.44 GPU=3.1G ETA=36m
+Step  3110/3815 [MorphAttn] | CE=4.0967 PPL=60.1 | 21956 tok/s ∇=1.37 GPU=3.1G ETA=36m
+Step  3120/3815 [MorphAttn] | CE=4.2795 PPL=72.2 | 23838 tok/s ∇=1.47 GPU=3.1G ETA=35m
+Step  3130/3815 [MorphAttn] | CE=4.0163 PPL=55.5 | 23334 tok/s ∇=1.66 GPU=3.1G ETA=35m
+Step  3140/3815 [MorphAttn] | CE=4.0169 PPL=55.5 | 22850 tok/s ∇=1.71 GPU=3.1G ETA=34m
+Step  3150/3815 [MorphAttn] | CE=4.2765 PPL=72.0 | 22390 tok/s ∇=1.71 GPU=3.1G ETA=34m
+Step  3160/3815 [MorphAttn] | CE=3.9844 PPL=53.8 | 22022 tok/s ∇=1.58 GPU=3.1G ETA=33m
+Step  3170/3815 [MorphAttn] | CE=4.1179 PPL=61.4 | 21246 tok/s ∇=1.49 GPU=3.1G ETA=33m
+Step  3180/3815 [MorphAttn] | CE=4.1472 PPL=63.3 | 22103 tok/s ∇=1.46 GPU=3.1G ETA=32m
+Step  3190/3815 [MorphAttn] | CE=4.1665 PPL=64.5 | 22195 tok/s ∇=1.60 GPU=3.1G ETA=32m
+Step  3200/3815 [MorphAttn] | CE=3.9046 PPL=49.6 | 22834 tok/s ∇=1.59 GPU=3.1G ETA=31m
+  >>> VAL: CE=4.0428 PPL=57.0
+  Disk free before save (C:): 13.42 GB
+  Saved checkpoint: best_model.pt
+  Disk free after save (C:): 13.42 GB
+  >>> New best Val PPL: 57.0
+Step  3210/3815 [MorphAttn] | CE=4.1449 PPL=63.1 | 22576 tok/s ∇=1.77 GPU=3.1G ETA=31m
+Step  3220/3815 [MorphAttn] | CE=4.1782 PPL=65.2 | 22710 tok/s ∇=1.49 GPU=3.1G ETA=30m
+Step  3230/3815 [MorphAttn] | CE=3.9991 PPL=54.5 | 21477 tok/s ∇=1.35 GPU=3.1G ETA=30m
+Step  3240/3815 [MorphAttn] | CE=4.1990 PPL=66.6 | 23257 tok/s ∇=1.53 GPU=3.1G ETA=29m
+Step  3250/3815 [MorphAttn] | CE=4.1004 PPL=60.4 | 22679 tok/s ∇=1.74 GPU=3.1G ETA=29m
+Step  3260/3815 [MorphAttn] | CE=4.0315 PPL=56.3 | 22242 tok/s ∇=1.46 GPU=3.1G ETA=28m
+Step  3270/3815 [MorphAttn] | CE=3.9262 PPL=50.7 | 22524 tok/s ∇=1.72 GPU=3.1G ETA=28m
+Step  3280/3815 [MorphAttn] | CE=4.0057 PPL=54.9 | 22036 tok/s ∇=1.47 GPU=3.1G ETA=27m
+Step  3290/3815 [MorphAttn] | CE=4.1081 PPL=60.8 | 21704 tok/s ∇=1.48 GPU=3.1G ETA=27m
+Step  3300/3815 [MorphAttn] | CE=4.1337 PPL=62.4 | 23240 tok/s ∇=1.50 GPU=3.1G ETA=26m
+Step  3310/3815 [MorphAttn] | CE=3.6604 PPL=38.9 | 22979 tok/s ∇=1.41 GPU=3.1G ETA=26m
+Step  3320/3815 [MorphAttn] | CE=3.9053 PPL=49.7 | 22843 tok/s ∇=2.02 GPU=3.1G ETA=25m
+Step  3330/3815 [MorphAttn] | CE=4.0697 PPL=58.5 | 22884 tok/s ∇=1.63 GPU=3.1G ETA=25m
+Step  3340/3815 [MorphAttn] | CE=4.0944 PPL=60.0 | 23057 tok/s ∇=1.57 GPU=3.1G ETA=24m
+Step  3350/3815 [MorphAttn] | CE=4.1632 PPL=64.3 | 22387 tok/s ∇=1.51 GPU=3.1G ETA=24m
+Step  3360/3815 [MorphAttn] | CE=3.9378 PPL=51.3 | 22481 tok/s ∇=1.61 GPU=3.1G ETA=23m
+Step  3370/3815 [MorphAttn] | CE=4.0413 PPL=56.9 | 22577 tok/s ∇=1.87 GPU=3.1G ETA=23m
+Step  3380/3815 [MorphAttn] | CE=4.0734 PPL=58.8 | 22471 tok/s ∇=1.58 GPU=3.1G ETA=22m
+Step  3390/3815 [MorphAttn] | CE=4.1877 PPL=65.9 | 22374 tok/s ∇=1.40 GPU=3.1G ETA=22m
+Step  3400/3815 [MorphAttn] | CE=4.0433 PPL=57.0 | 21278 tok/s ∇=1.42 GPU=3.1G ETA=21m
+  >>> VAL: CE=4.0837 PPL=59.4
+Step  3410/3815 [MorphAttn] | CE=3.9364 PPL=51.2 | 23491 tok/s ∇=1.45 GPU=3.1G ETA=21m
+Step  3420/3815 [MorphAttn] | CE=4.1874 PPL=65.8 | 22179 tok/s ∇=1.64 GPU=3.1G ETA=20m
+Step  3430/3815 [MorphAttn] | CE=4.0498 PPL=57.4 | 22701 tok/s ∇=1.81 GPU=3.1G ETA=20m
+Step  3440/3815 [MorphAttn] | CE=4.0124 PPL=55.3 | 23178 tok/s ∇=1.80 GPU=3.1G ETA=19m
+Step  3450/3815 [MorphAttn] | CE=3.9851 PPL=53.8 | 23253 tok/s ∇=1.62 GPU=3.1G ETA=18m
+Step  3460/3815 [MorphAttn] | CE=3.9108 PPL=49.9 | 21977 tok/s ∇=1.44 GPU=3.1G ETA=18m
+Step  3470/3815 [MorphAttn] | CE=4.1309 PPL=62.2 | 22888 tok/s ∇=1.40 GPU=3.1G ETA=17m
+Step  3480/3815 [MorphAttn] | CE=4.2119 PPL=67.5 | 22888 tok/s ∇=1.50 GPU=3.1G ETA=17m
+Step  3490/3815 [MorphAttn] | CE=4.1470 PPL=63.2 | 22362 tok/s ∇=1.56 GPU=3.1G ETA=16m
+Step  3500/3815 [MorphAttn] | CE=4.0470 PPL=57.2 | 22295 tok/s ∇=1.38 GPU=3.1G ETA=16m
+Step  3510/3815 [MorphAttn] | CE=3.9449 PPL=51.7 | 22129 tok/s ∇=1.53 GPU=3.1G ETA=15m
+Step  3520/3815 [MorphAttn] | CE=3.7455 PPL=42.3 | 23159 tok/s ∇=1.80 GPU=3.1G ETA=15m
+Step  3530/3815 [MorphAttn] | CE=3.8961 PPL=49.2 | 23924 tok/s ∇=1.66 GPU=3.1G ETA=14m
+Step  3540/3815 [MorphAttn] | CE=4.2428 PPL=69.6 | 22694 tok/s ∇=1.75 GPU=3.1G ETA=14m
+Step  3550/3815 [MorphAttn] | CE=4.0347 PPL=56.5 | 22891 tok/s ∇=1.70 GPU=3.1G ETA=13m
+Step  3560/3815 [MorphAttn] | CE=3.8216 PPL=45.7 | 23239 tok/s ∇=1.36 GPU=3.1G ETA=13m
+Step  3570/3815 [MorphAttn] | CE=4.0035 PPL=54.8 | 22504 tok/s ∇=1.30 GPU=3.1G ETA=12m
+Step  3580/3815 [MorphAttn] | CE=4.2748 PPL=71.9 | 22816 tok/s ∇=1.45 GPU=3.1G ETA=12m
+Step  3590/3815 [MorphAttn] | CE=4.0685 PPL=58.5 | 22637 tok/s ∇=1.44 GPU=3.1G ETA=11m
+Step  3600/3815 [MorphAttn] | CE=3.9835 PPL=53.7 | 22668 tok/s ∇=1.85 GPU=3.1G ETA=11m
+  >>> VAL: CE=4.1361 PPL=62.6
+Step  3610/3815 [MorphAttn] | CE=4.0126 PPL=55.3 | 22200 tok/s ∇=1.72 GPU=3.1G ETA=10m
+Step  3620/3815 [MorphAttn] | CE=4.1051 PPL=60.7 | 21894 tok/s ∇=1.48 GPU=3.1G ETA=10m
+Step  3630/3815 [MorphAttn] | CE=4.0292 PPL=56.2 | 23023 tok/s ∇=1.57 GPU=3.1G ETA=9m
+Step  3640/3815 [MorphAttn] | CE=4.0755 PPL=58.9 | 23804 tok/s ∇=1.55 GPU=3.1G ETA=9m
+Step  3650/3815 [MorphAttn] | CE=4.0381 PPL=56.7 | 22959 tok/s ∇=1.44 GPU=3.1G ETA=8m
+Step  3660/3815 [MorphAttn] | CE=4.2843 PPL=72.6 | 23014 tok/s ∇=1.49 GPU=3.1G ETA=8m
+Step  3670/3815 [MorphAttn] | CE=4.0196 PPL=55.7 | 23237 tok/s ∇=1.48 GPU=3.1G ETA=7m
+Step  3680/3815 [MorphAttn] | CE=3.9559 PPL=52.2 | 22451 tok/s ∇=1.69 GPU=3.1G ETA=7m
+Step  3690/3815 [MorphAttn] | CE=3.8339 PPL=46.2 | 22082 tok/s ∇=1.50 GPU=3.1G ETA=6m
+Step  3700/3815 [MorphAttn] | CE=3.9918 PPL=54.1 | 22127 tok/s ∇=1.47 GPU=3.1G ETA=6m
+Step  3710/3815 [MorphAttn] | CE=3.6899 PPL=40.0 | 22010 tok/s ∇=1.49 GPU=3.1G ETA=5m
+Step  3720/3815 [MorphAttn] | CE=4.0434 PPL=57.0 | 19673 tok/s ∇=1.58 GPU=3.1G ETA=5m
+Step  3730/3815 [MorphAttn] | CE=4.2924 PPL=73.1 | 20283 tok/s ∇=1.84 GPU=3.1G ETA=4m
+Step  3740/3815 [MorphAttn] | CE=4.0238 PPL=55.9 | 20048 tok/s ∇=1.58 GPU=3.1G ETA=4m
+Step  3750/3815 [MorphAttn] | CE=3.8803 PPL=48.4 | 19536 tok/s ∇=1.47 GPU=3.1G ETA=3m
+  >>> Sample: Once upon a time or a week?
+
+Sie has taken a short-term survival. After a few years, I still have
+very experienced a low-life study. When I discovered my opinion, I would
+have had a great chance to im...
+  Disk free before save (C:): 13.41 GB
+  Saved checkpoint: checkpoint_step3750.pt
+  Disk free after save (C:): 13.41 GB
+  Disk free before save (C:): 13.41 GB
+  Saved checkpoint: latest.pt
+  Disk free after save (C:): 13.41 GB
+Step  3760/3815 [MorphAttn] | CE=4.2020 PPL=66.8 | 19927 tok/s ∇=1.45 GPU=3.1G ETA=3m
+Step  3770/3815 [MorphAttn] | CE=4.1434 PPL=63.0 | 20161 tok/s ∇=1.67 GPU=3.1G ETA=2m
+Step  3780/3815 [MorphAttn] | CE=4.1712 PPL=64.8 | 19672 tok/s ∇=1.77 GPU=3.1G ETA=2m
+Step  3790/3815 [MorphAttn] | CE=4.3036 PPL=74.0 | 19745 tok/s ∇=1.38 GPU=3.1G ETA=1m
+Step  3800/3815 [MorphAttn] | CE=4.0179 PPL=55.6 | 19740 tok/s ∇=1.44 GPU=3.1G ETA=1m
+  >>> VAL: CE=4.0583 PPL=57.9
+Step  3810/3815 [MorphAttn] | CE=3.9707 PPL=53.0 | 19348 tok/s ∇=1.56 GPU=3.1G ETA=0m
+  Disk free before save (C:): 13.41 GB
+  Saved checkpoint: final_model.pt
+  Disk free after save (C:): 11.59 GB
+  Disk free before save (C:): 11.59 GB
+  Saved checkpoint: latest.pt
+  Disk free after save (C:): 11.60 GB
+
+==============================================================================
+  TRAINING COMPLETE
+==============================================================================
+
+  RESULTS
+    Final Val PPL:    52.88
+    Best Val PPL:     56.98
+    Final Val CE:     3.9679
+
+  TRAINING STATISTICS
+    Total time:       3.23 hours (193.7 minutes)
+    Steps completed:  3,815
+    Tokens processed: 250,019,840 (250.0M)
+    Avg throughput:   21507 tok/s
+
+  GPU MEMORY
+    Peak allocated:   9.74 GB
+
+==============================================================================
+
+Final generation samples:
+  [Once upon a time]: Once upon a time to the new language, the former is a third priority for this issue. We may only consider this hypothesis on the subject of an independent survey because of the latter approach to the previous report to the current literature.
+
+Conflict of Interest
+====================
+
+The authors d
+  [The little cat]: The little cat in the United Kingdom.
+
+And how did the city actually can make your state when people are not aware of the way they will have to go on the street, but they will have a lot more than one or two of them now.
+
+When you can have to get a lot more than a year ago, the team will have to be 
+  [One day, a]: One day, a big business in a game for a while. The New York Times, a coach, a former assistant at the conference, an A&B who took his family with a child, an A&B, as well as a member of the US.
+
+The New York Times is a member of the New York Times, and the New York Times is a member of the New York 

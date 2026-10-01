@@ -1,0 +1,64 @@
+{
+  "experiment": {
+    "name": "pile_2b_gpt2",
+    "profile": "pile_2b_gpt2",
+    "seed": 42,
+    "timestamp": "20260318_112530",
+    "total_time_hours": 10.959885702000724,
+    "total_time_minutes": 657.5931421200435
+  },
+  "results": {
+    "final_val_ppl": 15.2597131984698,
+    "final_val_ce": 2.7252162313461303,
+    "best_val_ppl": 14.454165144702992
+  },
+  "model": {
+    "architecture": "GPT-2",
+    "total_params": 162322944,
+    "embed_params": 38633472,
+    "head_params": 38633472,
+    "layer_params": 85054464,
+    "ln_params": 1536,
+    "d_model": 768,
+    "n_layer": 12,
+    "n_head": 12,
+    "d_ff": 3072,
+    "d_head": 64,
+    "rotary_dim": 16,
+    "rotary_pct": 0.25,
+    "vocab_size": 50304,
+    "tie_embeddings": false,
+    "use_parallel_residual": true,
+    "paradigm": "Standard Decoder-Only Transformer (GPT-NeoX style)"
+  },
+  "training": {
+    "max_steps": 30518,
+    "steps_completed": 30518,
+    "batch_size": 8,
+    "seq_len": 1024,
+    "grad_accum_steps": 8,
+    "effective_batch_tokens": 65536,
+    "total_tokens": 2000027648,
+    "learning_rate": 0.0002,
+    "weight_decay": 0.1,
+    "grad_clip": 1.0,
+    "warmup_steps": 1500,
+    "beta2": 0.99,
+    "lambda_agc": 0.0,
+    "lambda_reg": 0.0,
+    "lambda_aux": 0.0,
+    "dropout": 0.0,
+    "optimizer": "AdamW (beta1=0.9, beta2=0.99)",
+    "lr_schedule": "cosine with linear warmup (min_lr_ratio=0.1)",
+    "amp": true
+  },
+  "performance": {
+    "avg_tokens_per_sec": 50690.604871375406,
+    "gpu_peak_memory_gb": 6.678310871124268
+  },
+  "hardware": {
+    "device": "cuda",
+    "gpu_name": "NVIDIA GeForce RTX 4080 SUPER",
+    "gpu_memory_total_gb": 15.99169921875
+  }
+}

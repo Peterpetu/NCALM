@@ -1,0 +1,74 @@
+{
+  "experiment": {
+    "name": "pile_250m_v13",
+    "profile": "pile_250m_v13",
+    "seed": 42,
+    "timestamp": "20260331_122830",
+    "total_time_hours": 3.22910543402036,
+    "total_time_minutes": 193.7463260412216
+  },
+  "results": {
+    "final_val_ppl": 52.87560430263775,
+    "final_val_ce": 3.967942066192627,
+    "best_val_ppl": 56.98379986270951
+  },
+  "model": {
+    "architecture": "AENCA v13 (Morphogenetic Attention)",
+    "total_params": 161999873,
+    "morphogen_params": 625408,
+    "embed_params": 38633472,
+    "readout_params": 38634240,
+    "theta_attention_params": 9440256,
+    "theta_ffn_params": 74664960,
+    "halt_params": 1537,
+    "d_model": 768,
+    "d_h": 128,
+    "d_ff": 8101,
+    "n_theta": 4,
+    "n_morph_steps": 4,
+    "n_rules": 4,
+    "n_heads": 12,
+    "d_head": 64,
+    "morph_dilations": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "enable_halting": true,
+    "mos_components": 1,
+    "tie_embeddings": false,
+    "vocab_size": 50304,
+    "paradigm": "Morphogenetic Attention (NCA morphogen \u2192 Q/K gate steering)"
+  },
+  "training": {
+    "max_steps": 3815,
+    "steps_completed": 3815,
+    "batch_size": 4,
+    "seq_len": 1024,
+    "grad_accum_steps": 16,
+    "effective_batch_tokens": 65536,
+    "total_tokens": 250019840,
+    "learning_rate": 0.0002,
+    "weight_decay": 0.1,
+    "grad_clip": 1.0,
+    "warmup_steps": 188,
+    "beta2": 0.99,
+    "lambda_agc": 0.0,
+    "lambda_reg": 0.005,
+    "lambda_aux": 0.05,
+    "dropout": 0.0,
+    "optimizer": "AdamW (beta1=0.9, beta2=0.99)",
+    "lr_schedule": "cosine with linear warmup (min_lr_ratio=0.1)",
+    "amp": true
+  },
+  "performance": {
+    "avg_tokens_per_sec": 21507.490843706422,
+    "gpu_peak_memory_gb": 9.735623836517334
+  },
+  "hardware": {
+    "device": "cuda",
+    "gpu_name": "NVIDIA GeForce RTX 4080 SUPER",
+    "gpu_memory_total_gb": 15.99169921875
+  }
+}

@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use the harness or the archived runs, please cite this repository."
+title: "NCALM: can a neural cellular automaton replace attention? A matched-baseline study at 162M parameters"
+authors:
+  - family-names: Lahtinen
+    given-names: Peter
+year: 2026
+url: "https://github.com/Peterpetu/NCALM"
+license: MIT

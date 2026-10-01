@@ -1,0 +1,294 @@
+  Param group 'decay': 152,303,936 params, wd=0.1
+  Param group 'no_decay': 7,687,653 params, wd=0.0
+==============================================================================
+  AENCA v15 (2D RD-NCA)
+==============================================================================
+  Params: 159,991,589 total
+  Config: 2000 steps, batch=12, seq_len=512
+  Token budget: 12,288,000
+  Device: cuda
+==============================================================================
+Step     1/2000 [TuringRD-NCA] | CE=9.2881 PPL=10809.2 | 5580 tok/s ∇=2.47 GPU=2.4G
+Step     2/2000 [TuringRD-NCA] | CE=9.2789 PPL=10710.1 | 11079 tok/s ∇=2.59 GPU=2.4G
+Step     3/2000 [TuringRD-NCA] | CE=9.2807 PPL=10729.4 | 11512 tok/s ∇=2.56 GPU=2.4G
+Step     4/2000 [TuringRD-NCA] | CE=9.2682 PPL=10595.8 | 11191 tok/s ∇=2.57 GPU=2.4G
+Step     5/2000 [TuringRD-NCA] | CE=9.2511 PPL=10416.1 | 11550 tok/s ∇=2.56 GPU=2.4G ETA=23m
+Step    10/2000 [TuringRD-NCA] | CE=9.1282 PPL=9211.4 | 11265 tok/s ∇=2.64 GPU=2.4G ETA=21m
+Step    20/2000 [TuringRD-NCA] | CE=8.1992 PPL=3638.2 | 11106 tok/s ∇=3.82 GPU=2.4G ETA=20m
+Step    30/2000 [TuringRD-NCA] | CE=7.3718 PPL=1590.5 | 11258 tok/s ∇=3.10 GPU=2.4G ETA=20m
+Step    40/2000 [TuringRD-NCA] | CE=6.7595 PPL=862.2 | 11160 tok/s ∇=2.57 GPU=2.4G ETA=19m
+Step    50/2000 [TuringRD-NCA] | CE=6.1966 PPL=491.1 | 11469 tok/s ∇=2.58 GPU=2.4G ETA=19m
+Step    60/2000 [TuringRD-NCA] | CE=6.0338 PPL=417.3 | 10973 tok/s ∇=2.98 GPU=2.4G ETA=19m
+Step    70/2000 [TuringRD-NCA] | CE=6.0027 PPL=404.5 | 11089 tok/s ∇=7.41 GPU=2.4G ETA=19m
+Step    80/2000 [TuringRD-NCA] | CE=6.0180 PPL=410.8 | 10979 tok/s ∇=7.17 GPU=2.4G ETA=19m
+Step    90/2000 [TuringRD-NCA] | CE=6.0194 PPL=411.3 | 11177 tok/s ∇=15.23 GPU=2.4G ETA=19m
+Step   100/2000 [TuringRD-NCA] | CE=5.9561 PPL=386.1 | 11167 tok/s ∇=16.16 GPU=2.4G ETA=19m
+Step   110/2000 [TuringRD-NCA] | CE=5.9523 PPL=384.6 | 11422 tok/s ∇=32.35 GPU=2.4G ETA=19m
+Step   120/2000 [TuringRD-NCA] | CE=5.9769 PPL=394.2 | 11313 tok/s ∇=25.12 GPU=2.4G ETA=19m
+Step   130/2000 [TuringRD-NCA] | CE=5.8162 PPL=335.7 | 11100 tok/s ∇=37.07 GPU=2.4G ETA=18m
+Step   140/2000 [TuringRD-NCA] | CE=5.8217 PPL=337.6 | 11402 tok/s ∇=34.71 GPU=2.4G ETA=18m
+Step   150/2000 [TuringRD-NCA] | CE=5.8065 PPL=332.5 | 11518 tok/s ∇=nan GPU=2.4G ETA=18m
+Step   160/2000 [TuringRD-NCA] | CE=5.7982 PPL=329.7 | 11379 tok/s ∇=40.64 GPU=2.4G ETA=18m
+Step   170/2000 [TuringRD-NCA] | CE=5.7410 PPL=311.4 | 11142 tok/s ∇=46.24 GPU=2.4G ETA=18m
+Step   180/2000 [TuringRD-NCA] | CE=5.9628 PPL=388.7 | 11284 tok/s ∇=45.91 GPU=2.4G ETA=18m
+Step   190/2000 [TuringRD-NCA] | CE=5.5695 PPL=262.3 | 11606 tok/s ∇=29.28 GPU=2.4G ETA=18m
+Step   200/2000 [TuringRD-NCA] | CE=5.5536 PPL=258.2 | 11496 tok/s ∇=36.67 GPU=2.4G ETA=18m
+  >>> VAL: CE=5.5276 PPL=251.5
+  Disk free before save (experiments\AENCA v15 (2D RD-NCA)\v15_tinystories_160m_20260331_230750): 11.68 GB
+  Saved checkpoint: best_model.pt
+  Disk free after save (experiments\AENCA v15 (2D RD-NCA)\v15_tinystories_160m_20260331_230750): 9.89 GB
+  >>> New best Val PPL: 251.5
+Step   210/2000 [TuringRD-NCA] | CE=5.5299 PPL=252.1 | 11086 tok/s ∇=49.78 GPU=2.4G ETA=19m
+Step   220/2000 [TuringRD-NCA] | CE=5.3439 PPL=209.3 | 11064 tok/s ∇=43.01 GPU=2.4G ETA=19m
+Step   230/2000 [TuringRD-NCA] | CE=5.1516 PPL=172.7 | 10635 tok/s ∇=55.59 GPU=2.4G ETA=19m
+Step   240/2000 [TuringRD-NCA] | CE=5.1599 PPL=174.1 | 11117 tok/s ∇=67.23 GPU=2.4G ETA=19m
+Step   250/2000 [TuringRD-NCA] | CE=5.0312 PPL=153.1 | 11051 tok/s ∇=77.04 GPU=2.4G ETA=18m
+Step   260/2000 [TuringRD-NCA] | CE=5.0888 PPL=162.2 | 11469 tok/s ∇=88.85 GPU=2.4G ETA=18m
+Step   270/2000 [TuringRD-NCA] | CE=5.1052 PPL=164.9 | 11251 tok/s ∇=89.69 GPU=2.4G ETA=18m
+Step   280/2000 [TuringRD-NCA] | CE=4.7909 PPL=120.4 | 11298 tok/s ∇=49.31 GPU=2.4G ETA=18m
+Step   290/2000 [TuringRD-NCA] | CE=4.6355 PPL=103.1 | 11267 tok/s ∇=42.90 GPU=2.4G ETA=18m
+Step   300/2000 [TuringRD-NCA] | CE=4.7303 PPL=113.3 | 10171 tok/s ∇=62.54 GPU=2.4G ETA=18m
+Step   310/2000 [TuringRD-NCA] | CE=4.5136 PPL=91.3 | 11178 tok/s ∇=61.90 GPU=2.4G ETA=18m
+Step   320/2000 [TuringRD-NCA] | CE=4.6653 PPL=106.2 | 11247 tok/s ∇=71.16 GPU=2.4G ETA=17m
+Step   330/2000 [TuringRD-NCA] | CE=4.5628 PPL=95.8 | 10749 tok/s ∇=74.01 GPU=2.4G ETA=17m
+Step   340/2000 [TuringRD-NCA] | CE=4.2927 PPL=73.2 | 11076 tok/s ∇=99.96 GPU=2.4G ETA=17m
+Step   350/2000 [TuringRD-NCA] | CE=4.6105 PPL=100.5 | 10872 tok/s ∇=71.78 GPU=2.4G ETA=17m
+Step   360/2000 [TuringRD-NCA] | CE=4.3930 PPL=80.9 | 10952 tok/s ∇=120.80 GPU=2.4G ETA=17m
+Step   370/2000 [TuringRD-NCA] | CE=4.2682 PPL=71.4 | 11085 tok/s ∇=108.07 GPU=2.4G ETA=17m
+Step   380/2000 [TuringRD-NCA] | CE=4.3005 PPL=73.7 | 11246 tok/s ∇=136.81 GPU=2.4G ETA=17m
+Step   390/2000 [TuringRD-NCA] | CE=4.3174 PPL=75.0 | 11682 tok/s ∇=53.28 GPU=2.4G ETA=17m
+Step   400/2000 [TuringRD-NCA] | CE=4.4151 PPL=82.7 | 10171 tok/s ∇=95.97 GPU=2.4G ETA=16m
+  >>> VAL: CE=4.3192 PPL=75.1
+  Disk free before save (experiments\AENCA v15 (2D RD-NCA)\v15_tinystories_160m_20260331_230750): 9.89 GB
+  Saved checkpoint: best_model.pt
+  Disk free after save (experiments\AENCA v15 (2D RD-NCA)\v15_tinystories_160m_20260331_230750): 9.89 GB
+  >>> New best Val PPL: 75.1
+Step   410/2000 [TuringRD-NCA] | CE=4.1384 PPL=62.7 | 11254 tok/s ∇=72.38 GPU=2.4G ETA=17m
+Step   420/2000 [TuringRD-NCA] | CE=4.1922 PPL=66.2 | 11226 tok/s ∇=143.81 GPU=2.4G ETA=17m
+Step   430/2000 [TuringRD-NCA] | CE=4.4115 PPL=82.4 | 11544 tok/s ∇=140.88 GPU=2.4G ETA=17m
+Step   440/2000 [TuringRD-NCA] | CE=4.2643 PPL=71.1 | 11177 tok/s ∇=153.87 GPU=2.4G ETA=17m
+Step   450/2000 [TuringRD-NCA] | CE=4.2794 PPL=72.2 | 11164 tok/s ∇=130.96 GPU=2.4G ETA=16m
+Step   460/2000 [TuringRD-NCA] | CE=4.2370 PPL=69.2 | 10971 tok/s ∇=154.50 GPU=2.4G ETA=16m
+Step   470/2000 [TuringRD-NCA] | CE=4.3283 PPL=75.8 | 11054 tok/s ∇=129.93 GPU=2.4G ETA=16m
+Step   480/2000 [TuringRD-NCA] | CE=4.4796 PPL=88.2 | 11245 tok/s ∇=114.52 GPU=2.4G ETA=16m
+Step   490/2000 [TuringRD-NCA] | CE=4.2226 PPL=68.2 | 11151 tok/s ∇=79.64 GPU=2.4G ETA=16m
+Step   500/2000 [TuringRD-NCA] | CE=4.2260 PPL=68.4 | 11063 tok/s ∇=177.92 GPU=2.4G ETA=16m
+  >>> Sample: Once upon a time, and started to go home. It was very high for a time, there was not worry, and said she saw, but they would't know what's mom and Ben was a time to have a long, and the end of the sto...
+  Disk free before save (experiments\AENCA v15 (2D RD-NCA)\v15_tinystories_160m_20260331_230750): 9.89 GB
+  Saved checkpoint: checkpoint_step500.pt
+  Disk free after save (experiments\AENCA v15 (2D RD-NCA)\v15_tinystories_160m_20260331_230750): 8.10 GB
+  Disk free before save (experiments\AENCA v15 (2D RD-NCA)\v15_tinystories_160m_20260331_230750): 8.10 GB
+  Saved checkpoint: latest.pt
+  Disk free after save (experiments\AENCA v15 (2D RD-NCA)\v15_tinystories_160m_20260331_230750): 6.31 GB
+Step   510/2000 [TuringRD-NCA] | CE=4.1545 PPL=63.7 | 11009 tok/s ∇=127.57 GPU=2.4G ETA=17m
+Step   520/2000 [TuringRD-NCA] | CE=4.2179 PPL=67.9 | 10910 tok/s ∇=95.77 GPU=2.4G ETA=17m
+Step   530/2000 [TuringRD-NCA] | CE=4.2337 PPL=69.0 | 10965 tok/s ∇=146.70 GPU=2.4G ETA=16m
+Step   540/2000 [TuringRD-NCA] | CE=4.2953 PPL=73.4 | 11367 tok/s ∇=146.46 GPU=2.4G ETA=16m
+Step   550/2000 [TuringRD-NCA] | CE=4.2477 PPL=69.9 | 11699 tok/s ∇=71.11 GPU=2.4G ETA=16m
+Step   560/2000 [TuringRD-NCA] | CE=4.1514 PPL=63.5 | 11233 tok/s ∇=124.38 GPU=2.4G ETA=16m
+Step   570/2000 [TuringRD-NCA] | CE=4.0137 PPL=55.4 | 10894 tok/s ∇=85.88 GPU=2.4G ETA=16m
+Step   580/2000 [TuringRD-NCA] | CE=4.2302 PPL=68.7 | 11332 tok/s ∇=114.43 GPU=2.4G ETA=16m
+Step   590/2000 [TuringRD-NCA] | CE=4.1960 PPL=66.4 | 10197 tok/s ∇=90.46 GPU=2.4G ETA=16m
+Step   600/2000 [TuringRD-NCA] | CE=4.2117 PPL=67.5 | 11686 tok/s ∇=70.35 GPU=2.4G ETA=15m
+  >>> VAL: CE=4.1357 PPL=62.5
+  Disk free before save (experiments\AENCA v15 (2D RD-NCA)\v15_tinystories_160m_20260331_230750): 6.31 GB
+  Saved checkpoint: best_model.pt
+  Disk free after save (experiments\AENCA v15 (2D RD-NCA)\v15_tinystories_160m_20260331_230750): 6.32 GB
+  >>> New best Val PPL: 62.5
+Step   610/2000 [TuringRD-NCA] | CE=4.1503 PPL=63.5 | 12690 tok/s ∇=98.09 GPU=2.4G ETA=16m
+Step   620/2000 [TuringRD-NCA] | CE=4.2233 PPL=68.3 | 12669 tok/s ∇=103.16 GPU=2.4G ETA=15m
+Step   630/2000 [TuringRD-NCA] | CE=4.0952 PPL=60.1 | 13673 tok/s ∇=128.68 GPU=2.4G ETA=15m
+Step   640/2000 [TuringRD-NCA] | CE=4.1363 PPL=62.6 | 13725 tok/s ∇=201.13 GPU=2.4G ETA=15m
+Step   650/2000 [TuringRD-NCA] | CE=4.1192 PPL=61.5 | 13715 tok/s ∇=149.91 GPU=2.4G ETA=15m
+Step   660/2000 [TuringRD-NCA] | CE=4.1483 PPL=63.3 | 13448 tok/s ∇=129.32 GPU=2.4G ETA=15m
+Step   670/2000 [TuringRD-NCA] | CE=4.0760 PPL=58.9 | 13519 tok/s ∇=128.35 GPU=2.4G ETA=14m
+Step   680/2000 [TuringRD-NCA] | CE=4.1230 PPL=61.7 | 13448 tok/s ∇=79.28 GPU=2.4G ETA=14m
+Step   690/2000 [TuringRD-NCA] | CE=4.1246 PPL=61.8 | 12121 tok/s ∇=91.47 GPU=2.4G ETA=14m
+Step   700/2000 [TuringRD-NCA] | CE=4.0639 PPL=58.2 | 13610 tok/s ∇=152.91 GPU=2.4G ETA=14m
+Step   710/2000 [TuringRD-NCA] | CE=3.9854 PPL=53.8 | 13146 tok/s ∇=55.69 GPU=2.4G ETA=14m
+Step   720/2000 [TuringRD-NCA] | CE=4.1437 PPL=63.0 | 13190 tok/s ∇=66.96 GPU=2.4G ETA=14m
+Step   730/2000 [TuringRD-NCA] | CE=4.1557 PPL=63.8 | 12815 tok/s ∇=65.70 GPU=2.4G ETA=14m
+Step   740/2000 [TuringRD-NCA] | CE=4.1483 PPL=63.3 | 12069 tok/s ∇=97.61 GPU=2.4G ETA=13m
+Step   750/2000 [TuringRD-NCA] | CE=4.0998 PPL=60.3 | 11812 tok/s ∇=69.65 GPU=2.4G ETA=13m
+Step   760/2000 [TuringRD-NCA] | CE=4.0892 PPL=59.7 | 12359 tok/s ∇=70.96 GPU=2.4G ETA=13m
+Step   770/2000 [TuringRD-NCA] | CE=4.0547 PPL=57.7 | 11279 tok/s ∇=47.62 GPU=2.4G ETA=13m
+Step   780/2000 [TuringRD-NCA] | CE=4.0227 PPL=55.8 | 11367 tok/s ∇=43.71 GPU=2.4G ETA=13m
+Step   790/2000 [TuringRD-NCA] | CE=4.0013 PPL=54.7 | 10469 tok/s ∇=56.57 GPU=2.4G ETA=13m
+Step   800/2000 [TuringRD-NCA] | CE=4.1232 PPL=61.8 | 11506 tok/s ∇=41.20 GPU=2.4G ETA=13m
+  >>> VAL: CE=4.0409 PPL=56.9
+  Disk free before save (experiments\AENCA v15 (2D RD-NCA)\v15_tinystories_160m_20260331_230750): 6.33 GB
+  Saved checkpoint: best_model.pt
+  Disk free after save (experiments\AENCA v15 (2D RD-NCA)\v15_tinystories_160m_20260331_230750): 6.33 GB
+  >>> New best Val PPL: 56.9
+Step   810/2000 [TuringRD-NCA] | CE=4.0376 PPL=56.7 | 11356 tok/s ∇=55.05 GPU=2.4G ETA=13m
+Step   820/2000 [TuringRD-NCA] | CE=4.0438 PPL=57.0 | 11158 tok/s ∇=58.33 GPU=2.4G ETA=13m
+Step   830/2000 [TuringRD-NCA] | CE=4.0413 PPL=56.9 | 11127 tok/s ∇=55.32 GPU=2.4G ETA=13m
+Step   840/2000 [TuringRD-NCA] | CE=4.0627 PPL=58.1 | 11443 tok/s ∇=50.44 GPU=2.4G ETA=13m
+Step   850/2000 [TuringRD-NCA] | CE=3.9495 PPL=51.9 | 11228 tok/s ∇=57.13 GPU=2.4G ETA=12m
+Step   860/2000 [TuringRD-NCA] | CE=4.0715 PPL=58.6 | 10718 tok/s ∇=61.56 GPU=2.4G ETA=12m
+Step   870/2000 [TuringRD-NCA] | CE=4.0122 PPL=55.3 | 11203 tok/s ∇=542.60 GPU=2.4G ETA=12m
+Step   880/2000 [TuringRD-NCA] | CE=3.9680 PPL=52.9 | 9810 tok/s ∇=34.79 GPU=2.4G ETA=12m
+Step   890/2000 [TuringRD-NCA] | CE=3.9753 PPL=53.3 | 11232 tok/s ∇=56.74 GPU=2.4G ETA=12m
+Step   900/2000 [TuringRD-NCA] | CE=4.0051 PPL=54.9 | 10882 tok/s ∇=25.77 GPU=2.4G ETA=12m
+Step   910/2000 [TuringRD-NCA] | CE=3.9731 PPL=53.1 | 11145 tok/s ∇=44.83 GPU=2.4G ETA=12m
+Step   920/2000 [TuringRD-NCA] | CE=4.0602 PPL=58.0 | 11052 tok/s ∇=21.53 GPU=2.4G ETA=12m
+Step   930/2000 [TuringRD-NCA] | CE=3.9825 PPL=53.7 | 11324 tok/s ∇=22.10 GPU=2.4G ETA=11m
+Step   940/2000 [TuringRD-NCA] | CE=4.0329 PPL=56.4 | 11552 tok/s ∇=56.21 GPU=2.4G ETA=11m
+Step   950/2000 [TuringRD-NCA] | CE=3.9165 PPL=50.2 | 11553 tok/s ∇=21.48 GPU=2.4G ETA=11m
+Step   960/2000 [TuringRD-NCA] | CE=3.9713 PPL=53.1 | 11185 tok/s ∇=34.64 GPU=2.4G ETA=11m
+Step   970/2000 [TuringRD-NCA] | CE=4.0419 PPL=56.9 | 11148 tok/s ∇=30.67 GPU=2.4G ETA=11m
+Step   980/2000 [TuringRD-NCA] | CE=3.9514 PPL=52.0 | 10377 tok/s ∇=17.88 GPU=2.4G ETA=11m
+Step   990/2000 [TuringRD-NCA] | CE=4.1259 PPL=61.9 | 11440 tok/s ∇=29.90 GPU=2.4G ETA=11m
+Step  1000/2000 [TuringRD-NCA] | CE=3.9625 PPL=52.6 | 11293 tok/s ∇=25.00 GPU=2.4G ETA=11m
+  >>> VAL: CE=3.9785 PPL=53.4
+  Disk free before save (experiments\AENCA v15 (2D RD-NCA)\v15_tinystories_160m_20260331_230750): 6.32 GB
+  Saved checkpoint: best_model.pt
+  Disk free after save (experiments\AENCA v15 (2D RD-NCA)\v15_tinystories_160m_20260331_230750): 6.32 GB
+  >>> New best Val PPL: 53.4
+  >>> Sample: Once upon a time, and she was a big and ran to be careful, "It's important. His dad. She loved to the garden and he remembered what to come over to find something. He opened the hill. He took it was s...
+  Disk free before save (experiments\AENCA v15 (2D RD-NCA)\v15_tinystories_160m_20260331_230750): 6.32 GB
+  Saved checkpoint: checkpoint_step1000.pt
+  Disk free after save (experiments\AENCA v15 (2D RD-NCA)\v15_tinystories_160m_20260331_230750): 4.13 GB
+  Disk free before save (experiments\AENCA v15 (2D RD-NCA)\v15_tinystories_160m_20260331_230750): 4.13 GB
+  Saved checkpoint: latest.pt
+  Disk free after save (experiments\AENCA v15 (2D RD-NCA)\v15_tinystories_160m_20260331_230750): 3.27 GB
+Step  1010/2000 [TuringRD-NCA] | CE=3.8859 PPL=48.7 | 11073 tok/s ∇=30.97 GPU=2.4G ETA=11m
+Step  1020/2000 [TuringRD-NCA] | CE=4.0177 PPL=55.6 | 11234 tok/s ∇=34.57 GPU=2.4G ETA=11m
+Step  1030/2000 [TuringRD-NCA] | CE=3.9901 PPL=54.1 | 10083 tok/s ∇=27.01 GPU=2.4G ETA=11m
+Step  1040/2000 [TuringRD-NCA] | CE=3.9887 PPL=54.0 | 11392 tok/s ∇=24.39 GPU=2.4G ETA=11m
+Step  1050/2000 [TuringRD-NCA] | CE=4.0497 PPL=57.4 | 11511 tok/s ∇=60.04 GPU=2.4G ETA=11m
+Step  1060/2000 [TuringRD-NCA] | CE=4.0731 PPL=58.7 | 11027 tok/s ∇=31.20 GPU=2.4G ETA=11m
+Step  1070/2000 [TuringRD-NCA] | CE=3.9026 PPL=49.5 | 11388 tok/s ∇=30.58 GPU=2.4G ETA=11m
+Step  1080/2000 [TuringRD-NCA] | CE=3.9870 PPL=53.9 | 11154 tok/s ∇=26.20 GPU=2.4G ETA=11m
+Step  1090/2000 [TuringRD-NCA] | CE=4.0037 PPL=54.8 | 10885 tok/s ∇=21.55 GPU=2.4G ETA=10m
+Step  1100/2000 [TuringRD-NCA] | CE=3.9153 PPL=50.2 | 10085 tok/s ∇=45.81 GPU=2.4G ETA=10m
+Step  1110/2000 [TuringRD-NCA] | CE=4.0915 PPL=59.8 | 11042 tok/s ∇=28.07 GPU=2.4G ETA=10m
+Step  1120/2000 [TuringRD-NCA] | CE=4.0013 PPL=54.7 | 11413 tok/s ∇=36.08 GPU=2.4G ETA=10m
+Step  1130/2000 [TuringRD-NCA] | CE=3.9075 PPL=49.8 | 11196 tok/s ∇=20.63 GPU=2.4G ETA=10m
+Step  1140/2000 [TuringRD-NCA] | CE=3.9660 PPL=52.8 | 11120 tok/s ∇=22.85 GPU=2.4G ETA=10m
+Step  1150/2000 [TuringRD-NCA] | CE=4.0428 PPL=57.0 | 10932 tok/s ∇=29.25 GPU=2.4G ETA=10m
+Step  1160/2000 [TuringRD-NCA] | CE=3.8759 PPL=48.2 | 11300 tok/s ∇=32.19 GPU=2.4G ETA=10m
+Step  1170/2000 [TuringRD-NCA] | CE=3.8948 PPL=49.1 | 10961 tok/s ∇=27.54 GPU=2.4G ETA=9m
+Step  1180/2000 [TuringRD-NCA] | CE=4.0069 PPL=55.0 | 11331 tok/s ∇=18.11 GPU=2.4G ETA=9m
+Step  1190/2000 [TuringRD-NCA] | CE=4.0581 PPL=57.9 | 10482 tok/s ∇=16.85 GPU=2.4G ETA=9m
+Step  1200/2000 [TuringRD-NCA] | CE=3.9336 PPL=51.1 | 8213 tok/s ∇=26.83 GPU=2.4G ETA=9m
+  >>> VAL: CE=3.9527 PPL=52.1
+  Disk free before save (experiments\AENCA v15 (2D RD-NCA)\v15_tinystories_160m_20260331_230750): 4.09 GB
+  Saved checkpoint: best_model.pt
+  Disk free after save (experiments\AENCA v15 (2D RD-NCA)\v15_tinystories_160m_20260331_230750): 4.09 GB
+  >>> New best Val PPL: 52.1
+Step  1210/2000 [TuringRD-NCA] | CE=4.0378 PPL=56.7 | 9429 tok/s ∇=39.47 GPU=2.4G ETA=9m
+Step  1220/2000 [TuringRD-NCA] | CE=3.8491 PPL=47.0 | 11111 tok/s ∇=20.52 GPU=2.4G ETA=9m
+Step  1230/2000 [TuringRD-NCA] | CE=3.9912 PPL=54.1 | 10334 tok/s ∇=23.00 GPU=2.4G ETA=9m
+Step  1240/2000 [TuringRD-NCA] | CE=3.9353 PPL=51.2 | 11435 tok/s ∇=24.07 GPU=2.4G ETA=9m
+Step  1250/2000 [TuringRD-NCA] | CE=3.8692 PPL=47.9 | 11029 tok/s ∇=14.42 GPU=2.4G ETA=9m
+Step  1260/2000 [TuringRD-NCA] | CE=4.1308 PPL=62.2 | 11069 tok/s ∇=18.69 GPU=2.4G ETA=9m
+Step  1270/2000 [TuringRD-NCA] | CE=3.9308 PPL=50.9 | 11358 tok/s ∇=18.21 GPU=2.4G ETA=8m
+Step  1280/2000 [TuringRD-NCA] | CE=3.9781 PPL=53.4 | 11081 tok/s ∇=25.79 GPU=2.4G ETA=8m
+Step  1290/2000 [TuringRD-NCA] | CE=3.9672 PPL=52.8 | 11097 tok/s ∇=24.90 GPU=2.4G ETA=8m
+Step  1300/2000 [TuringRD-NCA] | CE=3.8848 PPL=48.7 | 11319 tok/s ∇=35.77 GPU=2.4G ETA=8m
+Step  1310/2000 [TuringRD-NCA] | CE=3.9012 PPL=49.5 | 11228 tok/s ∇=25.70 GPU=2.4G ETA=8m
+Step  1320/2000 [TuringRD-NCA] | CE=3.9160 PPL=50.2 | 11100 tok/s ∇=33.62 GPU=2.4G ETA=8m
+Step  1330/2000 [TuringRD-NCA] | CE=3.9509 PPL=52.0 | 10203 tok/s ∇=38.28 GPU=2.4G ETA=8m
+Step  1340/2000 [TuringRD-NCA] | CE=3.9502 PPL=51.9 | 10671 tok/s ∇=20.20 GPU=2.4G ETA=8m
+Step  1350/2000 [TuringRD-NCA] | CE=4.0050 PPL=54.9 | 10937 tok/s ∇=25.58 GPU=2.4G ETA=7m
+Step  1360/2000 [TuringRD-NCA] | CE=3.9767 PPL=53.3 | 10978 tok/s ∇=36.86 GPU=2.4G ETA=7m
+Step  1370/2000 [TuringRD-NCA] | CE=3.9351 PPL=51.2 | 11327 tok/s ∇=17.55 GPU=2.4G ETA=7m
+Step  1380/2000 [TuringRD-NCA] | CE=3.8886 PPL=48.8 | 11143 tok/s ∇=21.14 GPU=2.4G ETA=7m
+Step  1390/2000 [TuringRD-NCA] | CE=3.8445 PPL=46.7 | 11169 tok/s ∇=42.69 GPU=2.4G ETA=7m
+Step  1400/2000 [TuringRD-NCA] | CE=3.7643 PPL=43.1 | 11143 tok/s ∇=10.19 GPU=2.4G ETA=7m
+  >>> VAL: CE=3.9253 PPL=50.7
+  Disk free before save (experiments\AENCA v15 (2D RD-NCA)\v15_tinystories_160m_20260331_230750): 4.09 GB
+  Saved checkpoint: best_model.pt
+  Disk free after save (experiments\AENCA v15 (2D RD-NCA)\v15_tinystories_160m_20260331_230750): 4.09 GB
+  >>> New best Val PPL: 50.7
+Step  1410/2000 [TuringRD-NCA] | CE=3.9966 PPL=54.4 | 11203 tok/s ∇=17.87 GPU=2.4G ETA=7m
+Step  1420/2000 [TuringRD-NCA] | CE=3.8964 PPL=49.2 | 11059 tok/s ∇=31.60 GPU=2.4G ETA=7m
+Step  1430/2000 [TuringRD-NCA] | CE=3.9295 PPL=50.9 | 10157 tok/s ∇=8.80 GPU=2.4G ETA=7m
+Step  1440/2000 [TuringRD-NCA] | CE=3.8056 PPL=45.0 | 11289 tok/s ∇=14.21 GPU=2.4G ETA=6m
+Step  1450/2000 [TuringRD-NCA] | CE=4.0175 PPL=55.6 | 11498 tok/s ∇=21.38 GPU=2.4G ETA=6m
+Step  1460/2000 [TuringRD-NCA] | CE=3.8977 PPL=49.3 | 11583 tok/s ∇=17.11 GPU=2.4G ETA=6m
+Step  1470/2000 [TuringRD-NCA] | CE=3.9375 PPL=51.3 | 11130 tok/s ∇=13.89 GPU=2.4G ETA=6m
+Step  1480/2000 [TuringRD-NCA] | CE=3.9741 PPL=53.2 | 11354 tok/s ∇=112.96 GPU=2.4G ETA=6m
+Step  1490/2000 [TuringRD-NCA] | CE=3.9679 PPL=52.9 | 11518 tok/s ∇=26.40 GPU=2.4G ETA=6m
+Step  1500/2000 [TuringRD-NCA] | CE=3.8785 PPL=48.4 | 10973 tok/s ∇=15.08 GPU=2.4G ETA=6m
+  >>> Sample: Once upon a time, "Come on the toy and the sun. 
+
+
+
+She was a time, but he was a special place. She smiled and the world! We hope you can't worry. Tim said, "Let's a small bird was a little girl who w...
+  Disk free before save (experiments\AENCA v15 (2D RD-NCA)\v15_tinystories_160m_20260331_230750): 4.09 GB
+  Saved checkpoint: checkpoint_step1500.pt
+  Disk free after save (experiments\AENCA v15 (2D RD-NCA)\v15_tinystories_160m_20260331_230750): 2.31 GB
+  Disk free before save (experiments\AENCA v15 (2D RD-NCA)\v15_tinystories_160m_20260331_230750): 2.31 GB
+  Saved checkpoint: latest.pt
+  Disk free after save (experiments\AENCA v15 (2D RD-NCA)\v15_tinystories_160m_20260331_230750): 2.31 GB
+Step  1510/2000 [TuringRD-NCA] | CE=4.0166 PPL=55.5 | 10866 tok/s ∇=15.42 GPU=2.4G ETA=6m
+Step  1520/2000 [TuringRD-NCA] | CE=3.8544 PPL=47.2 | 11321 tok/s ∇=21.41 GPU=2.4G ETA=6m
+Step  1530/2000 [TuringRD-NCA] | CE=3.9596 PPL=52.4 | 11335 tok/s ∇=20.77 GPU=2.4G ETA=5m
+Step  1540/2000 [TuringRD-NCA] | CE=3.9155 PPL=50.2 | 11069 tok/s ∇=15.99 GPU=2.4G ETA=5m
+Step  1550/2000 [TuringRD-NCA] | CE=3.9777 PPL=53.4 | 11173 tok/s ∇=11.55 GPU=2.4G ETA=5m
+Step  1560/2000 [TuringRD-NCA] | CE=3.9146 PPL=50.1 | 11302 tok/s ∇=22.97 GPU=2.4G ETA=5m
+Step  1570/2000 [TuringRD-NCA] | CE=4.0461 PPL=57.2 | 11096 tok/s ∇=13.75 GPU=2.4G ETA=5m
+Step  1580/2000 [TuringRD-NCA] | CE=3.8649 PPL=47.7 | 11094 tok/s ∇=14.99 GPU=2.4G ETA=5m
+Step  1590/2000 [TuringRD-NCA] | CE=4.0972 PPL=60.2 | 11450 tok/s ∇=12.15 GPU=2.4G ETA=5m
+Step  1600/2000 [TuringRD-NCA] | CE=3.8802 PPL=48.4 | 11049 tok/s ∇=20.18 GPU=2.4G ETA=5m
+  >>> VAL: CE=3.8972 PPL=49.3
+  Disk free before save (experiments\AENCA v15 (2D RD-NCA)\v15_tinystories_160m_20260331_230750): 2.31 GB
+  Saved checkpoint: best_model.pt
+  Disk free after save (experiments\AENCA v15 (2D RD-NCA)\v15_tinystories_160m_20260331_230750): 2.31 GB
+  >>> New best Val PPL: 49.3
+Step  1610/2000 [TuringRD-NCA] | CE=3.8407 PPL=46.6 | 10798 tok/s ∇=8.94 GPU=2.4G ETA=5m
+Step  1620/2000 [TuringRD-NCA] | CE=4.0300 PPL=56.3 | 11135 tok/s ∇=18.96 GPU=2.4G ETA=4m
+Step  1630/2000 [TuringRD-NCA] | CE=3.8288 PPL=46.0 | 11288 tok/s ∇=28.34 GPU=2.4G ETA=4m
+Step  1640/2000 [TuringRD-NCA] | CE=3.9349 PPL=51.2 | 10788 tok/s ∇=19.72 GPU=2.4G ETA=4m
+Step  1650/2000 [TuringRD-NCA] | CE=3.8166 PPL=45.5 | 11283 tok/s ∇=8.47 GPU=2.4G ETA=4m
+Step  1660/2000 [TuringRD-NCA] | CE=3.7627 PPL=43.1 | 11367 tok/s ∇=15.63 GPU=2.4G ETA=4m
+Step  1670/2000 [TuringRD-NCA] | CE=3.9202 PPL=50.4 | 11485 tok/s ∇=13.16 GPU=2.4G ETA=4m
+Step  1680/2000 [TuringRD-NCA] | CE=3.8455 PPL=46.8 | 10870 tok/s ∇=8.91 GPU=2.4G ETA=4m
+Step  1690/2000 [TuringRD-NCA] | CE=3.9634 PPL=52.6 | 11440 tok/s ∇=130.28 GPU=2.4G ETA=4m
+Step  1700/2000 [TuringRD-NCA] | CE=3.9821 PPL=53.6 | 11254 tok/s ∇=10.15 GPU=2.4G ETA=3m
+Step  1710/2000 [TuringRD-NCA] | CE=3.9377 PPL=51.3 | 11219 tok/s ∇=13.94 GPU=2.4G ETA=3m
+Step  1720/2000 [TuringRD-NCA] | CE=3.9301 PPL=50.9 | 11241 tok/s ∇=11.52 GPU=2.4G ETA=3m
+Step  1730/2000 [TuringRD-NCA] | CE=3.9325 PPL=51.0 | 11368 tok/s ∇=19.82 GPU=2.4G ETA=3m
+Step  1740/2000 [TuringRD-NCA] | CE=3.8155 PPL=45.4 | 11160 tok/s ∇=59.78 GPU=2.4G ETA=3m
+Step  1750/2000 [TuringRD-NCA] | CE=3.6832 PPL=39.8 | 11221 tok/s ∇=13.67 GPU=2.4G ETA=3m
+Step  1760/2000 [TuringRD-NCA] | CE=3.8620 PPL=47.6 | 11187 tok/s ∇=30.07 GPU=2.4G ETA=3m
+Step  1770/2000 [TuringRD-NCA] | CE=3.9621 PPL=52.6 | 11471 tok/s ∇=9.19 GPU=2.4G ETA=3m
+Step  1780/2000 [TuringRD-NCA] | CE=3.8252 PPL=45.8 | 10993 tok/s ∇=56.13 GPU=2.4G ETA=3m
+Step  1790/2000 [TuringRD-NCA] | CE=3.7796 PPL=43.8 | 11224 tok/s ∇=17.00 GPU=2.4G ETA=2m
+Step  1800/2000 [TuringRD-NCA] | CE=3.8710 PPL=48.0 | 11215 tok/s ∇=8.70 GPU=2.4G ETA=2m
+  >>> VAL: CE=3.8825 PPL=48.5
+  Disk free before save (experiments\AENCA v15 (2D RD-NCA)\v15_tinystories_160m_20260331_230750): 2.30 GB
+  Saved checkpoint: best_model.pt
+  Disk free after save (experiments\AENCA v15 (2D RD-NCA)\v15_tinystories_160m_20260331_230750): 2.30 GB
+  >>> New best Val PPL: 48.5
+Step  1810/2000 [TuringRD-NCA] | CE=3.9380 PPL=51.3 | 10813 tok/s ∇=5.32 GPU=2.4G ETA=2m
+Step  1820/2000 [TuringRD-NCA] | CE=3.8823 PPL=48.5 | 10895 tok/s ∇=16.58 GPU=2.4G ETA=2m
+Step  1830/2000 [TuringRD-NCA] | CE=4.0537 PPL=57.6 | 10799 tok/s ∇=13.51 GPU=2.4G ETA=2m
+Step  1840/2000 [TuringRD-NCA] | CE=3.8665 PPL=47.8 | 10828 tok/s ∇=19.89 GPU=2.4G ETA=2m
+Step  1850/2000 [TuringRD-NCA] | CE=3.7438 PPL=42.3 | 11079 tok/s ∇=16.56 GPU=2.4G ETA=2m
+Step  1860/2000 [TuringRD-NCA] | CE=3.7827 PPL=43.9 | 11132 tok/s ∇=18.27 GPU=2.4G ETA=2m
+Step  1870/2000 [TuringRD-NCA] | CE=3.9301 PPL=50.9 | 11173 tok/s ∇=13.39 GPU=2.4G ETA=1m
+Step  1880/2000 [TuringRD-NCA] | CE=3.9542 PPL=52.2 | 11590 tok/s ∇=13.72 GPU=2.4G ETA=1m
+Step  1890/2000 [TuringRD-NCA] | CE=3.8788 PPL=48.4 | 11107 tok/s ∇=9.69 GPU=2.4G ETA=1m
+Step  1900/2000 [TuringRD-NCA] | CE=3.7616 PPL=43.0 | 10715 tok/s ∇=11.36 GPU=2.4G ETA=1m
+Step  1910/2000 [TuringRD-NCA] | CE=3.6883 PPL=40.0 | 11112 tok/s ∇=8.44 GPU=2.4G ETA=1m
+Step  1920/2000 [TuringRD-NCA] | CE=4.0051 PPL=54.9 | 9717 tok/s ∇=10.75 GPU=2.4G ETA=1m
+Step  1930/2000 [TuringRD-NCA] | CE=3.8402 PPL=46.5 | 11234 tok/s ∇=8.24 GPU=2.4G ETA=1m
+Step  1940/2000 [TuringRD-NCA] | CE=3.8189 PPL=45.6 | 11365 tok/s ∇=10.74 GPU=2.4G ETA=1m
+Step  1950/2000 [TuringRD-NCA] | CE=3.8178 PPL=45.5 | 11373 tok/s ∇=8.81 GPU=2.4G ETA=1m
+Step  1960/2000 [TuringRD-NCA] | CE=3.8164 PPL=45.4 | 11662 tok/s ∇=11.89 GPU=2.4G ETA=0m
+Step  1970/2000 [TuringRD-NCA] | CE=4.0065 PPL=55.0 | 11227 tok/s ∇=16.36 GPU=2.4G ETA=0m
+Step  1980/2000 [TuringRD-NCA] | CE=3.9396 PPL=51.4 | 11404 tok/s ∇=47.25 GPU=2.4G ETA=0m
+Step  1990/2000 [TuringRD-NCA] | CE=3.9430 PPL=51.6 | 11467 tok/s ∇=9.55 GPU=2.4G ETA=0m
+Step  2000/2000 [TuringRD-NCA] | CE=3.9031 PPL=49.6 | 11359 tok/s ∇=16.50 GPU=2.4G ETA=0m
+  >>> VAL: CE=3.8969 PPL=49.3
+  >>> Sample: Once upon a time. But the tree. They were very sad. They made her toys. She looked angry and the park.
+The man and they were brave.
+
+The little girl named Timmy. It was happy. You were so happy and th...
+  Disk free before save (experiments\AENCA v15 (2D RD-NCA)\v15_tinystories_160m_20260331_230750): 2.30 GB
+  Saved checkpoint: checkpoint_step2000.pt
+  Disk free after save (experiments\AENCA v15 (2D RD-NCA)\v15_tinystories_160m_20260331_230750): 0.52 GB
+  Disk free before save (experiments\AENCA v15 (2D RD-NCA)\v15_tinystories_160m_20260331_230750): 0.52 GB

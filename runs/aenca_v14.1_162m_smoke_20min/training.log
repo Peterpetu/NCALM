@@ -1,0 +1,262 @@
+  Param group 'decay': 154,303,040 params, wd=0.1
+  Param group 'no_decay': 7,690,289 params, wd=0.0
+  Resumed from checkpoint: step=500, tokens=4,096,000, best_val_ppl=73.94
+==============================================================================
+  AENCA v14 (Emergent Dynamics)
+==============================================================================
+  Params: 161,993,329 total
+  Config: 2000 steps, batch=16, seq_len=512
+  Token budget: 16,384,000
+  Device: cuda
+==============================================================================
+Step   510/2000 [EmergentDynamics] | CE=3.9775 PPL=53.4 | 12638 tok/s ∇=76.19 GPU=3.1G ETA=0m
+Step   520/2000 [EmergentDynamics] | CE=4.1746 PPL=65.0 | 11978 tok/s ∇=71.22 GPU=3.1G ETA=1m
+Step   530/2000 [EmergentDynamics] | CE=4.0817 PPL=59.2 | 12278 tok/s ∇=66.61 GPU=3.1G ETA=1m
+Step   540/2000 [EmergentDynamics] | CE=4.0968 PPL=60.1 | 12222 tok/s ∇=56.54 GPU=3.1G ETA=1m
+Step   550/2000 [EmergentDynamics] | CE=4.0071 PPL=55.0 | 11693 tok/s ∇=41.06 GPU=3.1G ETA=2m
+Step   560/2000 [EmergentDynamics] | CE=4.0693 PPL=58.5 | 12278 tok/s ∇=36.78 GPU=3.1G ETA=2m
+Step   570/2000 [EmergentDynamics] | CE=3.9969 PPL=54.4 | 12283 tok/s ∇=49.30 GPU=3.1G ETA=2m
+Step   580/2000 [EmergentDynamics] | CE=4.0666 PPL=58.4 | 11979 tok/s ∇=35.50 GPU=3.1G ETA=2m
+Step   590/2000 [EmergentDynamics] | CE=3.9196 PPL=50.4 | 12593 tok/s ∇=47.97 GPU=3.1G ETA=2m
+Step   600/2000 [EmergentDynamics] | CE=4.0606 PPL=58.0 | 11693 tok/s ∇=43.57 GPU=3.1G ETA=3m
+  >>> VAL: CE=4.0448 PPL=57.1
+  Disk free before save (C:): 21.39 GB
+  Saved checkpoint: best_model.pt
+  Disk free after save (C:): 21.39 GB
+  >>> New best Val PPL: 57.1
+Step   610/2000 [EmergentDynamics] | CE=3.9758 PPL=53.3 | 11790 tok/s ∇=47.50 GPU=3.1G ETA=3m
+Step   620/2000 [EmergentDynamics] | CE=4.0394 PPL=56.8 | 11840 tok/s ∇=56.13 GPU=3.1G ETA=3m
+Step   630/2000 [EmergentDynamics] | CE=4.1808 PPL=65.4 | 11890 tok/s ∇=53.85 GPU=3.1G ETA=4m
+Step   640/2000 [EmergentDynamics] | CE=3.9718 PPL=53.1 | 12283 tok/s ∇=29.48 GPU=3.1G ETA=4m
+Step   650/2000 [EmergentDynamics] | CE=4.0437 PPL=57.0 | 11699 tok/s ∇=38.66 GPU=3.1G ETA=4m
+Step   660/2000 [EmergentDynamics] | CE=4.0256 PPL=56.0 | 11665 tok/s ∇=46.74 GPU=3.1G ETA=4m
+Step   670/2000 [EmergentDynamics] | CE=3.9273 PPL=50.8 | 12278 tok/s ∇=43.79 GPU=3.1G ETA=4m
+Step   680/2000 [EmergentDynamics] | CE=4.0139 PPL=55.4 | 12242 tok/s ∇=36.02 GPU=3.1G ETA=4m
+Step   690/2000 [EmergentDynamics] | CE=3.9747 PPL=53.2 | 11981 tok/s ∇=21.64 GPU=3.1G ETA=4m
+Step   700/2000 [EmergentDynamics] | CE=4.0374 PPL=56.7 | 11978 tok/s ∇=25.82 GPU=3.1G ETA=5m
+Step   710/2000 [EmergentDynamics] | CE=3.9852 PPL=53.8 | 11693 tok/s ∇=29.68 GPU=3.1G ETA=5m
+Step   720/2000 [EmergentDynamics] | CE=3.9299 PPL=50.9 | 12174 tok/s ∇=24.33 GPU=3.1G ETA=5m
+Step   730/2000 [EmergentDynamics] | CE=3.9444 PPL=51.6 | 12500 tok/s ∇=21.43 GPU=3.1G ETA=5m
+Step   740/2000 [EmergentDynamics] | CE=3.9572 PPL=52.3 | 12042 tok/s ∇=47.14 GPU=3.1G ETA=5m
+Step   750/2000 [EmergentDynamics] | CE=4.0006 PPL=54.6 | 12285 tok/s ∇=23.74 GPU=3.1G ETA=5m
+Step   760/2000 [EmergentDynamics] | CE=3.9910 PPL=54.1 | 11422 tok/s ∇=34.21 GPU=3.1G ETA=5m
+Step   770/2000 [EmergentDynamics] | CE=3.8807 PPL=48.5 | 11978 tok/s ∇=33.25 GPU=3.1G ETA=5m
+Step   780/2000 [EmergentDynamics] | CE=4.0947 PPL=60.0 | 12268 tok/s ∇=31.55 GPU=3.1G ETA=5m
+Step   790/2000 [EmergentDynamics] | CE=3.9731 PPL=53.1 | 12191 tok/s ∇=17.52 GPU=3.1G ETA=5m
+Step   800/2000 [EmergentDynamics] | CE=3.9403 PPL=51.4 | 12278 tok/s ∇=42.72 GPU=3.1G ETA=5m
+  >>> VAL: CE=3.9681 PPL=52.9
+  Disk free before save (C:): 21.39 GB
+  Saved checkpoint: best_model.pt
+  Disk free after save (C:): 21.39 GB
+  >>> New best Val PPL: 52.9
+Step   810/2000 [EmergentDynamics] | CE=3.9498 PPL=51.9 | 12593 tok/s ∇=40.14 GPU=3.1G ETA=6m
+Step   820/2000 [EmergentDynamics] | CE=3.8124 PPL=45.3 | 11430 tok/s ∇=35.15 GPU=3.1G ETA=6m
+Step   830/2000 [EmergentDynamics] | CE=3.9417 PPL=51.5 | 11693 tok/s ∇=32.11 GPU=3.1G ETA=6m
+Step   840/2000 [EmergentDynamics] | CE=4.0828 PPL=59.3 | 12278 tok/s ∇=25.04 GPU=3.1G ETA=6m
+Step   850/2000 [EmergentDynamics] | CE=4.0422 PPL=57.0 | 12272 tok/s ∇=42.41 GPU=3.1G ETA=6m
+Step   860/2000 [EmergentDynamics] | CE=3.9348 PPL=51.2 | 12302 tok/s ∇=26.47 GPU=3.1G ETA=6m
+Step   870/2000 [EmergentDynamics] | CE=3.8964 PPL=49.2 | 11416 tok/s ∇=20.90 GPU=3.1G ETA=6m
+Step   880/2000 [EmergentDynamics] | CE=3.8966 PPL=49.2 | 12273 tok/s ∇=16.47 GPU=3.1G ETA=6m
+Step   890/2000 [EmergentDynamics] | CE=3.8957 PPL=49.2 | 12577 tok/s ∇=23.67 GPU=3.1G ETA=6m
+Step   900/2000 [EmergentDynamics] | CE=3.9596 PPL=52.4 | 12290 tok/s ∇=32.55 GPU=3.1G ETA=6m
+Step   910/2000 [EmergentDynamics] | CE=3.8944 PPL=49.1 | 12603 tok/s ∇=39.31 GPU=3.1G ETA=6m
+Step   920/2000 [EmergentDynamics] | CE=3.9473 PPL=51.8 | 11421 tok/s ∇=39.41 GPU=3.1G ETA=6m
+Step   930/2000 [EmergentDynamics] | CE=3.8146 PPL=45.4 | 12277 tok/s ∇=26.48 GPU=3.1G ETA=6m
+Step   940/2000 [EmergentDynamics] | CE=3.8879 PPL=48.8 | 12271 tok/s ∇=15.17 GPU=3.1G ETA=6m
+Step   950/2000 [EmergentDynamics] | CE=4.0571 PPL=57.8 | 12593 tok/s ∇=26.63 GPU=3.1G ETA=6m
+Step   960/2000 [EmergentDynamics] | CE=3.9588 PPL=52.4 | 12284 tok/s ∇=21.94 GPU=3.1G ETA=6m
+Step   970/2000 [EmergentDynamics] | CE=3.8692 PPL=47.9 | 12277 tok/s ∇=13.55 GPU=3.1G ETA=6m
+Step   980/2000 [EmergentDynamics] | CE=3.9313 PPL=51.0 | 11421 tok/s ∇=19.35 GPU=3.1G ETA=6m
+Step   990/2000 [EmergentDynamics] | CE=4.0637 PPL=58.2 | 12736 tok/s ∇=17.67 GPU=3.1G ETA=6m
+Step  1000/2000 [EmergentDynamics] | CE=3.9798 PPL=53.5 | 12582 tok/s ∇=13.92 GPU=3.1G ETA=6m
+  >>> VAL: CE=3.9117 PPL=50.0
+  Disk free before save (C:): 21.39 GB
+  Saved checkpoint: best_model.pt
+  Disk free after save (C:): 21.39 GB
+  >>> New best Val PPL: 50.0
+  >>> Sample: Once upon a time, we can teach me help others and the grass.
+Lily. They played together. They like it. One day, but eventually it. He said. He was very powerful.
+One day she would be a time, "I'm sorr...
+  Disk free before save (C:): 21.39 GB
+  Saved checkpoint: checkpoint_step1000.pt
+  Disk free after save (C:): 19.58 GB
+  Disk free before save (C:): 19.58 GB
+  Saved checkpoint: latest.pt
+  Disk free after save (C:): 17.90 GB
+Step  1010/2000 [EmergentDynamics] | CE=3.9111 PPL=50.0 | 11978 tok/s ∇=30.80 GPU=3.1G ETA=7m
+Step  1020/2000 [EmergentDynamics] | CE=3.7425 PPL=42.2 | 12277 tok/s ∇=14.08 GPU=3.1G ETA=7m
+Step  1030/2000 [EmergentDynamics] | CE=3.9361 PPL=51.2 | 11421 tok/s ∇=13.85 GPU=3.1G ETA=7m
+Step  1040/2000 [EmergentDynamics] | CE=3.9855 PPL=53.8 | 12278 tok/s ∇=14.67 GPU=3.1G ETA=7m
+Step  1050/2000 [EmergentDynamics] | CE=3.8763 PPL=48.2 | 11973 tok/s ∇=22.52 GPU=3.1G ETA=7m
+Step  1060/2000 [EmergentDynamics] | CE=3.9195 PPL=50.4 | 12281 tok/s ∇=27.43 GPU=3.1G ETA=7m
+Step  1070/2000 [EmergentDynamics] | CE=3.9118 PPL=50.0 | 12277 tok/s ∇=23.65 GPU=3.1G ETA=7m
+Step  1080/2000 [EmergentDynamics] | CE=3.9569 PPL=52.3 | 12079 tok/s ∇=12.72 GPU=3.1G ETA=7m
+Step  1090/2000 [EmergentDynamics] | CE=3.9292 PPL=50.9 | 12344 tok/s ∇=14.37 GPU=3.1G ETA=7m
+Step  1100/2000 [EmergentDynamics] | CE=3.8615 PPL=47.5 | 11978 tok/s ∇=14.70 GPU=3.1G ETA=7m
+Step  1110/2000 [EmergentDynamics] | CE=4.0188 PPL=55.6 | 12594 tok/s ∇=25.66 GPU=3.1G ETA=7m
+Step  1120/2000 [EmergentDynamics] | CE=3.8508 PPL=47.0 | 12277 tok/s ∇=16.14 GPU=3.1G ETA=7m
+Step  1130/2000 [EmergentDynamics] | CE=3.8081 PPL=45.1 | 12924 tok/s ∇=9.97 GPU=3.1G ETA=7m
+Step  1140/2000 [EmergentDynamics] | CE=3.9334 PPL=51.1 | 10888 tok/s ∇=14.66 GPU=3.1G ETA=6m
+Step  1150/2000 [EmergentDynamics] | CE=3.9484 PPL=51.9 | 12261 tok/s ∇=11.94 GPU=3.1G ETA=6m
+Step  1160/2000 [EmergentDynamics] | CE=3.8917 PPL=49.0 | 12279 tok/s ∇=15.30 GPU=3.1G ETA=6m
+Step  1170/2000 [EmergentDynamics] | CE=3.8338 PPL=46.2 | 12266 tok/s ∇=15.55 GPU=3.1G ETA=6m
+Step  1180/2000 [EmergentDynamics] | CE=3.8441 PPL=46.7 | 11421 tok/s ∇=19.03 GPU=3.1G ETA=6m
+Step  1190/2000 [EmergentDynamics] | CE=3.9447 PPL=51.7 | 11162 tok/s ∇=29.61 GPU=3.1G ETA=6m
+Step  1200/2000 [EmergentDynamics] | CE=3.9195 PPL=50.4 | 12278 tok/s ∇=9.14 GPU=3.1G ETA=6m
+  >>> VAL: CE=3.8718 PPL=48.0
+  Disk free before save (C:): 17.90 GB
+  Saved checkpoint: best_model.pt
+  Disk free after save (C:): 17.90 GB
+  >>> New best Val PPL: 48.0
+Step  1210/2000 [EmergentDynamics] | CE=3.8418 PPL=46.6 | 12224 tok/s ∇=13.92 GPU=3.1G ETA=6m
+Step  1220/2000 [EmergentDynamics] | CE=3.9451 PPL=51.7 | 12595 tok/s ∇=16.37 GPU=3.1G ETA=6m
+Step  1230/2000 [EmergentDynamics] | CE=3.8853 PPL=48.7 | 11657 tok/s ∇=10.64 GPU=3.1G ETA=6m
+Step  1240/2000 [EmergentDynamics] | CE=3.8123 PPL=45.3 | 11989 tok/s ∇=9.17 GPU=3.1G ETA=6m
+Step  1250/2000 [EmergentDynamics] | CE=3.9471 PPL=51.8 | 12278 tok/s ∇=17.57 GPU=3.1G ETA=6m
+Step  1260/2000 [EmergentDynamics] | CE=3.8147 PPL=45.4 | 12278 tok/s ∇=18.76 GPU=3.1G ETA=6m
+Step  1270/2000 [EmergentDynamics] | CE=3.8006 PPL=44.7 | 12512 tok/s ∇=8.21 GPU=3.1G ETA=6m
+Step  1280/2000 [EmergentDynamics] | CE=3.9913 PPL=54.1 | 11710 tok/s ∇=31.22 GPU=3.1G ETA=6m
+Step  1290/2000 [EmergentDynamics] | CE=3.9201 PPL=50.4 | 11977 tok/s ∇=30.51 GPU=3.1G ETA=6m
+Step  1300/2000 [EmergentDynamics] | CE=3.8430 PPL=46.7 | 12547 tok/s ∇=28.09 GPU=3.1G ETA=6m
+Step  1310/2000 [EmergentDynamics] | CE=3.8113 PPL=45.2 | 11293 tok/s ∇=28.93 GPU=3.1G ETA=6m
+Step  1320/2000 [EmergentDynamics] | CE=3.9531 PPL=52.1 | 12593 tok/s ∇=16.05 GPU=3.1G ETA=6m
+Step  1330/2000 [EmergentDynamics] | CE=3.9576 PPL=52.3 | 11978 tok/s ∇=8.57 GPU=3.1G ETA=6m
+Step  1340/2000 [EmergentDynamics] | CE=3.8789 PPL=48.4 | 12277 tok/s ∇=9.42 GPU=3.1G ETA=5m
+Step  1350/2000 [EmergentDynamics] | CE=3.9637 PPL=52.7 | 11978 tok/s ∇=10.08 GPU=3.1G ETA=5m
+Step  1360/2000 [EmergentDynamics] | CE=3.9447 PPL=51.7 | 11694 tok/s ∇=8.68 GPU=3.1G ETA=5m
+Step  1370/2000 [EmergentDynamics] | CE=3.9082 PPL=49.8 | 11967 tok/s ∇=12.67 GPU=3.1G ETA=5m
+Step  1380/2000 [EmergentDynamics] | CE=3.8417 PPL=46.6 | 12194 tok/s ∇=14.98 GPU=3.1G ETA=5m
+Step  1390/2000 [EmergentDynamics] | CE=3.7812 PPL=43.9 | 12598 tok/s ∇=12.26 GPU=3.1G ETA=5m
+Step  1400/2000 [EmergentDynamics] | CE=3.9052 PPL=49.7 | 12301 tok/s ∇=13.88 GPU=3.1G ETA=5m
+  >>> VAL: CE=3.8780 PPL=48.3
+Step  1410/2000 [EmergentDynamics] | CE=3.8687 PPL=47.9 | 11422 tok/s ∇=20.86 GPU=3.1G ETA=5m
+Step  1420/2000 [EmergentDynamics] | CE=3.8318 PPL=46.1 | 11693 tok/s ∇=11.63 GPU=3.1G ETA=5m
+Step  1430/2000 [EmergentDynamics] | CE=3.7423 PPL=42.2 | 11943 tok/s ∇=10.05 GPU=3.1G ETA=5m
+Step  1440/2000 [EmergentDynamics] | CE=3.9746 PPL=53.2 | 12255 tok/s ∇=5.67 GPU=3.1G ETA=5m
+Step  1450/2000 [EmergentDynamics] | CE=3.8130 PPL=45.3 | 11978 tok/s ∇=8.67 GPU=3.1G ETA=5m
+Step  1460/2000 [EmergentDynamics] | CE=3.9414 PPL=51.5 | 11161 tok/s ∇=12.82 GPU=3.1G ETA=5m
+Step  1470/2000 [EmergentDynamics] | CE=3.8325 PPL=46.2 | 11421 tok/s ∇=6.16 GPU=3.1G ETA=5m
+Step  1480/2000 [EmergentDynamics] | CE=3.8819 PPL=48.5 | 12151 tok/s ∇=12.73 GPU=3.1G ETA=4m
+Step  1490/2000 [EmergentDynamics] | CE=3.8756 PPL=48.2 | 11978 tok/s ∇=12.14 GPU=3.1G ETA=4m
+Step  1500/2000 [EmergentDynamics] | CE=3.8872 PPL=48.8 | 11978 tok/s ∇=12.59 GPU=3.1G ETA=4m
+  >>> Sample: Once upon a time, "I'm sorry for the boy and wanted to play with a new!
+
+The little girl said, and thanked his hand.
+
+Lily was not find out of their parents. He was very much fun. She asked her to hel...
+  Disk free before save (C:): 17.90 GB
+  Saved checkpoint: checkpoint_step1500.pt
+  Disk free after save (C:): 16.09 GB
+  Disk free before save (C:): 16.09 GB
+  Saved checkpoint: latest.pt
+  Disk free after save (C:): 16.09 GB
+Step  1510/2000 [EmergentDynamics] | CE=3.9143 PPL=50.1 | 11421 tok/s ∇=14.24 GPU=3.1G ETA=4m
+Step  1520/2000 [EmergentDynamics] | CE=3.8607 PPL=47.5 | 11690 tok/s ∇=10.51 GPU=3.1G ETA=4m
+Step  1530/2000 [EmergentDynamics] | CE=3.9069 PPL=49.7 | 12334 tok/s ∇=22.65 GPU=3.1G ETA=4m
+Step  1540/2000 [EmergentDynamics] | CE=4.0102 PPL=55.2 | 12072 tok/s ∇=20.22 GPU=3.1G ETA=4m
+Step  1550/2000 [EmergentDynamics] | CE=3.8942 PPL=49.1 | 11957 tok/s ∇=11.46 GPU=3.1G ETA=4m
+Step  1560/2000 [EmergentDynamics] | CE=3.8285 PPL=46.0 | 12256 tok/s ∇=11.69 GPU=3.1G ETA=4m
+Step  1570/2000 [EmergentDynamics] | CE=3.8562 PPL=47.3 | 10914 tok/s ∇=10.25 GPU=3.1G ETA=4m
+Step  1580/2000 [EmergentDynamics] | CE=3.8047 PPL=44.9 | 12592 tok/s ∇=10.33 GPU=3.1G ETA=4m
+Step  1590/2000 [EmergentDynamics] | CE=3.9153 PPL=50.2 | 11978 tok/s ∇=14.34 GPU=3.1G ETA=4m
+Step  1600/2000 [EmergentDynamics] | CE=3.7329 PPL=41.8 | 11979 tok/s ∇=9.96 GPU=3.1G ETA=4m
+  >>> VAL: CE=3.8492 PPL=47.0
+  Disk free before save (C:): 16.08 GB
+  Saved checkpoint: best_model.pt
+  Disk free after save (C:): 16.08 GB
+  >>> New best Val PPL: 47.0
+Step  1610/2000 [EmergentDynamics] | CE=3.8872 PPL=48.8 | 12593 tok/s ∇=9.71 GPU=3.1G ETA=4m
+Step  1620/2000 [EmergentDynamics] | CE=4.0018 PPL=54.7 | 11421 tok/s ∇=10.52 GPU=3.1G ETA=4m
+Step  1630/2000 [EmergentDynamics] | CE=3.8111 PPL=45.2 | 11676 tok/s ∇=4.24 GPU=3.1G ETA=3m
+Step  1640/2000 [EmergentDynamics] | CE=3.9481 PPL=51.8 | 11995 tok/s ∇=9.59 GPU=3.1G ETA=3m
+Step  1650/2000 [EmergentDynamics] | CE=3.9047 PPL=49.6 | 11677 tok/s ∇=6.76 GPU=3.1G ETA=3m
+Step  1660/2000 [EmergentDynamics] | CE=3.8012 PPL=44.8 | 12079 tok/s ∇=7.78 GPU=3.1G ETA=3m
+Step  1670/2000 [EmergentDynamics] | CE=3.8906 PPL=48.9 | 12277 tok/s ∇=8.29 GPU=3.1G ETA=3m
+Step  1680/2000 [EmergentDynamics] | CE=3.9373 PPL=51.3 | 11421 tok/s ∇=8.65 GPU=3.1G ETA=3m
+Step  1690/2000 [EmergentDynamics] | CE=3.8754 PPL=48.2 | 12271 tok/s ∇=9.33 GPU=3.1G ETA=3m
+Step  1700/2000 [EmergentDynamics] | CE=3.8487 PPL=46.9 | 12278 tok/s ∇=7.84 GPU=3.1G ETA=3m
+Step  1710/2000 [EmergentDynamics] | CE=3.9062 PPL=49.7 | 12278 tok/s ∇=8.86 GPU=3.1G ETA=3m
+Step  1720/2000 [EmergentDynamics] | CE=3.7699 PPL=43.4 | 11876 tok/s ∇=5.17 GPU=3.1G ETA=3m
+Step  1730/2000 [EmergentDynamics] | CE=3.8205 PPL=45.6 | 12277 tok/s ∇=5.06 GPU=3.1G ETA=3m
+Step  1740/2000 [EmergentDynamics] | CE=3.9064 PPL=49.7 | 12931 tok/s ∇=6.28 GPU=3.1G ETA=2m
+Step  1750/2000 [EmergentDynamics] | CE=3.7375 PPL=42.0 | 12593 tok/s ∇=8.61 GPU=3.1G ETA=2m
+Step  1760/2000 [EmergentDynamics] | CE=3.9261 PPL=50.7 | 12278 tok/s ∇=7.22 GPU=3.1G ETA=2m
+Step  1770/2000 [EmergentDynamics] | CE=3.8390 PPL=46.5 | 11981 tok/s ∇=7.43 GPU=3.1G ETA=2m
+Step  1780/2000 [EmergentDynamics] | CE=3.9126 PPL=50.0 | 12285 tok/s ∇=10.91 GPU=3.1G ETA=2m
+Step  1790/2000 [EmergentDynamics] | CE=3.8014 PPL=44.8 | 11242 tok/s ∇=8.18 GPU=3.1G ETA=2m
+Step  1800/2000 [EmergentDynamics] | CE=3.8455 PPL=46.8 | 11979 tok/s ∇=6.47 GPU=3.1G ETA=2m
+  >>> VAL: CE=3.8819 PPL=48.5
+Step  1810/2000 [EmergentDynamics] | CE=3.8604 PPL=47.5 | 12157 tok/s ∇=11.24 GPU=3.1G ETA=2m
+Step  1820/2000 [EmergentDynamics] | CE=3.8959 PPL=49.2 | 12191 tok/s ∇=6.29 GPU=3.1G ETA=2m
+Step  1830/2000 [EmergentDynamics] | CE=3.8586 PPL=47.4 | 11978 tok/s ∇=6.98 GPU=3.1G ETA=2m
+Step  1840/2000 [EmergentDynamics] | CE=3.8387 PPL=46.5 | 11173 tok/s ∇=4.45 GPU=3.1G ETA=2m
+Step  1850/2000 [EmergentDynamics] | CE=3.8419 PPL=46.6 | 12411 tok/s ∇=429.20 GPU=3.1G ETA=1m
+Step  1860/2000 [EmergentDynamics] | CE=3.8921 PPL=49.0 | 12542 tok/s ∇=11.76 GPU=3.1G ETA=1m
+Step  1870/2000 [EmergentDynamics] | CE=3.8478 PPL=46.9 | 11978 tok/s ∇=10.37 GPU=3.1G ETA=1m
+Step  1880/2000 [EmergentDynamics] | CE=3.8613 PPL=47.5 | 12277 tok/s ∇=14.74 GPU=3.1G ETA=1m
+Step  1890/2000 [EmergentDynamics] | CE=3.7989 PPL=44.7 | 11693 tok/s ∇=10.19 GPU=3.1G ETA=1m
+Step  1900/2000 [EmergentDynamics] | CE=3.9775 PPL=53.4 | 11978 tok/s ∇=7.64 GPU=3.1G ETA=1m
+Step  1910/2000 [EmergentDynamics] | CE=3.9074 PPL=49.8 | 12351 tok/s ∇=76.86 GPU=3.1G ETA=1m
+Step  1920/2000 [EmergentDynamics] | CE=3.7953 PPL=44.5 | 12345 tok/s ∇=9.01 GPU=3.1G ETA=1m
+Step  1930/2000 [EmergentDynamics] | CE=3.8985 PPL=49.3 | 11978 tok/s ∇=25.63 GPU=3.1G ETA=1m
+Step  1940/2000 [EmergentDynamics] | CE=3.9040 PPL=49.6 | 11427 tok/s ∇=50.58 GPU=3.1G ETA=1m
+Step  1950/2000 [EmergentDynamics] | CE=3.8737 PPL=48.1 | 11602 tok/s ∇=83.21 GPU=3.1G ETA=0m
+Step  1960/2000 [EmergentDynamics] | CE=3.8118 PPL=45.2 | 11978 tok/s ∇=16.70 GPU=3.1G ETA=0m
+Step  1970/2000 [EmergentDynamics] | CE=3.8584 PPL=47.4 | 11978 tok/s ∇=6.85 GPU=3.1G ETA=0m
+Step  1980/2000 [EmergentDynamics] | CE=3.8485 PPL=46.9 | 12592 tok/s ∇=6.07 GPU=3.1G ETA=0m
+Step  1990/2000 [EmergentDynamics] | CE=3.8925 PPL=49.0 | 11978 tok/s ∇=4.97 GPU=3.1G ETA=0m
+Step  2000/2000 [EmergentDynamics] | CE=3.8957 PPL=49.2 | 11635 tok/s ∇=8.09 GPU=3.1G ETA=0m
+  >>> VAL: CE=3.8623 PPL=47.6
+  >>> Sample: Once upon a time there was a big dog named Jane was a time and she was happy he had lots of the ground. It was very nice to their toys.
+
+
+
+
+
+
+From that the end, "What do not want to explore. They had ...
+  Disk free before save (C:): 16.08 GB
+  Saved checkpoint: checkpoint_step2000.pt
+  Disk free after save (C:): 14.27 GB
+  Disk free before save (C:): 14.27 GB
+  Saved checkpoint: latest.pt
+  Disk free after save (C:): 14.27 GB
+  Disk free before save (C:): 14.27 GB
+  Saved checkpoint: final_model.pt
+  Disk free after save (C:): 12.46 GB
+  Disk free before save (C:): 12.46 GB
+  Saved checkpoint: latest.pt
+  Disk free after save (C:): 12.46 GB
+
+==============================================================================
+  TRAINING COMPLETE
+==============================================================================
+
+  RESULTS
+    Final Val PPL:    48.23
+    Best Val PPL:     46.96
+    Final Val CE:     3.8761
+
+  TRAINING STATISTICS
+    Total time:       0.33 hours (20.0 minutes)
+    Steps completed:  2,000
+    Tokens processed: 16,384,000 (16.4M)
+    Avg throughput:   13627 tok/s
+
+  GPU MEMORY
+    Peak allocated:   7.83 GB
+
+==============================================================================
+
+Final generation samples:
+  [Once upon a time]: Once upon a time, they could fly around the tree and started to the little boy named Lily's just like to the cat was a time, but she heard a huge rock. They saw the story.Once upon a little girl said the cat a time there was happy.
+
+
+Tom and laughed and the world. But she felt so excited to see it o
+  [The little cat]: The little cat was a beautiful! 
+
+
+"Yes, "You are you have a big hole and she looked in the ball. They learned that she was very quiet. She felt very happy. 
+
+"OK, they knew that the park. One day, she did not have to play on the park. The bird looked at the ball, she noticed something else could no
+  [One day, a]: One day, a little rabbit and the floor. "Wow, "I'm sorry. The man and started to play his mom said, there was brave and said, "You can. The tree. She took a little mouse who lived in a little boy. She was a wonderful place to the man and it was a little girl named Lily said, "You're having a big yel

@@ -1,0 +1,25 @@
+# data, checkpoints, caches
+data_cache/
+hf_cache/
+checkpoints/
+backup_checkpoints/
+*.pt
+*.safetensors
+runs/**/*.pt
+experiments/
+
+# environment
+.env
+.venv/
+venv/
+
+# python
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+
+# editors / OS
+.vscode/
+.idea/
+.DS_Store

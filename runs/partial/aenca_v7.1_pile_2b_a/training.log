@@ -1,0 +1,67 @@
+  Param group 'decay': 123,347,712 params, wd=0.1
+  Param group 'no_decay': 38,646,529 params, wd=0.0
+==============================================================================
+  AENCA v7.1 (BDH-inspired Hebbian NCA)
+==============================================================================
+  Params: 161,994,241 total
+  Config: 30517 steps, batch=4, seq_len=1024
+  Token budget: 124,997,632
+  Device: cuda
+==============================================================================
+Step     1/30517 [HNCA] | CE=10.8325 PPL=50638.4 | 16271 tok/s ∇=0.78 GPU=2.5G
+Step     2/30517 [HNCA] | CE=10.8328 PPL=50657.2 | 21029 tok/s ∇=0.78 GPU=2.5G
+Step     3/30517 [HNCA] | CE=10.8332 PPL=50677.9 | 21208 tok/s ∇=0.78 GPU=2.5G
+Step     4/30517 [HNCA] | CE=10.8317 PPL=50599.8 | 21355 tok/s ∇=0.78 GPU=2.5G
+Step     5/30517 [HNCA] | CE=10.8297 PPL=50498.9 | 21283 tok/s ∇=0.78 GPU=2.5G ETA=28.2h
+Step    20/30517 [HNCA] | CE=10.8090 PPL=49461.6 | 21195 tok/s ∇=0.78 GPU=2.5G ETA=27.0h
+Step    40/30517 [HNCA] | CE=10.6810 PPL=43522.4 | 20948 tok/s ∇=0.78 GPU=2.5G ETA=26.8h
+Step    60/30517 [HNCA] | CE=10.4191 PPL=33494.9 | 20959 tok/s ∇=0.78 GPU=2.5G ETA=26.7h
+Step    80/30517 [HNCA] | CE=10.1944 PPL=26752.3 | 21070 tok/s ∇=0.78 GPU=2.5G ETA=26.6h
+Step   100/30517 [HNCA] | CE=10.0224 PPL=22525.2 | 20678 tok/s ∇=0.78 GPU=2.5G ETA=26.6h
+Step   120/30517 [HNCA] | CE=9.7482 PPL=17123.1 | 21150 tok/s ∇=0.78 GPU=2.5G ETA=26.6h
+Step   140/30517 [HNCA] | CE=9.5056 PPL=13435.2 | 21138 tok/s ∇=0.79 GPU=2.5G ETA=26.5h
+Step   160/30517 [HNCA] | CE=9.2392 PPL=10292.8 | 20978 tok/s ∇=0.79 GPU=2.5G ETA=26.5h
+Step   180/30517 [HNCA] | CE=8.9566 PPL=7758.6 | 21065 tok/s ∇=0.81 GPU=2.5G ETA=26.5h
+Step   200/30517 [HNCA] | CE=8.6426 PPL=5668.1 | 20976 tok/s ∇=0.89 GPU=2.5G ETA=26.5h
+Step   220/30517 [HNCA] | CE=8.4692 PPL=4765.5 | 21199 tok/s ∇=0.83 GPU=2.5G ETA=26.4h
+Step   240/30517 [HNCA] | CE=8.2618 PPL=3873.1 | 21103 tok/s ∇=0.88 GPU=2.5G ETA=26.4h
+Step   260/30517 [HNCA] | CE=8.0642 PPL=3178.6 | 21171 tok/s ∇=0.87 GPU=2.5G ETA=26.4h
+Step   280/30517 [HNCA] | CE=7.7788 PPL=2389.4 | 20924 tok/s ∇=0.94 GPU=2.5G ETA=26.4h
+Step   300/30517 [HNCA] | CE=7.8433 PPL=2548.5 | 20928 tok/s ∇=0.62 GPU=2.5G ETA=26.4h
+Step   320/30517 [HNCA] | CE=7.5770 PPL=1952.8 | 21122 tok/s ∇=0.59 GPU=2.5G ETA=26.3h
+Step   340/30517 [HNCA] | CE=7.6236 PPL=2045.9 | 21098 tok/s ∇=0.72 GPU=2.5G ETA=26.3h
+Step   360/30517 [HNCA] | CE=7.4859 PPL=1782.7 | 21229 tok/s ∇=0.53 GPU=2.5G ETA=26.3h
+Step   380/30517 [HNCA] | CE=7.3045 PPL=1487.0 | 20965 tok/s ∇=0.56 GPU=2.5G ETA=26.3h
+Step   400/30517 [HNCA] | CE=7.2662 PPL=1431.1 | 20831 tok/s ∇=0.52 GPU=2.5G ETA=26.3h
+Step   420/30517 [HNCA] | CE=7.1811 PPL=1314.3 | 21005 tok/s ∇=0.75 GPU=2.5G ETA=26.2h
+Step   440/30517 [HNCA] | CE=7.1011 PPL=1213.2 | 21209 tok/s ∇=0.71 GPU=2.5G ETA=26.2h
+Step   460/30517 [HNCA] | CE=7.0507 PPL=1153.7 | 21111 tok/s ∇=0.74 GPU=2.5G ETA=26.2h
+Step   480/30517 [HNCA] | CE=7.0804 PPL=1188.5 | 21204 tok/s ∇=0.82 GPU=2.5G ETA=26.2h
+Step   500/30517 [HNCA] | CE=6.9003 PPL=992.6 | 20989 tok/s ∇=1.19 GPU=2.5G ETA=26.2h
+Step   520/30517 [HNCA] | CE=6.7786 PPL=878.8 | 20945 tok/s ∇=0.95 GPU=2.5G ETA=26.1h
+Step   540/30517 [HNCA] | CE=6.7888 PPL=887.8 | 23945 tok/s ∇=0.65 GPU=2.5G ETA=26.1h
+Step   560/30517 [HNCA] | CE=6.6794 PPL=795.8 | 24466 tok/s ∇=0.69 GPU=2.5G ETA=25.9h
+Step   580/30517 [HNCA] | CE=6.6744 PPL=791.8 | 24196 tok/s ∇=0.89 GPU=2.5G ETA=25.8h
+Step   600/30517 [HNCA] | CE=6.4504 PPL=633.0 | 23727 tok/s ∇=1.11 GPU=2.5G ETA=25.7h
+Step   620/30517 [HNCA] | CE=6.4937 PPL=660.9 | 24250 tok/s ∇=0.72 GPU=2.5G ETA=25.6h
+Step   640/30517 [HNCA] | CE=6.6088 PPL=741.6 | 24295 tok/s ∇=0.94 GPU=2.5G ETA=25.5h
+Step   660/30517 [HNCA] | CE=6.4459 PPL=630.1 | 23938 tok/s ∇=0.86 GPU=2.5G ETA=25.4h
+Step   680/30517 [HNCA] | CE=6.4335 PPL=622.4 | 24431 tok/s ∇=0.87 GPU=2.5G ETA=25.3h
+Step   700/30517 [HNCA] | CE=6.4124 PPL=609.4 | 24320 tok/s ∇=1.01 GPU=2.5G ETA=25.2h
+Step   720/30517 [HNCA] | CE=6.2853 PPL=536.6 | 28668 tok/s ∇=0.78 GPU=2.5G ETA=25.1h
+Step   740/30517 [HNCA] | CE=5.9739 PPL=393.0 | 28440 tok/s ∇=0.84 GPU=2.5G ETA=25.0h
+Step   760/30517 [HNCA] | CE=6.0940 PPL=443.2 | 27924 tok/s ∇=0.63 GPU=2.5G ETA=24.8h
+Step   780/30517 [HNCA] | CE=6.1558 PPL=471.4 | 28393 tok/s ∇=0.77 GPU=2.5G ETA=24.7h
+Step   800/30517 [HNCA] | CE=5.9479 PPL=382.9 | 27822 tok/s ∇=0.72 GPU=2.5G ETA=24.5h
+Step   820/30517 [HNCA] | CE=5.9457 PPL=382.1 | 28316 tok/s ∇=0.66 GPU=2.5G ETA=24.4h
+Step   840/30517 [HNCA] | CE=5.9906 PPL=399.7 | 28499 tok/s ∇=0.76 GPU=2.5G ETA=24.2h
+Step   860/30517 [HNCA] | CE=5.8742 PPL=355.7 | 27677 tok/s ∇=0.89 GPU=2.5G ETA=24.1h
+Step   880/30517 [HNCA] | CE=5.8922 PPL=362.2 | 28277 tok/s ∇=0.65 GPU=2.5G ETA=24.0h
+Step   900/30517 [HNCA] | CE=5.7743 PPL=321.9 | 27920 tok/s ∇=0.67 GPU=2.5G ETA=23.9h
+Step   920/30517 [HNCA] | CE=5.6342 PPL=279.8 | 28083 tok/s ∇=0.62 GPU=2.5G ETA=23.8h
+Step   940/30517 [HNCA] | CE=5.9202 PPL=372.5 | 28492 tok/s ∇=0.76 GPU=2.5G ETA=23.6h
+Step   960/30517 [HNCA] | CE=5.8414 PPL=344.3 | 28291 tok/s ∇=0.94 GPU=2.5G ETA=23.5h
+Step   980/30517 [HNCA] | CE=5.6408 PPL=281.7 | 28641 tok/s ∇=0.86 GPU=2.5G ETA=23.4h
+Step  1000/30517 [HNCA] | CE=5.5516 PPL=257.6 | 28420 tok/s ∇=0.77 GPU=2.5G ETA=23.3h
+  >>> VAL: CE=5.6503 PPL=284.4
+  Disk free before save (experiments\AENCA v7.1 (BDH-inspired Hebbian NCA)\pile_2b_v7_20260321_012508): 17.90 GB
